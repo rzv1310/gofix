@@ -479,6 +479,7 @@ function MiroslavaPage() {
       <main>
         <Hero />
         <EmergencyBar />
+        <Reviews />
         <ForWhom />
         <Services />
         <WhyUs />
