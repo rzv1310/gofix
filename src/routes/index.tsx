@@ -749,7 +749,11 @@ function Zones() {
               <h3 className="font-display text-xl text-primary">Cartiere Iași</h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {CARTIERE.map(c => (
-                  <span key={c} className="rounded-full border border-border bg-card px-3 py-1.5 text-sm font-semibold">{c}</span>
+                  c === "Păcurari" ? (
+                    <Link key={c} to="/vulcanizare-pacurari" className="rounded-full border border-border bg-card px-3 py-1.5 text-sm font-semibold hover:text-primary hover:underline">{c}</Link>
+                  ) : (
+                    <span key={c} className="rounded-full border border-border bg-card px-3 py-1.5 text-sm font-semibold">{c}</span>
+                  )
                 ))}
               </div>
             </div>
@@ -1035,7 +1039,16 @@ function Footer() {
         {/* Cartiere deservite */}
         <div>
           <h3 className="font-display text-xl text-white">Cartiere deservite</h3>
-          <p className="mt-4 text-sm">{cartiere.join(", ")}.</p>
+          <p className="mt-4 text-sm">
+            {cartiere.map((c, i) => (
+              <span key={c}>
+                {c === "Păcurari" ? (
+                  <Link to="/vulcanizare-pacurari" className="hover:text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">{c}</Link>
+                ) : c}
+                {i < cartiere.length - 1 ? ", " : "."}
+              </span>
+            ))}
+          </p>
         </div>
 
         <div className="my-12 border-t border-white/10" />
