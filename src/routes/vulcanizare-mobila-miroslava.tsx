@@ -196,7 +196,7 @@ function Reviews() {
     },
     {
       initials: "L.B.",
-      text: "Cea mai practică soluție când ai probleme cu roata. Nu a trebuit să mut mașina, au venit ei direct la mine. Recomand GoFix!",
+      text: "Cea mai buna solutie cand ai probleme cu roata. Nu a trebuit sa mut masina, au venit ei direct la mine. Recomand GoFix!",
     },
     {
       initials: "N.K.",
