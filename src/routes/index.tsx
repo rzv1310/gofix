@@ -319,7 +319,7 @@ function HowItWorks() {
   );
 }
 
-const CARTIERE = ["Copou", "Centrul istoric", "Țicău", "Tudor Vladimirescu", "Tătărași", "Păcurari", "C.U.G. / Cantemir", "Nicolina"];
+const CARTIERE = ["Copou", "Centrul istoric", "Țicău", "Tudor Vladimirescu", "Tătărași", "Păcurari", "C.U.G.", "Cantemir", "Nicolina"];
 const LOCALITATI = ["Aroneanu","Bârnova","Ciurea","Holboca","Lețcani","Miroslava","Popricani","Rediu","Schitu Duca","Tomești","Ungheni","Valea Lupului","Victoria","Comarna","Costuleni","Dobrovăț","Golăiești","Grajduri","Mogoșești","Movileni","Prisăcani","Românești","Scânteia","Țigănași","Țuțora","Voinești","Horlești"];
 
 function Zones() {
