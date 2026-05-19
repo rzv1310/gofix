@@ -858,24 +858,46 @@ function Pricing() {
 }
 
 function Reviews() {
-  const traits = [
-    "Răspuns rapid",
-    "Comunicare clară",
-    "Intervenție la locație",
-    "Disponibilitate non-stop",
-    "Profesionalism",
-    "Echipamente moderne",
+  const reviews = [
+    {
+      initials: "A.M.",
+      text: "Profesioniști băieții, recomand cu încredere! An de an, schimburile, dar și neprevăzutele au fost rezolvate fără probleme! E probabil cea mai serioasă vulcanizare mobilă din Iași.",
+    },
+    {
+      initials: "R.P.",
+      text: "Personal profi, au venit la ora 2 noaptea cu mașina și s-a rezolvat problema în nici 15 minute. Aparatură excelentă. Recomand vulcanizarea mobilă GOFIX, nu degeaba are atâtea recenzii pozitive. Voi suna mereu aici când voi avea o problemă.",
+    },
+    {
+      initials: "C.D.",
+      text: "Bine organizați pentru perioada schimbării anvelopelor, angajați amabili. Prețuri decente.",
+    },
+    {
+      initials: "M.I.",
+      text: "Au venit foarte rapid, mulțumesc GoFix!",
+    },
+    {
+      initials: "S.B.",
+      text: "5 stele pentru o pană de cauciuc noaptea în Iași care s-a rezolvat în 10 minute! Mulțumesc pentru rapiditate!",
+    },
+    {
+      initials: "V.T.",
+      text: "Foarte bune servicii. A zis la telefon că ajunge într-o jumătate de oră și a ajuns. Și era duminică. A durat mai puțin să repare cauciucul și asta a fost. Recomand această vulcanizare mobilă.",
+    },
   ];
   return (
     <section id="recenzii" className="py-20">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeading kicker="Social proof" title="Șoferii din Iași aleg GoFix pentru intervenții rapide" />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {traits.map(t => (
-            <div key={t} className="rounded-xl border border-border bg-card p-6 shadow-card">
-              <div className="flex gap-0.5 text-primary">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}</div>
-              <p className="mt-3 font-display text-lg">„{t}”</p>
-              <p className="mt-2 text-sm text-muted-foreground">Ce apreciază clienții GoFix la fiecare intervenție în Iași.</p>
+          {reviews.map(r => (
+            <div key={r.initials + r.text.slice(0, 10)} className="rounded-xl border border-border bg-card p-6 shadow-card">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary font-display text-sm font-bold text-white">
+                  {r.initials}
+                </div>
+                <div className="flex gap-0.5 text-primary">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}</div>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-foreground">„{r.text}”</p>
             </div>
           ))}
         </div>
