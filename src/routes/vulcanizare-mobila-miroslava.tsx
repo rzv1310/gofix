@@ -387,7 +387,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16">
         <div className="grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-1">
-            <h2 className="font-display text-2xl text-white">GoFix Vulcanizare Mobilă Iași</h2>
+            <h2 className="font-display text-2xl text-white"><a href="/" className="hover:text-primary transition">GoFix Vulcanizare Mobilă Iași</a></h2>
             <p className="mt-3 text-sm">Serviciu non-stop de vulcanizare mobilă în Iași, Miroslava și zona metropolitană.</p>
           </div>
           <div className="lg:col-span-2">
