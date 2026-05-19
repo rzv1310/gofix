@@ -7,7 +7,6 @@ import {
   useRouter,
   HeadContent,
   Scripts,
-  useLocation,
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
