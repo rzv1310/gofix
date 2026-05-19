@@ -60,6 +60,11 @@ export const Route = createFileRoute("/")({
             postalCode: "700259",
             addressCountry: "RO",
           },
+          geo: {
+            "@type": "GeoCoordinates",
+            latitude: "47.1664",
+            longitude: "27.5795",
+          },
           openingHoursSpecification: {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
