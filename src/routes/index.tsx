@@ -749,7 +749,11 @@ function Zones() {
               <h3 className="font-display text-xl text-primary">Cartiere Iași</h3>
               <div className="mt-3 flex flex-wrap gap-2">
                 {CARTIERE.map(c => (
-                  <span key={c} className="rounded-full border border-border bg-card px-3 py-1.5 text-sm font-semibold">{c}</span>
+                  c === "Păcurari" ? (
+                    <Link key={c} to="/vulcanizare-pacurari" className="rounded-full border border-border bg-card px-3 py-1.5 text-sm font-semibold hover:text-primary hover:underline">{c}</Link>
+                  ) : (
+                    <span key={c} className="rounded-full border border-border bg-card px-3 py-1.5 text-sm font-semibold">{c}</span>
+                  )
                 ))}
               </div>
             </div>
