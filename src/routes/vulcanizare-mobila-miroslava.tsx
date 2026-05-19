@@ -204,7 +204,7 @@ function Reviews() {
     },
     {
       initials: "F.G.",
-      text: "Serviciu foarte bun pentru Miroslava. Am avut roata dezumflată în parcare și nu puteam pleca spre Iași. Au ajuns în 35 min și au reparat pana pe loc.",
+      text: "Serviciu foarte fain pentru Miroslava. Am avut roata dezumflata in parcare si nu puteam pleca spre Iasi. Au ajuns in 35 min si au reparat pana pe loc.",
     },
   ];
   return (
