@@ -769,7 +769,7 @@ function Vehicles() {
   const items = [
     { i: Car, t: "Autoturisme", d: "Pentru șoferii din Iași care au pană, roată dezumflată sau nevoie de schimb anvelope." },
     { i: Building2, t: "Vehicule de serviciu", d: "Pentru instituții, companii, spitale, firme locale și echipe mobile." },
-    { i: Truck, t: "Microbuze & Autoutilitare", d: "Pentru curieri, transportatori, firme de distribuție și servicii locale." },
+    { i: Bus, t: "Microbuze & Autoutilitare", d: "Pentru curieri, transportatori, firme de distribuție și servicii locale." },
     { i: Truck, t: "Camioane & tiruri", d: "Pentru intervenții la vehicule mari, unde deplasarea la service este dificilă." },
   ];
   return (
