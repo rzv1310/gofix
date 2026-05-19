@@ -81,8 +81,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "GoFix Vulcanizare Mobilă Iași Non-Stop" },
       { name: "twitter:description", content: "Vulcanizare mobilă Iași non-stop. Reparații pene de cauciuc, schimb anvelope și echilibrare roți la domiciliu sau pe drum. Sună la 0332 630 507." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/4JwdkPfG3Mgryfl0Byt7yN5KIf43/social-images/social-1779201599695-LOGO_-_GoFix_Vulcanizare_Mobilă_Iași.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/4JwdkPfG3Mgryfl0Byt7yN5KIf43/social-images/social-1779201599695-LOGO_-_GoFix_Vulcanizare_Mobilă_Iași.webp" },
+      { property: "og:image", content: "https://gofix.lovable.app/gofix-logo-og.png" },
+      { name: "twitter:image", content: "https://gofix.lovable.app/gofix-logo-og.png" },
     ],
     links: [
       {
