@@ -14,20 +14,64 @@ import serviceTire from "@/assets/service-tire.jpg";
 import whyUs from "@/assets/why-us.jpg";
 import vehicles from "@/assets/vehicles.jpg";
 
+const FAQS: Array<[string, string]> = [
+  ["GoFix este disponibil non-stop în Iași?", "Da, serviciul de vulcanizare mobilă este disponibil non-stop pentru intervenții în Iași și zona metropolitană."],
+  ["Veniți la domiciliu sau la birou?", "Da. Putem interveni acasă, la birou, în parcare sau în alte locații accesibile."],
+  ["Reparați pene pe loc?", "Da. În funcție de starea anvelopei, putem repara pana direct la locație."],
+  ["Faceți și echilibrare roți?", "Da, oferim echilibrare roți pe loc, cu echipamente mobile profesionale."],
+  ["Lucrați și pentru dube sau camioane?", "Da, oferim servicii pentru autoturisme, autoutilitare, dube, camioane și tiruri."],
+  ["Cât costă intervenția?", "Prețul depinde de locație, tipul vehiculului și serviciul necesar. Cel mai rapid este să suni sau să trimiți mesaj pe WhatsApp pentru estimare."],
+  ["În ce zone din Iași ajungeți?", "Ajungem în principalele cartiere din Iași și în localitățile din zona metropolitană: Miroslava, Valea Lupului, Rediu, Tomești, Holboca, Ciurea, Lețcani și altele."],
+];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "GoFix Vulcanizare Mobilă Iași Non-Stop — Venim la tine 24/7" },
+      { title: "Vulcanizare Mobilă Iași Non-Stop 24/7 — GoFix la tine în 30 min" },
       { name: "description", content: "Vulcanizare mobilă Iași non-stop. Reparații pene, schimb anvelope și echilibrare roți la domiciliu, birou sau pe marginea drumului. Sună 0332 630 507." },
-      { property: "og:title", content: "GoFix Vulcanizare Mobilă Iași Non-Stop" },
+      { property: "og:title", content: "Vulcanizare Mobilă Iași Non-Stop 24/7 — GoFix" },
       { property: "og:description", content: "Intervenim 24/7 în Iași și zona metropolitană. Sună 0332 630 507 sau scrie pe WhatsApp." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://gofix.lovable.app/" },
     ],
     links: [
       { rel: "canonical", href: "https://gofix.lovable.app/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AutoRepair",
+          name: "GoFix Vulcanizare Mobilă Iași",
+          description: "Serviciu non-stop de vulcanizare mobilă în Iași și zona metropolitană.",
+          url: "https://gofix.lovable.app/",
+          telephone: "+40332630507",
+          areaServed: "Iași, România",
+          address: { "@type": "PostalAddress", addressLocality: "Iași", addressCountry: "RO" },
+          openingHoursSpecification: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            opens: "00:00",
+            closes: "23:59",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: FAQS.map(([q, a]) => ({
+            "@type": "Question",
+            name: q,
+            acceptedAnswer: { "@type": "Answer", text: a },
+          })),
+        }),
+      },
     ],
   }),
   component: HomePage,
