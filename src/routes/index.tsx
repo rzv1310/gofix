@@ -1045,7 +1045,13 @@ function Footer() {
           <h3 className="font-display text-xl text-white">Zona Metropolitană Iași</h3>
           <ul className="mt-4 grid gap-x-4 gap-y-2 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {metroLocalities.map(l => (
-              <li key={l} className="hover:text-primary">{l}</li>
+              <li key={l} className="hover:text-primary">
+                {l === "Miroslava" ? (
+                  <a href="/vulcanizare-mobila-miroslava" className="hover:text-primary hover:underline">{l}</a>
+                ) : (
+                  l
+                )}
+              </li>
             ))}
           </ul>
         </div>
