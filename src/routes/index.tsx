@@ -133,8 +133,7 @@ function Hero() {
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm">
-              <span className="text-white">5</span>
-              <span className="flex items-center text-yellow-400">*****</span>
+              <span className="text-white">5<span className="text-yellow-400">*****</span></span>
               <span className="tracking-wider">
                 <span style={{ color: "#4285F4" }}>G</span>
                 <span style={{ color: "#EA4335" }}>o</span>
