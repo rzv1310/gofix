@@ -214,13 +214,19 @@ function Reviews() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {reviews.map(r => (
             <div key={r.initials + r.text.slice(0, 10)} className="rounded-xl border border-border bg-card p-6 shadow-card">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary font-display text-sm font-bold text-white">
-                  {r.initials}
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary font-display text-sm font-bold text-white">
+                    {r.initials}
+                  </div>
+                  <div className="flex gap-0.5 text-primary">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}</div>
                 </div>
-                <div className="flex gap-0.5 text-primary">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}</div>
+                <MoreVertical className="h-4 w-4 text-muted-foreground" />
               </div>
               <p className="mt-4 text-sm leading-relaxed text-foreground">„{r.text}”</p>
+              <div className="mt-4 flex items-center gap-2">
+                <ThumbsUp className="h-4 w-4 text-muted-foreground" />
+              </div>
             </div>
           ))}
         </div>
