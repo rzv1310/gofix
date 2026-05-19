@@ -429,7 +429,6 @@ function PacurariPage() {
         <ForWhom />
         <Services />
         <WhyUs />
-        <HowItWorks />
         <Zones />
         <FAQ />
         <FinalCTA />
