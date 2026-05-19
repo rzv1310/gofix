@@ -325,7 +325,7 @@ function FAQ() {
   return (
     <section id="faq" className="py-20">
       <div className="mx-auto max-w-3xl px-4">
-        <SectionHeading kicker="FAQ" title="Întrebări frecvente despre vulcanizarea mobilă în Păcurari" />
+        <SectionHeading kicker="FAQ" title="Ce ne întreabă clienții" />
         <div className="mt-10 rounded-2xl border border-border bg-card px-6 shadow-card">
           {FAQS.map(([q, a]) => <FAQItem key={q} q={q} a={a} />)}
         </div>
