@@ -112,7 +112,7 @@ function Hero() {
       <div className="speed-lines relative mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-2 lg:py-24">
         <div className="relative z-10">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-green/50 bg-brand-green/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" /> 24/7 · Iași
+            <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" /> 24/7 · Urgent
           </span>
           <h1 className="mt-5 font-display text-4xl leading-[0.95] text-white sm:text-5xl lg:text-7xl">
             Go<span className="text-primary">Fix</span> Vulcanizare Mobilă Iași
@@ -133,7 +133,7 @@ function Hero() {
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
             <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm">
-              <span className="text-white">5<span className="text-yellow-400">*****</span></span>
+              <span className="text-white">5<sup className="text-yellow-400">*****</sup></span>
               <span className="tracking-wider">
                 <span style={{ color: "#4285F4" }}>G</span>
                 <span style={{ color: "#EA4335" }}>o</span>
