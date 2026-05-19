@@ -687,7 +687,7 @@ function WhyUs() {
     <section className="py-20">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-2 lg:items-center">
         <div className="relative">
-          <img src={whyUs} alt="Autospecială GoFix pe drum" width={1200} height={1400} loading="lazy" className="rounded-2xl object-cover shadow-card" />
+          <img src={whyUs} alt="Autospecială GoFix pe drum" title="Autospecială GoFix pe drum" width={1200} height={1400} loading="lazy" className="rounded-2xl object-cover shadow-card" />
           <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-primary p-6 text-primary-foreground shadow-glow sm:block">
             <p className="font-display text-4xl leading-none">24/7</p>
             <p className="mt-1 text-xs font-semibold uppercase tracking-wider">Non-Stop Iași</p>
