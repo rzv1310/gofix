@@ -799,7 +799,6 @@ function Vehicles() {
   ];
   return (
     <section className="relative overflow-hidden bg-secondary py-20 text-secondary-foreground">
-      <img src={vehicles} alt="" className="absolute inset-0 h-full w-full object-cover opacity-20" loading="lazy" />
       <div className="relative mx-auto max-w-7xl px-4">
         <SectionHeading kicker="Tipuri de vehicule" title="Servicii pentru autoturisme, dube, camioane și vehicule de serviciu" />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
