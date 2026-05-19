@@ -112,7 +112,7 @@ function Hero() {
       <div className="speed-lines relative mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-2 lg:py-24">
         <div className="relative z-10">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-green/50 bg-brand-green/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" /> Non-Stop · 24/7 · Iași
+            <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" /> 24/7 · Iași
           </span>
           <h1 className="mt-5 font-display text-4xl leading-[0.95] text-white sm:text-5xl lg:text-7xl">
             Go<span className="text-primary">Fix</span> Vulcanizare Mobilă Iași
@@ -121,7 +121,7 @@ function Hero() {
             Ai făcut pană în Iași sau împrejurimi? Intervenim rapid la domiciliu, la birou sau pe marginea drumului pentru reparații pene, schimb anvelope și echilibrare roți pe loc.
           </p>
           <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {["Disponibil non-stop, 24/7", "Deplasare rapidă în Iași + zona metropolitană", "Autoturisme, dube, autoutilitare, camioane", "Plată corectă, intervenție profesionistă"].map(t => (
+            {["Disponibil NON STOP", "Deplasare rapidă în Iași + zona metropolitană", "Autoturisme, dube, autoutilitare, camioane", "Plată corectă, intervenție profesionistă"].map(t => (
               <li key={t} className="flex items-start gap-2 text-sm text-secondary-foreground/90">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-green" /> {t}
               </li>
