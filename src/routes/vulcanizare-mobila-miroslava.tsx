@@ -276,7 +276,7 @@ function HowItWorks() {
   const steps = [
     { i: Phone, t: "Ne contactezi", d: `Suni la ${PHONE_DISPLAY} sau trimiți mesaj pe WhatsApp.` },
     { i: MapPin, t: "Ne trimiți locația", d: "Ne spui unde ești în Miroslava: acasă, la birou, în parcare sau pe drum." },
-    { i: Wrench, t: "Venim și rezolvăm pe loc", d: "Echipa GoFix ajunge cu autospeciala și intervine rapid." },
+    { i: Wrench, t: "Venim și rezolvăm pe loc", d: <><a href="/" className="underline hover:text-primary">Echipa GoFix</a> ajunge cu autospeciala și intervine rapid.</> },
   ];
   return (
     <section id="cum-functioneaza" className="bg-muted py-20">
