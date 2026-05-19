@@ -293,7 +293,7 @@ function Services() {
 
 function WhyUs() {
   const items = [
-    { t: "Venim noi la tine", d: "Nu mai pierzi timp cu drumul până la service — intervenim direct în Miroslava." },
+    { t: "Venim noi la tine", d: "Nu mai pierzi timp cu drumul până la service - intervenim direct în Miroslava." },
     { t: "Disponibilitate non-stop", d: "Intervenim 24/7 în Miroslava și zona metropolitană Iași." },
     { t: "Echipamente profesionale", d: "Autospeciale dotate pentru vulcanizare, schimb anvelope și echilibrare roți." },
     { t: "Pentru orice vehicul", d: "Autoturisme, autoutilitare, dube, camioane și tiruri." },
@@ -522,13 +522,13 @@ export const Route = createFileRoute("/vulcanizare-mobila-miroslava")({
       { property: "og:image:type", content: "image/jpeg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "GoFix Vulcanizare Mobilă Miroslava — autospecială GoFix, intervenții non-stop pentru pene, schimb anvelope și echilibrare roți la domiciliu." },
+      { property: "og:image:alt", content: "GoFix Vulcanizare Mobilă Miroslava - autospecială GoFix, intervenții non-stop pentru pene, schimb anvelope și echilibrare roți la domiciliu." },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@gofix_iasi" },
-      { name: "twitter:title", content: "Vulcanizare Mobilă Miroslava 24/7 — Pene, Anvelope la Domiciliu | GoFix" },
+      { name: "twitter:title", content: "Vulcanizare Mobilă Miroslava 24/7 - Pene, Anvelope la Domiciliu | GoFix" },
       { name: "twitter:description", content: "Intervenim în Miroslava, Uricani, Horpaz, Valea Adâncă pentru pene, schimb anvelope și echilibrare roți. Sună 0332 630 507." },
       { name: "twitter:image", content: "https://gofix.lovable.app/og-miroslava.jpg" },
-      { name: "twitter:image:alt", content: "GoFix Vulcanizare Mobilă Miroslava — autospecială GoFix, intervenții non-stop pentru pene, schimb anvelope și echilibrare roți la domiciliu." },
+      { name: "twitter:image:alt", content: "GoFix Vulcanizare Mobilă Miroslava - autospecială GoFix, intervenții non-stop pentru pene, schimb anvelope și echilibrare roți la domiciliu." },
     ],
     links: [
       { rel: "canonical", href: "https://gofix.lovable.app/vulcanizare-mobila-miroslava" },

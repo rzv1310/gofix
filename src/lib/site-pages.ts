@@ -13,7 +13,7 @@ export const SITE_NAME = "GoFix Vulcanizare Mobilă Iași";
 export const SITE_PAGES: SitePage[] = [
   {
     path: "/",
-    title: "Vulcanizare Mobilă Iași Non-Stop 24/7 — GoFix la tine în 30 min",
+    title: "Vulcanizare Mobilă Iași Non-Stop 24/7 - GoFix la tine în 30 min",
     description:
       "Vulcanizare mobilă Iași non-stop. Reparații pene, schimb anvelope și echilibrare roți la domiciliu, birou sau pe marginea drumului. Sună 0332 630 507.",
     keywords:
