@@ -9,6 +9,7 @@ import {
 import logo from "@/assets/gofix-logo.png";
 import heroVan from "@/assets/hero-van-desktop.png";
 import heroVanMobile from "@/assets/hero-van-mobile.png";
+import appVulcanizareMobila from "@/assets/app-vulcanizare-mobila.jpeg";
 import serviceTire from "@/assets/service-tire.jpg";
 import whyUs from "@/assets/why-us.jpg";
 import vehicles from "@/assets/vehicles.jpg";
