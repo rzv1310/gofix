@@ -1120,6 +1120,7 @@ function HomePage() {
       <main>
         <Hero />
         <EmergencyBar />
+        <Reviews />
         <ForWhom />
         <Services />
         <WhyUs />
@@ -1127,7 +1128,6 @@ function HomePage() {
         <Vehicles />
         <BusinessSegment />
         <Pricing />
-        <Reviews />
         <AppSection />
         <FAQ />
         <FinalCTA />
