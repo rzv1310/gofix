@@ -984,39 +984,69 @@ function FinalCTA() {
 }
 
 function Footer() {
+  const metroLocalities = [
+    "Aroneanu", "Bârnova", "Ciurea", "Holboca", "Lețcani", "Miroslava", "Popricani",
+    "Rediu", "Schitu Duca", "Tomești", "Ungheni", "Valea Lupului", "Victoria",
+    "Comarna", "Costuleni", "Dobrovăț", "Golăiești", "Grajduri", "Mogoșești",
+    "Movileni", "Prisăcani", "Românești", "Scânteia", "Țigănași", "Țuțora",
+    "Voinești", "Horlești",
+  ];
+  const cartiere = ["Copou", "Centrul istoric", "Țicău", "Tudor Vladimirescu", "Tătărași", "Păcurari", "C.U.G.", "Cantemir", "Nicolina"];
+  const servicii = ["Vulcanizare mobilă", "Reparații pene", "Schimb anvelope", "Echilibrare roți", "Verificări TPMS", "Tractări auto"];
+
   return (
     <footer id="contact" className="bg-black text-white/80">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-4">
-        <div>
-          <img src={logo} alt="GoFix" className="h-14 w-auto brightness-0 invert" />
-          <p className="mt-4 text-sm">GoFix Vulcanizare Mobilă Iași oferă servicii de vulcanizare mobilă, schimb anvelope și echilibrare roți la locație, non-stop.</p>
+      <div className="mx-auto max-w-7xl px-4 py-16">
+        {/* Header + Description + Contact */}
+        <div className="grid gap-10 lg:grid-cols-3">
+          <div className="lg:col-span-1">
+            <h2 className="font-display text-2xl text-white">GoFix Vulcanizare Mobilă Iași</h2>
+            <p className="mt-3 text-sm">GoFix Vulcanizare Mobilă Iași oferă servicii de vulcanizare mobilă, schimb anvelope și echilibrare roți la locație, non-stop.</p>
+          </div>
+          <div className="lg:col-span-2">
+            <h4 className="font-display text-base text-white">Contact</h4>
+            <ul className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
+              <li><a href={`tel:${PHONE}`} className="flex items-center gap-2 hover:text-primary"><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
+              <li><a href={WA_LINK} target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-primary"><MessageCircle className="h-4 w-4 text-primary" />0750 291 020</a></li>
+              <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" />Strada Golia 3, 700259 Iași</li>
+              <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" />Deschis non-stop</li>
+            </ul>
+          </div>
         </div>
+
+        <div className="my-12 border-t border-white/10" />
+
+        {/* Servicii */}
         <div>
-          <h4 className="font-display text-base text-white">Contact</h4>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li><a href={`tel:${PHONE}`} className="flex items-center gap-2 hover:text-primary"><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
-            <li><a href={WA_LINK} target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-primary"><MessageCircle className="h-4 w-4 text-primary" />0750 291 020</a></li>
-            <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" />Strada Golia 3, 700259 Iași</li>
-            <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" />Deschis non-stop</li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-display text-base text-white">Servicii</h4>
-          <ul className="mt-4 space-y-2 text-sm">
-            {["Vulcanizare mobilă","Reparații pene","Schimb anvelope","Echilibrare roți","Verificări TPMS","Tractări auto"].map(s => (
+          <h2 className="font-display text-xl text-white">Servicii</h2>
+          <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+            {servicii.map(s => (
               <li key={s}><a href="#servicii" className="hover:text-primary">{s}</a></li>
             ))}
           </ul>
         </div>
+
+        <div className="my-12 border-t border-white/10" />
+
+        {/* Cartiere deservite */}
         <div>
-          <h4 className="font-display text-base text-white">Zone</h4>
-          <ul className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2 text-sm">
-            {["Iași","Miroslava","Valea Lupului","Rediu","Tomești","Holboca","Lețcani","Ciurea"].map(z => (
-              <li key={z}><a href="#zone" className="hover:text-primary">{z}</a></li>
+          <h2 className="font-display text-xl text-white">Cartiere deservite</h2>
+          <p className="mt-4 text-sm">{cartiere.join(", ")}.</p>
+        </div>
+
+        <div className="my-12 border-t border-white/10" />
+
+        {/* Zona Metropolitană Iași */}
+        <div>
+          <h2 className="font-display text-xl text-white">Zona Metropolitană Iași</h2>
+          <ul className="mt-4 grid gap-x-4 gap-y-2 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {metroLocalities.map(l => (
+              <li key={l} className="hover:text-primary">{l}</li>
             ))}
           </ul>
         </div>
       </div>
+
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs sm:flex-row">
           <p>© {new Date().getFullYear()} GoFix Vulcanizare Mobilă Iași. Toate drepturile rezervate.</p>
