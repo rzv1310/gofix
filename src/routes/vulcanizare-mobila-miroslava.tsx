@@ -1,5 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import {
+  Phone, MessageCircle, MapPin, Clock, Wrench, Truck, Car, Gauge,
+  ShieldCheck, Zap, CheckCircle2, ChevronDown, Menu, X, Navigation,
+  Settings, AlertTriangle,
+} from "lucide-react";
 import logo from "@/assets/gofix-logo.png";
+import heroVan from "@/assets/hero-van-desktop.png";
+import heroVanMobile from "@/assets/hero-van-mobile.png";
+import whyUs from "@/assets/why-us.jpg";
+
+
 
 const PAGE_CSS = `
 :root{--bg-dark:#0f172a;--bg-soft:#f8fafc;--text:#0f172a;--muted:#475569;--accent:#f97316;--accent-dark:#ea580c;--border:#e2e8f0;--white:#ffffff;--green:#16a34a}
