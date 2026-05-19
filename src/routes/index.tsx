@@ -12,7 +12,7 @@ import heroVanMobile from "@/assets/hero-van-mobile.png";
 import appVulcanizareMobila from "@/assets/app-vulcanizare-mobila.jpeg";
 import serviceTire from "@/assets/service-tire.jpg";
 import whyUs from "@/assets/why-us.jpg";
-import vehicles from "@/assets/vehicles.jpg";
+
 
 const FAQS: Array<[string, string]> = [
   ["GoFix este disponibil non-stop în Iași?", "Da, serviciul de vulcanizare mobilă este disponibil non-stop pentru intervenții în Iași și zona metropolitană."],
@@ -799,7 +799,6 @@ function Vehicles() {
   ];
   return (
     <section className="relative overflow-hidden bg-secondary py-20 text-secondary-foreground">
-      <img src={vehicles} alt="" className="absolute inset-0 h-full w-full object-cover opacity-20" loading="lazy" />
       <div className="relative mx-auto max-w-7xl px-4">
         <SectionHeading kicker="Tipuri de vehicule" title="Servicii pentru autoturisme, dube, camioane și vehicule de serviciu" />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
