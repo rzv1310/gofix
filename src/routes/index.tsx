@@ -1109,7 +1109,6 @@ function HomePage() {
         <ForWhom />
         <Services />
         <WhyUs />
-        <HowItWorks />
         <Zones />
         <Vehicles />
         <BusinessSegment />
