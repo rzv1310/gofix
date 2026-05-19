@@ -1018,7 +1018,7 @@ function Footer() {
 
         {/* Servicii */}
         <div>
-          <h2 className="font-display text-xl text-white">Servicii</h2>
+          <h3 className="font-display text-xl text-white">Servicii</h3>
           <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {servicii.map(s => (
               <li key={s}><a href="#servicii" className="hover:text-primary">{s}</a></li>
