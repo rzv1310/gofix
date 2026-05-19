@@ -136,7 +136,12 @@ function Hero() {
               <span className="text-white">5</span>
               <span className="flex items-center text-yellow-400">*****</span>
               <span className="tracking-wider">
-                <span style={{ color: "#4285F4" }}>G</span><span style={{ color: "#EA4335" }}>o</span><span style={{ color: "#FBBC05" }}>o</span><span style={{ color: "#4285F4" }}>g</span><span style={{ color: "#34A853" }}>l</span><span style={{ color: "#EA4335" }}>e</span>
+                <span style={{ color: "#4285F4" }}>G</span>
+                <span style={{ color: "#EA4335" }}>o</span>
+                <span style={{ color: "#FBBC05" }}>o</span>
+                <span style={{ color: "#4285F4" }}>g</span>
+                <span style={{ color: "#34A853" }}>l</span>
+                <span style={{ color: "#EA4335" }}>e</span>
               </span>
             </div>
             <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
