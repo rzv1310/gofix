@@ -115,11 +115,42 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const location = useLocation();
+  const router = useRouter();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    let isPop = false;
+    const onPop = () => { isPop = true; };
+    window.addEventListener("popstate", onPop);
+
+    const unsub = router.subscribe("onResolved", ({ toLocation, fromLocation }) => {
+      // Hash navigation → let browser scroll to element (scroll-padding handles offset)
+      if (toLocation.hash) {
+        const el = document.getElementById(toLocation.hash.replace(/^#/, ""));
+        if (el) {
+          requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth", block: "start" }));
+        }
+        isPop = false;
+        return;
+      }
+
+      // Back/forward → let browser's native scroll restoration handle it
+      if (isPop) {
+        isPop = false;
+        return;
+      }
+
+      // Same path, no hash change → don't scroll
+      if (fromLocation && fromLocation.pathname === toLocation.pathname) return;
+
+      // New navigation → smooth scroll to top
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    });
+
+    return () => {
+      window.removeEventListener("popstate", onPop);
+      unsub();
+    };
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>
