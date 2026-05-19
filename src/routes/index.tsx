@@ -4,7 +4,7 @@ import {
   Phone, MessageCircle, MapPin, Clock, Wrench, Truck, Car, Gauge,
   ShieldCheck, Zap, CheckCircle2, ChevronDown, Menu, X, Navigation,
   Settings, AlertTriangle, Star, Building2, GraduationCap, Hospital,
-  Download, Apple, PlayCircle, MoreVertical, ThumbsUp,
+  Download, Apple, PlayCircle, MoreVertical, ThumbsUp, Bus,
 } from "lucide-react";
 import logo from "@/assets/gofix-logo.png";
 import heroVan from "@/assets/hero-van-desktop.png";
@@ -769,7 +769,7 @@ function Vehicles() {
   const items = [
     { i: Car, t: "Autoturisme", d: "Pentru șoferii din Iași care au pană, roată dezumflată sau nevoie de schimb anvelope." },
     { i: Building2, t: "Vehicule de serviciu", d: "Pentru instituții, companii, spitale, firme locale și echipe mobile." },
-    { i: Truck, t: "Microbuze & Autoutilitare", d: "Pentru curieri, transportatori, firme de distribuție și servicii locale." },
+    { i: Bus, t: "Microbuze & Autoutilitare", d: "Pentru curieri, transportatori, firme de distribuție și servicii locale." },
     { i: Truck, t: "Camioane & tiruri", d: "Pentru intervenții la vehicule mari, unde deplasarea la service este dificilă." },
   ];
   return (
@@ -796,7 +796,7 @@ function BusinessSegment() {
     { i: Zap, t: "Angajați din IT", show: "" },
     { i: Building2, t: "Birouri & companii", show: "" },
     { i: Hospital, t: "Instituții & spitale", show: "" },
-    { i: Truck, t: "Flote auto locale", show: "sm:hidden" },
+    { i: Bus, t: "Flote auto locale", show: "sm:hidden" },
   ];
   return (
     <section className="py-20">
