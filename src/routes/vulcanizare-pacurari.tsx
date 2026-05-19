@@ -485,6 +485,10 @@ export const Route = createFileRoute("/vulcanizare-pacurari")({
       { property: "og:description", content: "Vulcanizare mobilă în Păcurari: intervenții la bloc, acasă, la birou, în parcare sau pe drum. Reparații pene, schimb anvelope și echilibrare roți." },
       { property: "og:url", content: "https://gofix.lovable.app/vulcanizare-pacurari" },
       { property: "og:image", content: "https://gofix.lovable.app/gofix-logo-og.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Vulcanizare Păcurari Iași | GoFix Vulcanizare Mobilă" },
+      { name: "twitter:description", content: "Vulcanizare mobilă în Păcurari: intervenții la bloc, acasă, la birou, în parcare sau pe drum. Reparații pene, schimb anvelope și echilibrare roți." },
+      { name: "twitter:image", content: "https://gofix.lovable.app/gofix-logo-og.png" },
     ],
     links: [
       { rel: "canonical", href: "https://gofix.lovable.app/vulcanizare-pacurari" },

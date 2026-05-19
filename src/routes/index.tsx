@@ -42,6 +42,10 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Intervenim 24/7 în Iași și zona metropolitană. Sună 0332 630 507 sau scrie pe WhatsApp." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://gofix.lovable.app/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Vulcanizare Mobilă Iași Non-Stop 24/7 — GoFix" },
+      { name: "twitter:description", content: "Intervenim 24/7 în Iași și zona metropolitană. Sună 0332 630 507 sau scrie pe WhatsApp." },
+      { name: "twitter:image", content: "https://gofix.lovable.app/gofix-logo-og.png" },
     ],
     links: [
       { rel: "canonical", href: "https://gofix.lovable.app/" },
