@@ -34,7 +34,6 @@ const WA_LINK = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Salut! Am 
 const NAV = [
   { href: "#servicii", label: "Servicii" },
   { href: "#zone", label: "Zone deservite" },
-  { href: "#cum-functioneaza", label: "Cum funcționează" },
   { href: "#faq", label: "Întrebări" },
   { href: "#contact", label: "Contact" },
 ];
@@ -139,6 +138,10 @@ function Hero() {
             <WaBtn label="Trimite locația pe WhatsApp" className="w-full" />
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
+            <a href="https://www.google.com/search?q=GoFix+Vulcanizare+Mobila+Iasi" target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white transition hover:bg-white/10">
+              <span className="flex text-yellow-400">{'\u2605'.repeat(5)}</span>
+              <span>5.0 · Recenzii Google</span>
+            </a>
             <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
               <Navigation className="h-4 w-4 text-white" /> Venim la locația ta în Păcurari
             </div>
@@ -272,31 +275,6 @@ function WhyUs() {
   );
 }
 
-function HowItWorks() {
-  const steps = [
-    { i: Phone, t: "Ne contactezi", d: `Suni la ${PHONE_DISPLAY} sau trimiți mesaj pe WhatsApp.` },
-    { i: MapPin, t: "Ne trimiți locația", d: "Ne spui unde ești în Păcurari: acasă, la birou, în parcare sau pe drum." },
-    { i: Wrench, t: "Venim și rezolvăm pe loc", d: <><Link to="/" className="underline hover:text-primary">Echipa GoFix</Link> ajunge cu autospeciala și intervine rapid.</> },
-  ];
-  return (
-    <section id="cum-functioneaza" className="bg-muted py-20">
-      <div className="mx-auto max-w-7xl px-4">
-        <SectionHeading kicker="Proces simplu" title="Cum primești ajutor în 3 pași simpli" />
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {steps.map(({ i: I, t, d }, idx) => (
-            <div key={t} className="relative rounded-xl border border-border bg-card p-7">
-              <span className="absolute -top-5 left-7 flex h-10 w-10 items-center justify-center rounded-full bg-primary font-display text-lg text-primary-foreground shadow-glow">{idx + 1}</span>
-              <I className="h-9 w-9 text-primary" />
-              <h3 className="mt-4 font-display text-xl">{t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{d}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-10 text-center"><WaBtn label="Trimite locația pe WhatsApp" /></div>
-      </div>
-    </section>
-  );
-}
 
 function Zones() {
   return (
@@ -455,7 +433,6 @@ function PacurariPage() {
         <ForWhom />
         <Services />
         <WhyUs />
-        <HowItWorks />
         <Zones />
         <FAQ />
         <FinalCTA />

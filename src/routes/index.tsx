@@ -470,7 +470,6 @@ const NAV = [
   { href: "#servicii", label: "Servicii" },
   { href: "#zone", label: "Zone" },
   { href: "#tarife", label: "Tarife" },
-  { href: "#cum-functioneaza", label: "Cum funcționează" },
   { href: "#recenzii", label: "Recenzii" },
   { href: "#contact", label: "Contact" },
 ];
@@ -722,31 +721,6 @@ function WhyUs() {
   );
 }
 
-function HowItWorks() {
-  const steps = [
-    { i: Phone, t: "Ne contactezi", d: `Suni la ${PHONE_DISPLAY} sau trimiți mesaj pe WhatsApp.` },
-    { i: MapPin, t: "Ne trimiți locația", d: "Ne spui unde ești: acasă, la birou, în parcare sau pe marginea drumului." },
-    { i: Wrench, t: "Venim și rezolvăm pe loc", d: "Echipa GoFix ajunge cu autospeciala și intervine rapid." },
-  ];
-  return (
-    <section id="cum-functioneaza" className="bg-muted py-20">
-      <div className="mx-auto max-w-7xl px-4">
-        <SectionHeading kicker="Proces simplu" title="Cum primești ajutor în 3 pași simpli" />
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {steps.map(({ i: I, t, d }, idx) => (
-            <div key={t} className="relative rounded-xl border border-border bg-card p-7">
-              <span className="absolute -top-5 left-7 flex h-10 w-10 items-center justify-center rounded-full bg-primary font-display text-lg text-primary-foreground shadow-glow">{idx + 1}</span>
-              <I className="h-9 w-9 text-primary" />
-              <h3 className="mt-4 font-display text-xl">{t}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{d}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-10 text-center"><WaBtn label="Trimite locația pe WhatsApp" /></div>
-      </div>
-    </section>
-  );
-}
 
 const CARTIERE = ["Copou", "Centrul istoric", "Țicău", "Tudor Vladimirescu", "Tătărași", "Păcurari", "C.U.G.", "Cantemir", "Nicolina"];
 const LOCALITATI = ["Aroneanu","Bârnova","Ciurea","Holboca","Lețcani","Miroslava","Popricani","Rediu","Schitu Duca","Tomești","Ungheni","Valea Lupului","Victoria","Comarna","Costuleni","Dobrovăț","Golăiești","Grajduri","Mogoșești","Movileni","Prisăcani","Românești","Scânteia","Țigănași","Țuțora","Voinești","Horlești"];
@@ -1135,7 +1109,6 @@ function HomePage() {
         <ForWhom />
         <Services />
         <WhyUs />
-        <HowItWorks />
         <Zones />
         <Vehicles />
         <BusinessSegment />
