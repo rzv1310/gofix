@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as VulcanizarePacurariRouteImport } from './routes/vulcanizare-pacurari'
 import { Route as VulcanizareMobilaMiroslavaRouteImport } from './routes/vulcanizare-mobila-miroslava'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as IndexRouteImport } from './routes/index'
 
 const VulcanizarePacurariRoute = VulcanizarePacurariRouteImport.update({
@@ -30,6 +31,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
   '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
   '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
@@ -51,6 +59,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
   '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
@@ -59,18 +68,21 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/llms.txt'
     | '/sitemap.xml'
     | '/vulcanizare-mobila-miroslava'
     | '/vulcanizare-pacurari'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/llms.txt'
     | '/sitemap.xml'
     | '/vulcanizare-mobila-miroslava'
     | '/vulcanizare-pacurari'
   id:
     | '__root__'
     | '/'
+    | '/llms.txt'
     | '/sitemap.xml'
     | '/vulcanizare-mobila-miroslava'
     | '/vulcanizare-pacurari'
@@ -78,6 +90,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  LlmsDottxtRoute: typeof LlmsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VulcanizareMobilaMiroslavaRoute: typeof VulcanizareMobilaMiroslavaRoute
   VulcanizarePacurariRoute: typeof VulcanizarePacurariRoute
@@ -106,6 +119,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/llms.txt': {
+      id: '/llms.txt'
+      path: '/llms.txt'
+      fullPath: '/llms.txt'
+      preLoaderRoute: typeof LlmsDottxtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -118,6 +138,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  LlmsDottxtRoute: LlmsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VulcanizareMobilaMiroslavaRoute: VulcanizareMobilaMiroslavaRoute,
   VulcanizarePacurariRoute: VulcanizarePacurariRoute,
