@@ -595,7 +595,7 @@ function EmergencyBar() {
             "Ne trimiți locația exactă",
             "Venim și rezolvăm pe loc",
           ].map((t, i) => (
-            <li key={t} className="flex items-start gap-3 rounded-md bg-primary/10 p-3">
+            <li key={t} className="flex items-start gap-3 rounded-md bg-white p-3">
               <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary font-display text-sm font-bold text-white">{i + 1}</span>
               <span className="text-sm font-semibold text-foreground">{t}</span>
             </li>
