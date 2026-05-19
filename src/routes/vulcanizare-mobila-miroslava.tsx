@@ -471,14 +471,23 @@ export const Route = createFileRoute("/vulcanizare-mobila-miroslava")({
     meta: [
       { title: "Vulcanizare Mobilă Miroslava Non-Stop | GoFix Iași" },
       { name: "description", content: "Ai făcut pană în Miroslava? GoFix vine la tine pentru vulcanizare mobilă, reparații pene, schimb anvelope și echilibrare roți pe loc. Intervenții non-stop în Miroslava și împrejurimi." },
+      { name: "keywords", content: "vulcanizare mobila Miroslava, vulcanizare Uricani, vulcanizare Valea Adanca, vulcanizare Horpaz, schimb anvelope Miroslava, pana cauciuc Miroslava, GoFix Miroslava" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "googlebot", content: "index, follow" },
+      { name: "author", content: "GoFix Vulcanizare Mobilă Iași" },
+      { name: "publisher", content: "GoFix Vulcanizare Mobilă Iași" },
+      { name: "language", content: "ro" },
+      { httpEquiv: "content-language", content: "ro" },
+      { property: "og:locale", content: "ro_RO" },
+      { property: "og:site_name", content: "GoFix Vulcanizare Mobilă Iași" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Vulcanizare Mobilă Miroslava Non-Stop | GoFix Iași" },
       { property: "og:description", content: "Vulcanizare mobilă în Miroslava: reparații pene, schimb anvelope, echilibrare roți și intervenții pentru autoturisme, dube, camioane și tiruri." },
-      { property: "og:url", content: "https://gofix.lovable.app/vulcanizare-mobila-miroslava/" },
+      { property: "og:url", content: "https://gofix.lovable.app/vulcanizare-mobila-miroslava" },
       { property: "og:image", content: "https://gofix.lovable.app/gofix-logo-og.png" },
     ],
     links: [
-      { rel: "canonical", href: "https://gofix.lovable.app/vulcanizare-mobila-miroslava/" },
+      { rel: "canonical", href: "https://gofix.lovable.app/vulcanizare-mobila-miroslava" },
     ],
     scripts: [
       {

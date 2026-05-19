@@ -471,14 +471,23 @@ export const Route = createFileRoute("/vulcanizare-pacurari")({
     meta: [
       { title: "Vulcanizare Păcurari Iași | GoFix Vulcanizare Mobilă Non-Stop" },
       { name: "description", content: "Ai făcut pană în Păcurari, Iași? GoFix vine la tine pentru vulcanizare mobilă, reparații pene, schimb anvelope și echilibrare roți pe loc. Sună pentru intervenție rapidă." },
+      { name: "keywords", content: "vulcanizare Pacurari, vulcanizare mobila Pacurari, pana cauciuc Pacurari, schimb anvelope Pacurari, vulcanizare Canta, vulcanizare Moara de Foc, GoFix Pacurari" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "googlebot", content: "index, follow" },
+      { name: "author", content: "GoFix Vulcanizare Mobilă Iași" },
+      { name: "publisher", content: "GoFix Vulcanizare Mobilă Iași" },
+      { name: "language", content: "ro" },
+      { httpEquiv: "content-language", content: "ro" },
+      { property: "og:locale", content: "ro_RO" },
+      { property: "og:site_name", content: "GoFix Vulcanizare Mobilă Iași" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "Vulcanizare Păcurari Iași | GoFix Vulcanizare Mobilă" },
       { property: "og:description", content: "Vulcanizare mobilă în Păcurari: intervenții la bloc, acasă, la birou, în parcare sau pe drum. Reparații pene, schimb anvelope și echilibrare roți." },
-      { property: "og:url", content: "https://gofix.lovable.app/vulcanizare-pacurari/" },
+      { property: "og:url", content: "https://gofix.lovable.app/vulcanizare-pacurari" },
       { property: "og:image", content: "https://gofix.lovable.app/gofix-logo-og.png" },
     ],
     links: [
-      { rel: "canonical", href: "https://gofix.lovable.app/vulcanizare-pacurari/" },
+      { rel: "canonical", href: "https://gofix.lovable.app/vulcanizare-pacurari" },
     ],
     scripts: [
       {

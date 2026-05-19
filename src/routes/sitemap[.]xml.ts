@@ -1,34 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-
-const BASE_URL = "https://gofix.lovable.app";
-
-interface SitemapEntry {
-  path: string;
-  changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
-  priority?: string;
-}
+import { SITE_BASE_URL, SITE_PAGES } from "@/lib/site-pages";
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/vulcanizare-mobila-miroslava", changefreq: "monthly", priority: "0.8" },
-          { path: "/vulcanizare-pacurari", changefreq: "monthly", priority: "0.8" },
-        ];
-
-        const urls = entries.map((e) =>
+        const urls = SITE_PAGES.map((e) =>
           [
             `  <url>`,
-            `    <loc>${BASE_URL}${e.path}</loc>`,
-            e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
-            e.priority ? `    <priority>${e.priority}</priority>` : null,
+            `    <loc>${SITE_BASE_URL}${e.path}</loc>`,
+            `    <changefreq>${e.changefreq}</changefreq>`,
+            `    <priority>${e.priority}</priority>`,
             `  </url>`,
-          ]
-            .filter(Boolean)
-            .join("\n"),
+          ].join("\n"),
         );
 
         const xml = [
