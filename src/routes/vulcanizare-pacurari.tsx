@@ -183,28 +183,28 @@ function EmergencyBar() {
 function Reviews() {
   const reviews = [
     {
-      initials: "D.S.",
-      text: "Mi-au schimbat anvelopele acasă, în Valea Adanca. Au venit la ora stabilită, bine organizați, cu toate echipamentele necesare. Curat și rapid.",
+      initials: "G.D.",
+      text: "Am rămas cu pană chiar lângă Kaufland Păcurari. Am sunat, au venit în 20 de minute și au rezolvat tot pe trotuar. Super serviciu!",
     },
     {
-      initials: "M.R.",
-      text: "Răspund imediat la telefon și îți zic prețul de la început. Merită 10 stele.",
+      initials: "A.M.",
+      text: "Rapid si eficient. Baietii stiu ce fac, pret clar de la inceput. Recomand!",
     },
     {
-      initials: "A.P.",
-      text: "Foarte mulțumit de intervenție. Am trimis locația pe whatsapp, le-am explicat problema, iar băieții au venit în Miroslava și au rezolvat pana rapid. Preț corect, atitudine profi și aparatură bună.",
+      initials: "C.T.",
+      text: "Am apelat la GoFix pentru schimbul anvelopelor de iarnă. Programarea a fost simplă, au venit exact la ora stabilită și au lucrat curat. Nu am avut surprize la plată. O experiență foarte plăcută overall.",
     },
     {
-      initials: "L.B.",
-      text: "Cea mai practică soluție când ai probleme cu roata. Nu a trebuit să mut mașina, au venit ei direct la mine. Recomand GoFix!",
+      initials: "S.R.",
+      text: "Locuiesc in zona Pacurari de ani buni si am avut nevoie de vulcanizare mobila azi-noapte. Au raspuns la prima sunare, au venit repede si au facut treaba buna. Nota 10!",
     },
     {
-      initials: "N.K.",
-      text: "Recomand cu încredere GoFix Vulcanizare Mobilă Miroslava!",
+      initials: "M.P.",
+      text: "Am sunat pentru o roata dezumflata in parcarea de la bloc. In 30 de minute era totul rezolvat. Profesionisti, cu aparatura buna si preturi ok. O sa apelez din nou la ei.",
     },
     {
-      initials: "F.G.",
-      text: "Serviciu foarte bun pentru Miroslava. Am avut roata dezumflată în parcare și nu puteam pleca spre Iași. Au ajuns în 35 min și au reparat pana pe loc.",
+      initials: "I.L.",
+      text: "Pană pe Aleea Mihail Kogălniceanu la 11 seara... credeam că rămân pe marginea drumului. Dar băieții de la GoFix au venit ca niște salvatori, au reparat cauciucul și am plecat acasă liniștit. Mulțumesc frumos!",
     },
   ];
   return (
