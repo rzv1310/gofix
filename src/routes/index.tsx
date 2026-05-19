@@ -107,9 +107,9 @@ function Hero() {
           <source media="(min-width: 1024px)" srcSet={heroVan} />
           <img src={heroVanMobile} alt="" className="h-full w-full object-cover" />
         </picture>
-        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/85 to-secondary/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/70 to-secondary/40" />
       </div>
-      <div className="speed-lines relative mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-2 lg:py-24">
+      <div className="speed-lines relative mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:py-24">
         <div className="relative z-10">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-green/50 bg-brand-green/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
             <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" /> 24/7 · Urgent
@@ -147,10 +147,6 @@ function Hero() {
               <Navigation className="h-4 w-4 text-white" /> Venim la locația ta
             </div>
           </div>
-        </div>
-        <div className="relative hidden lg:block">
-          <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-primary/30 via-transparent to-transparent blur-2xl" />
-          <img src={heroVan} alt="Autospecială GoFix vulcanizare mobilă Iași" className="relative rounded-2xl border border-white/10 object-cover shadow-glow" />
         </div>
       </div>
     </section>
