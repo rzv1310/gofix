@@ -1004,7 +1004,7 @@ function Footer() {
         {/* Header + Description + Contact */}
         <div className="grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-1">
-            <h2 className="font-display text-2xl text-white">GoFix Vulcanizare Mobilă Iași</h2>
+            <h2 className="font-display text-2xl text-white"><a href="/" className="hover:text-primary transition">GoFix Vulcanizare Mobilă Iași</a></h2>
             <p className="mt-3 text-sm">GoFix Vulcanizare Mobilă Iași oferă servicii de vulcanizare mobilă, schimb anvelope și echilibrare roți la locație, non-stop.</p>
           </div>
           <div className="lg:col-span-2">
