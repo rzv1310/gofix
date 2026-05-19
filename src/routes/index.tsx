@@ -496,7 +496,7 @@ function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 lg:py-3">
         <div className="flex items-center gap-2">
           <Link to="/" aria-label="Mergi la pagina principală GoFix" aria-current="page" className="flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
-            <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
+            <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" title="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
           </Link>
           <button onClick={() => setOpen(v => !v)} aria-label="Meniu" className="rounded-md border border-border p-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent lg:hidden">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
         </div>
