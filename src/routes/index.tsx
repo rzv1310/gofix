@@ -792,11 +792,11 @@ function Vehicles() {
 
 function BusinessSegment() {
   const items = [
-    { i: GraduationCap, t: "Studenți & profesori", show: "sm:hidden" },
-    { i: Zap, t: "Angajați din IT", show: "sm:hidden" },
-    { i: Building2, t: "Birouri & companii", show: "sm:hidden" },
-    { i: Hospital, t: "Instituții & spitale", show: "sm:hidden" },
-    { i: Truck, t: "Flote auto locale", show: "" },
+    { i: GraduationCap, t: "Studenți & profesori", show: "" },
+    { i: Zap, t: "Angajați din IT", show: "" },
+    { i: Building2, t: "Birouri & companii", show: "" },
+    { i: Hospital, t: "Instituții & spitale", show: "" },
+    { i: Truck, t: "Flote auto locale", show: "sm:hidden" },
   ];
   return (
     <section className="py-20">
