@@ -802,11 +802,11 @@ function BusinessSegment() {
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeading kicker="Iași local" title="Intervenții rapide pentru zona universitară, IT și business din Iași" sub="Iași este un oraș activ, cu trafic intens, campusuri universitare, birouri, spitale și zone rezidențiale aglomerate. GoFix te ajută să economisești timp prin intervenții direct la locația ta." />
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-12 grid gap-2 sm:gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {items.map(({ i: I, t }) => (
-            <div key={t} className="rounded-xl border border-border bg-card p-5 text-center transition hover:border-primary hover:shadow-card">
-              <I className="mx-auto h-8 w-8 text-primary" />
-              <p className="mt-3 font-display text-sm">{t}</p>
+            <div key={t} className="rounded-xl border border-border bg-card p-3 sm:p-5 text-center transition hover:border-primary hover:shadow-card">
+              <I className="mx-auto h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+              <p className="mt-1.5 sm:mt-3 font-display text-xs sm:text-sm">{t}</p>
             </div>
           ))}
         </div>
