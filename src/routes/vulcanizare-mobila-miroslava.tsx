@@ -180,6 +180,55 @@ function EmergencyBar() {
   );
 }
 
+function Reviews() {
+  const reviews = [
+    {
+      initials: "D.S.",
+      text: "Mi-au schimbat anvelopele acasă, în Miroslava. Au venit la ora stabilită, bine organizați, cu toate echipamentele necesare. Curat și rapid.",
+    },
+    {
+      initials: "M.R.",
+      text: "Răspund imediat la telefon și îți zic prețul de la început. Merită 10 stele.",
+    },
+    {
+      initials: "A.P.",
+      text: "Foarte mulțumit de intervenție. Am trimis locația pe WhatsApp, le-am explicat problema, iar băieții au venit în Miroslava și au rezolvat pana rapid. Preț corect, atitudine profi și aparatură bună.",
+    },
+    {
+      initials: "L.B.",
+      text: "Cea mai practică soluție când ai probleme cu roata. Nu a trebuit să mut mașina, au venit ei direct la mine. Recomand GoFix!",
+    },
+    {
+      initials: "N.K.",
+      text: "Recomand cu încredere GoFix Vulcanizare Mobilă Miroslava!",
+    },
+    {
+      initials: "F.G.",
+      text: "Serviciu foarte bun pentru Miroslava. Am avut roata dezumflată în parcare și nu puteam pleca spre Iași. Au ajuns în 35 min și au reparat pana pe loc.",
+    },
+  ];
+  return (
+    <section id="recenzii" className="py-20">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeading kicker="Recenzii" title="Ce spun clienții despre GoFix" />
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {reviews.map(r => (
+            <div key={r.initials + r.text.slice(0, 10)} className="rounded-xl border border-border bg-card p-6 shadow-card">
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary font-display text-sm font-bold text-white">
+                  {r.initials}
+                </div>
+                <div className="flex gap-0.5 text-primary">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}</div>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-foreground">„{r.text}”</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function ForWhom() {
   const items = [
     { i: AlertTriangle, t: "Pană în drum spre Iași", d: "Pentru cei care fac naveta zilnic din Miroslava spre Iași, intervenim direct pe traseu." },
