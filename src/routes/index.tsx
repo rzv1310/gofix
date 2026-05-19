@@ -509,7 +509,7 @@ function AppSection() {
               <span><span className="block text-[10px] uppercase opacity-70">Disponibil pe</span><span className="block font-display text-base">Google Play</span></span>
             </a>
           </div>
-          <p className="mt-3 text-xs text-secondary-foreground/60">* Aplicația va fi disponibilă în curând.</p>
+          
         </div>
       </div>
     </section>
