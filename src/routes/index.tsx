@@ -12,7 +12,7 @@ import heroVanMobile from "@/assets/hero-van-mobile.png";
 import appVulcanizareMobila from "@/assets/app-vulcanizare-mobila.jpeg";
 import serviceTire from "@/assets/service-tire.jpg";
 import whyUs from "@/assets/why-us.jpg";
-import vehicles from "@/assets/vehicles.jpg";
+
 
 const FAQS: Array<[string, string]> = [
   ["GoFix este disponibil non-stop în Iași?", "Da, serviciul de vulcanizare mobilă este disponibil non-stop pentru intervenții în Iași și zona metropolitană."],
