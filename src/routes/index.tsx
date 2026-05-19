@@ -487,16 +487,12 @@ function AppSection() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 lg:grid-cols-2">
         <div className="relative mx-auto w-fit">
           <div className="absolute -inset-10 rounded-full bg-primary/20 blur-3xl" />
-          <div className="relative flex h-[440px] w-[220px] flex-col rounded-[2.5rem] border-8 border-black bg-gradient-to-b from-primary to-secondary p-4 shadow-glow">
-            <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-black/40" />
-            <img src={serviceTire} alt="Aplicația Vulcanizare Mobilă" className="h-40 w-full rounded-xl object-cover" loading="lazy" />
-            <div className="mt-3 space-y-2">
-              <div className="rounded-lg bg-black/40 p-2 text-[10px]">📍 Locația ta: Iași, Copou</div>
-              <div className="rounded-lg bg-white/10 p-2 text-[10px]">🚐 Tehnician la 8 min distanță</div>
-              <div className="rounded-lg bg-white/10 p-2 text-[10px]">🔧 Vulcanizare pe loc</div>
-            </div>
-            <button className="mt-auto rounded-full bg-white py-2 text-xs font-bold uppercase text-primary">Cere ajutor</button>
-          </div>
+          <img
+            src={appVulcanizareMobila}
+            alt="Aplicația Vulcanizare Mobilă"
+            className="relative h-[440px] w-auto rounded-[2.5rem] shadow-glow"
+            loading="lazy"
+          />
         </div>
         <div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">Aplicația</p>
