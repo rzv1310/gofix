@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Phone, MessageCircle, MapPin, Clock, Wrench, Truck, Car, Gauge,
   ShieldCheck, Zap, CheckCircle2, ChevronDown, Menu, X, Navigation,
@@ -112,12 +112,11 @@ function Hero() {
       </div>
       <div className="speed-lines relative mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-2 lg:py-24">
         <div className="relative z-10">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
             <span className="h-2 w-2 animate-pulse rounded-full bg-primary" /> Non-Stop · 24/7 · Iași
           </span>
-          <h1 className="mt-5 font-display text-4xl leading-[0.95] sm:text-5xl lg:text-7xl">
-            Vulcanizare <span className="text-primary">Mobilă</span> Iași<br />
-            <span className="text-stroke-red">Non-Stop</span> — venim la tine
+          <h1 className="mt-5 font-display text-4xl leading-[0.95] text-white sm:text-5xl lg:text-7xl">
+            Go<span className="text-primary">Fix</span> Vulcanizare Mobilă Iași
           </h1>
           <p className="mt-5 max-w-xl text-base text-secondary-foreground/80 sm:text-lg">
             Ai făcut pană în Iași sau împrejurimi? Intervenim rapid la domiciliu, la birou sau pe marginea drumului pentru reparații pene, schimb anvelope și echilibrare roți pe loc.
@@ -133,17 +132,22 @@ function Hero() {
             <CallBtn label={`Sună acum: ${PHONE_DISPLAY}`} className="text-base lg:text-lg" />
             <WaBtn label="Trimite locația pe WhatsApp" />
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {[
-              { i: Clock, t: "NON-STOP" },
-              { i: MapPin, t: "Iași + împrejurimi" },
-              { i: Settings, t: "Echipamente pro" },
-              { i: Navigation, t: "La locația ta" },
-            ].map(({ i: I, t }) => (
-              <div key={t} className="flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold uppercase tracking-wide">
-                <I className="h-4 w-4 text-primary" /> {t}
-              </div>
-            ))}
+          <div className="mt-6 flex flex-wrap gap-3">
+            <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold">
+              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+              <span className="text-white">5</span>
+              <span className="tracking-wider">
+                <span style={{ color: "#4285F4" }}>G</span>
+                <span style={{ color: "#EA4335" }}>o</span>
+                <span style={{ color: "#FBBC05" }}>o</span>
+                <span style={{ color: "#4285F4" }}>g</span>
+                <span style={{ color: "#34A853" }}>l</span>
+                <span style={{ color: "#EA4335" }}>e</span>
+              </span>
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
+              <Navigation className="h-4 w-4 text-primary" /> Venim la locația ta
+            </div>
           </div>
         </div>
         <div className="relative hidden lg:block">
@@ -623,8 +627,15 @@ function Footer() {
 }
 
 function MobileStickyBar() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 300);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/95 p-2 backdrop-blur lg:hidden">
+    <div className={`fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/95 p-2 backdrop-blur transition-transform duration-300 lg:hidden ${show ? "translate-y-0" : "translate-y-full"}`}>
       <a href={`tel:${PHONE}`} className="flex items-center justify-center gap-2 rounded-md bg-primary py-3 font-display text-sm font-bold uppercase text-primary-foreground shadow-glow">
         <Phone className="h-4 w-4" /> Sună acum
       </a>
