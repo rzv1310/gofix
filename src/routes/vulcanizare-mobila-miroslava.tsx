@@ -393,8 +393,8 @@ function Footer() {
           <div className="lg:col-span-2">
             <h3 className="font-display text-base text-white">Contact</h3>
             <ul className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
-              <li><a href={`tel:${PHONE}`} className="flex items-center gap-2 hover:text-primary"><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
-              <li><a href={WA_LINK} target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-primary"><MessageCircle className="h-4 w-4 text-primary" />0750 291 020</a></li>
+              <li><a href={`tel:${PHONE}`} className="flex items-center gap-2 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm"><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
+              <li><a href={WA_LINK} className="flex items-center gap-2 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm"><MessageCircle className="h-4 w-4 text-primary" />0750 291 020</a></li>
               <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" />Strada Golia 3, 700259 Iași</li>
               <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" />Deschis non-stop</li>
             </ul>
@@ -404,7 +404,7 @@ function Footer() {
         <div>
           <h3 className="font-display text-xl text-white">Servicii</h3>
           <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-            {servicii.map(s => (<li key={s}><a href="#servicii" className="hover:text-primary">{s}</a></li>))}
+            {servicii.map(s => (<li key={s}><a href="#servicii" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">{s}</a></li>))}
           </ul>
         </div>
         <div className="my-12 border-t border-white/10" />
@@ -418,7 +418,7 @@ function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs sm:flex-row">
           <p>© {new Date().getFullYear()} GoFix Vulcanizare Mobilă Iași. Toate drepturile rezervate.</p>
-          <div className="flex gap-4"><a href="/" className="hover:text-primary">Acasă</a></div>
+          <div className="flex gap-4"><Link to="/" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Acasă</Link></div>
         </div>
       </div>
     </footer>
