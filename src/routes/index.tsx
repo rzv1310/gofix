@@ -792,19 +792,19 @@ function Vehicles() {
 
 function BusinessSegment() {
   const items = [
-    { i: GraduationCap, t: "Studenți & profesori" },
-    { i: Zap, t: "Angajați din IT" },
-    { i: Building2, t: "Birouri & companii" },
-    { i: Hospital, t: "Instituții & spitale" },
-    { i: Truck, t: "Flote auto locale" },
+    { i: GraduationCap, t: "Studenți & profesori", show: "sm:hidden" },
+    { i: Zap, t: "Angajați din IT", show: "sm:hidden" },
+    { i: Building2, t: "Birouri & companii", show: "sm:hidden" },
+    { i: Hospital, t: "Instituții & spitale", show: "sm:hidden" },
+    { i: Truck, t: "Flote auto locale", show: "" },
   ];
   return (
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeading kicker="Iași local" title="Intervenții rapide pentru zona universitară, IT și business din Iași" sub="Iași este un oraș activ, cu trafic intens, campusuri universitare, birouri, spitale și zone rezidențiale aglomerate. GoFix te ajută să economisești timp prin intervenții direct la locația ta." />
         <div className="mt-12 grid gap-2 sm:gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {items.map(({ i: I, t }) => (
-            <div key={t} className="flex items-center gap-3 rounded-xl border border-border bg-card p-3 sm:p-4 transition hover:border-primary hover:shadow-card">
+          {items.map(({ i: I, t, show }) => (
+            <div key={t} className={`${show} flex items-center gap-3 rounded-xl border border-border bg-card p-3 sm:p-4 transition hover:border-primary hover:shadow-card`}>
               <I className="h-6 w-6 sm:h-7 sm:w-7 text-primary shrink-0" />
               <p className="font-display text-sm sm:text-base">{t}</p>
             </div>
