@@ -200,7 +200,7 @@ function Reviews() {
     },
     {
       initials: "M.P.",
-      text: "Am sunat pentru o roata dezumflata in parcarea de la bloc. In 30 de minute era totul rezolvat. Profesionisti, cu aparatura buna si preturi ok. O sa apelez din nou la ei.",
+      text: "Am sunat pentru o roata dezumflata in parcarea de la bloc. In 40 de minute era totul rezolvat. Profesionisti, cu aparatura buna si preturi ok. Sper sa nu mai am nevoie curand, dar o sa apelez din nou la ei la nevoie.",
     },
     {
       initials: "I.L.",
