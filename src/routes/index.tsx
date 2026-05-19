@@ -121,7 +121,7 @@ function Hero() {
             Ai făcut pană în Iași sau împrejurimi? Intervenim rapid la domiciliu, la birou sau pe marginea drumului pentru reparații pene, schimb anvelope și echilibrare roți pe loc.
           </p>
           <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
-            {["Disponibil NON STOP", "Deplasare rapidă în Iași + zona metropolitană", "Autoturisme, dube, autoutilitare, camioane", "Plată corectă, intervenție profesionistă"].map(t => (
+            {["Disponibil NON STOP", "Deplasare rapidă în Iași + zona metropolitană", "Autoturisme, dube, autoutilitare, camioane", "Plată corectă, emitem factură"].map(t => (
               <li key={t} className="flex items-start gap-2 text-sm text-secondary-foreground/90">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-green" /> {t}
               </li>
