@@ -4,7 +4,7 @@ import {
   Phone, MessageCircle, MapPin, Clock, Wrench, Truck, Car, Gauge,
   ShieldCheck, Zap, CheckCircle2, ChevronDown, Menu, X, Navigation,
   Settings, AlertTriangle, Star, Building2, GraduationCap, Hospital,
-  Download, Apple, PlayCircle, MoreVertical, ThumbsUp,
+  Download, Apple, PlayCircle, MoreVertical, ThumbsUp, Bus,
 } from "lucide-react";
 import logo from "@/assets/gofix-logo.png";
 import heroVan from "@/assets/hero-van-desktop.png";
