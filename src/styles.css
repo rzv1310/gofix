@@ -36,6 +36,7 @@
   --color-whatsapp-foreground: var(--whatsapp-foreground);
   --color-surface: var(--surface);
   --color-surface-foreground: var(--surface-foreground);
+  --color-brand-green: var(--brand-green);
 
   --shadow-glow: 0 20px 60px -15px oklch(0.55 0.24 27 / 0.55);
   --shadow-card: 0 10px 30px -10px oklch(0 0 0 / 0.35);
