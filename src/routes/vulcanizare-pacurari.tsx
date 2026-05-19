@@ -479,6 +479,7 @@ function PacurariPage() {
       <main>
         <Hero />
         <EmergencyBar />
+        <Reviews />
         <ForWhom />
         <Services />
         <WhyUs />
