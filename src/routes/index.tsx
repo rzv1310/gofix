@@ -83,7 +83,7 @@ function Header() {
           </div>
           <WaBtn />
         </div>
-        <div className="flex items-center gap-1 lg:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <a href={`tel:${PHONE}`} aria-label="Sună" className="rounded-md bg-primary p-2.5 text-primary-foreground"><Phone className="h-5 w-5" /></a>
           <a href={WA_LINK} aria-label="WhatsApp" className="rounded-md bg-whatsapp p-2.5 text-whatsapp-foreground"><MessageCircle className="h-5 w-5" /></a>
         </div>
