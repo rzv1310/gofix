@@ -90,27 +90,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "GoFix Vulcanizare Mobilă Iași",
-          url: "https://gofix.lovable.app/",
-          logo: "https://gofix.lovable.app/gofix-logo-og.png",
-          image: "https://gofix.lovable.app/gofix-logo-og.png",
-          telephone: "+40332630507",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: "Strada Golia 3",
-            addressLocality: "Iași",
-            postalCode: "700259",
-            addressCountry: "RO",
-          },
-        }),
-      },
-    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
