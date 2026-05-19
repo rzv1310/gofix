@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VulcanizarePacurariRouteImport } from './routes/vulcanizare-pacurari'
 import { Route as VulcanizareMobilaMiroslavaRouteImport } from './routes/vulcanizare-mobila-miroslava'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VulcanizarePacurariRoute = VulcanizarePacurariRouteImport.update({
+  id: '/vulcanizare-pacurari',
+  path: '/vulcanizare-pacurari',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VulcanizareMobilaMiroslavaRoute =
   VulcanizareMobilaMiroslavaRouteImport.update({
     id: '/vulcanizare-mobila-miroslava',
@@ -34,34 +40,58 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
+  '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
+  '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
+  '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml' | '/vulcanizare-mobila-miroslava'
+  fullPaths:
+    | '/'
+    | '/sitemap.xml'
+    | '/vulcanizare-mobila-miroslava'
+    | '/vulcanizare-pacurari'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml' | '/vulcanizare-mobila-miroslava'
-  id: '__root__' | '/' | '/sitemap.xml' | '/vulcanizare-mobila-miroslava'
+  to:
+    | '/'
+    | '/sitemap.xml'
+    | '/vulcanizare-mobila-miroslava'
+    | '/vulcanizare-pacurari'
+  id:
+    | '__root__'
+    | '/'
+    | '/sitemap.xml'
+    | '/vulcanizare-mobila-miroslava'
+    | '/vulcanizare-pacurari'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   VulcanizareMobilaMiroslavaRoute: typeof VulcanizareMobilaMiroslavaRoute
+  VulcanizarePacurariRoute: typeof VulcanizarePacurariRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vulcanizare-pacurari': {
+      id: '/vulcanizare-pacurari'
+      path: '/vulcanizare-pacurari'
+      fullPath: '/vulcanizare-pacurari'
+      preLoaderRoute: typeof VulcanizarePacurariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vulcanizare-mobila-miroslava': {
       id: '/vulcanizare-mobila-miroslava'
       path: '/vulcanizare-mobila-miroslava'
@@ -90,7 +120,18 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   VulcanizareMobilaMiroslavaRoute: VulcanizareMobilaMiroslavaRoute,
+  VulcanizarePacurariRoute: VulcanizarePacurariRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
