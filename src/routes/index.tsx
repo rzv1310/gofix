@@ -921,6 +921,7 @@ function AppSection() {
           <img
             src={appVulcanizareMobila}
             alt="Aplicația Vulcanizare Mobilă"
+            title="Vulcanizare Mobilă App"
             className="relative h-[440px] w-auto rounded-[2.5rem] shadow-glow"
             loading="lazy"
           />
