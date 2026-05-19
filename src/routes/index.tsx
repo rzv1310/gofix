@@ -50,8 +50,16 @@ export const Route = createFileRoute("/")({
           description: "Serviciu non-stop de vulcanizare mobilă în Iași și zona metropolitană.",
           url: "https://gofix.lovable.app/",
           telephone: "+40332630507",
+          priceRange: "$$",
+          image: "https://gofix.lovable.app/gofix-logo-og.png",
           areaServed: "Iași, România",
-          address: { "@type": "PostalAddress", addressLocality: "Iași", addressCountry: "RO" },
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Strada Golia 3",
+            addressLocality: "Iași",
+            postalCode: "700259",
+            addressCountry: "RO",
+          },
           openingHoursSpecification: {
             "@type": "OpeningHoursSpecification",
             dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
