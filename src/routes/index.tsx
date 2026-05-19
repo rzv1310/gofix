@@ -796,7 +796,7 @@ function BusinessSegment() {
     { i: Zap, t: "Angajați din IT", show: "" },
     { i: Building2, t: "Birouri & companii", show: "" },
     { i: Hospital, t: "Instituții & spitale", show: "" },
-    { i: Truck, t: "Flote auto locale", show: "sm:hidden" },
+    { i: Bus, t: "Flote auto locale", show: "sm:hidden" },
   ];
   return (
     <section className="py-20">
