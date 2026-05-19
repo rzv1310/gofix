@@ -477,7 +477,7 @@ function Header() {
         <div className="flex items-center gap-2">
           <Link to="/" aria-label="Mergi la pagina principală GoFix" aria-current="page" className="flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
             <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
-          </a>
+          </Link>
           <button onClick={() => setOpen(v => !v)} aria-label="Meniu" className="rounded-md border border-border p-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent lg:hidden">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
         </div>
         <nav className="hidden items-center gap-6 lg:flex">
