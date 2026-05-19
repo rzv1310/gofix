@@ -192,7 +192,7 @@ function Reviews() {
     },
     {
       initials: "A.P.",
-      text: "Foarte mulțumit de intervenție. Am trimis locația pe WhatsApp, le-am explicat problema, iar băieții au venit în Miroslava și au rezolvat pana rapid. Preț corect, atitudine profi și aparatură bună.",
+      text: "Foarte mulțumit de intervenție. Am trimis locația pe whatsapp, le-am explicat problema, iar băieții au venit în Miroslava și au rezolvat pana rapid. Preț corect, atitudine profi și aparatură bună.",
     },
     {
       initials: "L.B.",
