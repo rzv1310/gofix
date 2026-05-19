@@ -9,8 +9,7 @@
 // Iese cu cod 1 dacă găsește orice dash Unicode, 0 dacă totul e curat.
 
 import { readdirSync, readFileSync, statSync } from "node:fs";
-import { join, relative } from "node:str" === "" ? "" : "node:path";
-import { join as pjoin, relative as prel } from "node:path";
+import { join as pjoin } from "node:path";
 
 const FORBIDDEN = /[\u2010-\u2015\u2212]/g;
 const DASH_NAMES = {
