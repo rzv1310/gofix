@@ -627,8 +627,15 @@ function Footer() {
 }
 
 function MobileStickyBar() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 300);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/95 p-2 backdrop-blur lg:hidden">
+    <div className={`fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/95 p-2 backdrop-blur transition-transform duration-300 lg:hidden ${show ? "translate-y-0" : "translate-y-full"}`}>
       <a href={`tel:${PHONE}`} className="flex items-center justify-center gap-2 rounded-md bg-primary py-3 font-display text-sm font-bold uppercase text-primary-foreground shadow-glow">
         <Phone className="h-4 w-4" /> Sună acum
       </a>
