@@ -887,7 +887,7 @@ function Reviews() {
   return (
     <section id="recenzii" className="py-20">
       <div className="mx-auto max-w-7xl px-4">
-        <SectionHeading kicker="Social proof" title="Șoferii din Iași aleg GoFix pentru intervenții rapide" />
+        <SectionHeading kicker="Recenzii" title="Șoferii din Iași aleg GoFix pentru intervenții rapide" />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {reviews.map(r => (
             <div key={r.initials + r.text.slice(0, 10)} className="rounded-xl border border-border bg-card p-6 shadow-card">
@@ -901,7 +901,6 @@ function Reviews() {
             </div>
           ))}
         </div>
-        <p className="mt-8 text-center text-sm text-muted-foreground">Adăugăm continuu recenzii reale din Google Business Profile.</p>
       </div>
     </section>
   );
