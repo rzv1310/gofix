@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {
   Phone, MessageCircle, MapPin, Clock, Wrench, Truck, Car, Gauge,
   ShieldCheck, Zap, CheckCircle2, ChevronDown, Menu, X, Navigation,
-  Settings, AlertTriangle,
+  Settings, AlertTriangle, Star,
 } from "lucide-react";
 import logo from "@/assets/gofix-logo.png";
 import heroVan from "@/assets/hero-van-desktop.png";
