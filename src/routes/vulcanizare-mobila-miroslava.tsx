@@ -117,7 +117,7 @@ function Hero() {
       </div>
       <div className="speed-lines relative mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:py-24">
         <div className="relative z-10">
-          <p className="text-xs text-secondary-foreground/70"><a href="/" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Acasă</a> / Vulcanizare mobilă Miroslava</p>
+          <p className="text-xs text-secondary-foreground/70"><Link to="/" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Acasă</Link> / Vulcanizare mobilă Miroslava</p>
           <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-brand-green/50 bg-brand-green/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
             <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" /> Non-stop în Miroslava
           </span>
