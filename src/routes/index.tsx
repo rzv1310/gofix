@@ -1004,14 +1004,14 @@ function Footer() {
         {/* Header + Description + Contact */}
         <div className="grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-1">
-            <h2 className="font-display text-2xl text-white"><Link to="/" aria-label="Mergi la pagina principală GoFix Vulcanizare Mobilă Iași" className="hover:text-primary transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">GoFix Vulcanizare Mobilă Iași</Link></h2>
+            <h2 className="font-display text-2xl text-white"><Link to="/" aria-label="Mergi la pagina principală GoFix Vulcanizare Mobilă Iași" aria-current="page" className="hover:text-primary transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">GoFix Vulcanizare Mobilă Iași</Link></h2>
             <p className="mt-3 text-sm">GoFix Vulcanizare Mobilă Iași oferă servicii de vulcanizare mobilă, schimb anvelope și echilibrare roți la locație, non-stop.</p>
           </div>
           <div className="lg:col-span-2">
             <h3 className="font-display text-base text-white">Contact</h3>
             <ul className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
-              <li><a href={`tel:${PHONE}`} className="flex items-center gap-2 hover:text-primary"><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
-              <li><a href={WA_LINK} target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-primary"><MessageCircle className="h-4 w-4 text-primary" />0750 291 020</a></li>
+              <li><a href={`tel:${PHONE}`} className="flex items-center gap-2 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">{PHONE_DISPLAY}</a></li>
+              <li><a href={WA_LINK} className="flex items-center gap-2 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">0750 291 020</a></li>
               <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" />Strada Golia 3, 700259 Iași</li>
               <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" />Deschis non-stop</li>
             </ul>
@@ -1025,7 +1025,7 @@ function Footer() {
           <h3 className="font-display text-xl text-white">Servicii</h3>
           <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {servicii.map(s => (
-              <li key={s}><a href="#servicii" className="hover:text-primary">{s}</a></li>
+              <li key={s}><a href="#servicii" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">{s}</a></li>
             ))}
           </ul>
         </div>
@@ -1047,7 +1047,7 @@ function Footer() {
             {metroLocalities.map(l => (
               <li key={l} className="hover:text-primary">
                 {l === "Miroslava" ? (
-                  <a href="/vulcanizare-mobila-miroslava" className="hover:text-primary hover:underline">{l}</a>
+                  <Link to="/vulcanizare-mobila-miroslava" className="hover:text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">{l}</Link>
                 ) : (
                   l
                 )}
@@ -1061,9 +1061,10 @@ function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs sm:flex-row">
           <p>© {new Date().getFullYear()} GoFix Vulcanizare Mobilă Iași. Toate drepturile rezervate.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-primary">Politică de confidențialitate</a>
-            <a href="#" className="hover:text-primary">Termeni</a>
-            <a href="#" className="hover:text-primary">Cookies</a>
+            <Link to="/" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Acasă</Link>
+            <Link to="/" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Politică de confidențialitate</Link>
+            <Link to="/" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Termeni</Link>
+            <Link to="/" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Cookies</Link>
           </div>
         </div>
       </div>
