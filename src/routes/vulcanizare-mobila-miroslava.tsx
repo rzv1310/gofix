@@ -1,82 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import {
+  Phone, MessageCircle, MapPin, Clock, Wrench, Truck, Car, Gauge,
+  ShieldCheck, Zap, CheckCircle2, ChevronDown, Menu, X, Navigation,
+  Settings, AlertTriangle,
+} from "lucide-react";
 import logo from "@/assets/gofix-logo.png";
+import heroVan from "@/assets/hero-van-desktop.png";
+import heroVanMobile from "@/assets/hero-van-mobile.png";
+import whyUs from "@/assets/why-us.jpg";
 
-const PAGE_CSS = `
-:root{--bg-dark:#0f172a;--bg-soft:#f8fafc;--text:#0f172a;--muted:#475569;--accent:#f97316;--accent-dark:#ea580c;--border:#e2e8f0;--white:#ffffff;--green:#16a34a}
-.vm-page *{box-sizing:border-box}
-.vm-page{font-family:Arial,Helvetica,sans-serif;color:var(--text);background:var(--white);line-height:1.6}
-.vm-page a{color:inherit}
-.vm-page img{max-width:100%;height:auto}
-.vm-container{width:min(1120px,calc(100% - 32px));margin:0 auto}
-.vm-top-bar{background:#020617;color:#fff;font-size:14px;padding:8px 0}
-.vm-top-bar .vm-container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.vm-site-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20}
-.vm-header-inner{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:20px}
-.vm-logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none;font-size:20px;color:var(--text)}
-.vm-logo img{width:44px;height:44px;border-radius:10px}
-.vm-nav{display:flex;gap:18px;align-items:center;font-size:15px}
-.vm-nav a{text-decoration:none;color:var(--text);font-weight:600}
-.vm-header-cta{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:800}
-.vm-hero{background:radial-gradient(circle at top right,rgba(249,115,22,.18),transparent 32%),linear-gradient(135deg,#020617 0%,#111827 45%,#1e293b 100%);color:#fff;padding:72px 0 56px}
-.vm-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
-.vm-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(249,115,22,.14);color:#fed7aa;border:1px solid rgba(249,115,22,.35);padding:7px 12px;border-radius:999px;font-size:14px;font-weight:700;margin-bottom:18px}
-.vm-page h1{font-size:clamp(34px,5vw,58px);line-height:1.05;margin:0 0 20px;letter-spacing:-1.2px;color:#fff}
-.vm-hero p{font-size:19px;color:#dbeafe;margin:0 0 24px;max-width:680px}
-.vm-hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin:28px 0}
-.vm-btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:12px;font-weight:800;text-decoration:none;border:1px solid transparent;min-height:52px}
-.vm-btn-primary{background:var(--accent);color:#fff}
-.vm-btn-primary:hover{background:var(--accent-dark)}
-.vm-btn-secondary{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.24)}
-.vm-trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
-.vm-trust-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:16px}
-.vm-trust-card strong{display:block;color:#fff;font-size:17px;margin-bottom:4px}
-.vm-trust-card span{color:#cbd5e1;font-size:14px}
-.vm-hero-card{background:#fff;color:var(--text);border-radius:28px;padding:26px;box-shadow:0 24px 80px rgba(0,0,0,.28)}
-.vm-hero-card h2{font-size:26px;margin:0 0 12px}
-.vm-hero-card ul{padding-left:20px;margin:14px 0 0}
-.vm-hero-card li{margin-bottom:10px;color:var(--muted)}
-.vm-section{padding:70px 0}
-.vm-section-soft{background:var(--bg-soft)}
-.vm-section-dark{background:var(--bg-dark);color:#fff}
-.vm-section-title{max-width:780px;margin-bottom:34px}
-.vm-section-title h2{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:0 0 14px;letter-spacing:-.6px}
-.vm-section-title p{color:var(--muted);font-size:18px;margin:0}
-.vm-section-dark .vm-section-title p{color:#cbd5e1}
-.vm-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.vm-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
-.vm-card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:24px;box-shadow:0 10px 30px rgba(15,23,42,.04)}
-.vm-card h3{margin:0 0 10px;font-size:22px;line-height:1.25}
-.vm-card p{margin:0;color:var(--muted)}
-.vm-icon{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;background:#ffedd5;color:var(--accent-dark);border-radius:12px;font-weight:900;margin-bottom:14px}
-.vm-local-highlight{background:#fff7ed;border:1px solid #fed7aa;border-radius:24px;padding:28px}
-.vm-local-highlight h2{margin-top:0;font-size:32px}
-.vm-area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.vm-area-list span{background:#fff;border:1px solid #fed7aa;color:#9a3412;padding:8px 12px;border-radius:999px;font-size:15px;font-weight:700}
-.vm-step{position:relative;padding-left:64px}
-.vm-step-num{position:absolute;left:0;top:0;width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900}
-.vm-service-list{display:grid;gap:14px}
-.vm-service-item{display:flex;gap:14px;background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px}
-.vm-service-item strong{display:block;margin-bottom:4px;font-size:18px}
-.vm-service-item span{color:var(--muted)}
-.vm-check{color:var(--green);font-weight:900;font-size:20px;line-height:1.2}
-.vm-cta-box{background:linear-gradient(135deg,#ea580c 0%,#f97316 100%);color:#fff;border-radius:30px;padding:40px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
-.vm-cta-box h2{margin:0 0 12px;font-size:clamp(28px,4vw,42px);line-height:1.12;color:#fff}
-.vm-cta-box p{margin:0;font-size:18px;color:#fff7ed}
-.vm-cta-buttons{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
-.vm-cta-buttons .vm-btn{background:#fff;color:#9a3412}
-.vm-cta-buttons .vm-btn-secondary{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.35)}
-.vm-faq{display:grid;gap:14px}
-.vm-faq details{background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px 20px}
-.vm-faq summary{cursor:pointer;font-weight:800;font-size:18px}
-.vm-faq p{color:var(--muted);margin-bottom:0;margin-top:10px}
-.vm-breadcrumb{font-size:14px;margin-bottom:20px;color:#cbd5e1}
-.vm-breadcrumb a{color:#fff;text-decoration:underline}
-.vm-footer{background:#020617;color:#cbd5e1;padding:38px 0}
-.vm-footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:26px}
-.vm-footer h2,.vm-footer h3{color:#fff;margin-top:0}
-.vm-footer a{color:#fff}
-@media (max-width:900px){.vm-hero-grid,.vm-grid-2,.vm-cta-box,.vm-footer-grid{grid-template-columns:1fr}.vm-grid-3,.vm-trust-row{grid-template-columns:1fr}.vm-nav{display:none}.vm-cta-buttons{justify-content:flex-start}.vm-section{padding:52px 0}.vm-hero{padding:46px 0}}
-`;
 
 const FAQS: Array<[string, string]> = [
   ["GoFix vine la domiciliu în Miroslava?", "Da. Putem interveni la domiciliu, la birou, în curte, în parcare sau într-o altă locație accesibilă autospecialei."],
@@ -391,248 +324,443 @@ export const Route = createFileRoute("/vulcanizare-mobila-miroslava")({
   component: MiroslavaPage,
 });
 
-function MiroslavaPage() {
-  const tel = "+40332630507";
-  const wa = "https://wa.me/40332630507";
-  return (
-    <div className="vm-page">
-      <style dangerouslySetInnerHTML={{ __html: PAGE_CSS }} />
 
-      <div className="vm-top-bar">
-        <div className="vm-container">
-          <span>Vulcanizare mobilă NON-STOP în Miroslava și zona metropolitană Iași</span>
-          <a href={`tel:${tel}`}>Sună: +40 332 630 507</a>
+const PHONE = "0332630507";
+const PHONE_DISPLAY = "0332 630 507";
+const WHATSAPP = "40750291020";
+const WA_LINK = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Salut! Am nevoie de vulcanizare mobilă în Miroslava. Mă puteți ajuta?")}`;
+
+const NAV = [
+  { href: "#servicii", label: "Servicii" },
+  { href: "#zone", label: "Zone deservite" },
+  { href: "#cum-functioneaza", label: "Cum funcționează" },
+  { href: "#faq", label: "Întrebări" },
+  { href: "#contact", label: "Contact" },
+];
+
+function CallBtn({ className = "", label = "Sună Non-Stop" }: { className?: string; label?: string }) {
+  return (
+    <a href={`tel:${PHONE}`} className={`group inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 font-display text-base font-bold uppercase tracking-wide text-primary-foreground shadow-glow transition hover:brightness-110 active:scale-[0.98] ${className}`}>
+      <Phone className="h-4 w-4" /> {label}
+    </a>
+  );
+}
+function WaBtn({ className = "", label = "WhatsApp" }: { className?: string; label?: string }) {
+  return (
+    <a href={WA_LINK} target="_blank" rel="noopener" className={`inline-flex items-center justify-center gap-2 rounded-md bg-whatsapp px-5 py-3 font-display text-base font-bold uppercase tracking-wide text-whatsapp-foreground transition hover:brightness-110 active:scale-[0.98] ${className}`}>
+      <MessageCircle className="h-4 w-4" /> {label}
+    </a>
+  );
+}
+
+function Header() {
+  const [open, setOpen] = useState(false);
+  return (
+    <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 lg:py-3">
+        <div className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
+            <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
+          </a>
+          <button onClick={() => setOpen(v => !v)} aria-label="Meniu" className="rounded-md border border-border p-2.5 lg:hidden">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
+        </div>
+        <nav className="hidden items-center gap-6 lg:flex">
+          {NAV.map(n => (
+            <a key={n.href} href={n.href} className="text-sm font-semibold text-foreground/80 transition hover:text-primary">{n.label}</a>
+          ))}
+        </nav>
+        <div className="hidden items-center gap-2 lg:flex">
+          <div className="text-right">
+            <CallBtn />
+            <p className="mt-1 text-[11px] font-medium text-muted-foreground">Disponibil 24/7 în Miroslava și Iași</p>
+          </div>
+          <WaBtn />
+        </div>
+        <div className="flex items-center gap-2 lg:hidden">
+          <a href={`tel:${PHONE}`} aria-label="Sună" className="rounded-md bg-primary p-2.5 text-primary-foreground"><Phone className="h-5 w-5" /></a>
+          <a href={WA_LINK} aria-label="WhatsApp" className="rounded-md bg-whatsapp p-2.5 text-whatsapp-foreground"><MessageCircle className="h-5 w-5" /></a>
         </div>
       </div>
-
-      <header className="vm-site-header">
-        <div className="vm-container vm-header-inner">
-          <a href="/" className="vm-logo">
-            <img src={logo} alt="GoFix" />
-            <span>GoFix</span>
-          </a>
-          <nav className="vm-nav">
-            <a href="#servicii">Servicii</a>
-            <a href="#zone">Zone deservite</a>
-            <a href="#cum">Cum funcționează</a>
-            <a href="#faq">Întrebări</a>
-          </nav>
-          <a href={`tel:${tel}`} className="vm-header-cta">Sună acum</a>
-        </div>
-      </header>
-
-      <section className="vm-hero">
-        <div className="vm-container">
-          <div className="vm-hero-grid">
-            <div>
-              <div className="vm-breadcrumb">
-                <a href="/">Acasă</a> / Vulcanizare mobilă Miroslava
-              </div>
-              <span className="vm-eyebrow">Disponibil non-stop în Miroslava</span>
-              <h1>Vulcanizare mobilă Miroslava – venim la tine pentru pană, schimb anvelope și echilibrare roți</h1>
-              <p>
-                Ai găsit roata dezumflată dimineața, ai făcut pană în drum spre Iași sau nu vrei să pierzi timp la o vulcanizare fixă?
-                GoFix intervine direct la locația ta în Miroslava, Uricani, Horpaz, Valea Adâncă, Valea Ursului și zonele apropiate.
-              </p>
-              <div className="vm-hero-actions">
-                <a href={`tel:${tel}`} className="vm-btn vm-btn-primary">Sună pentru intervenție</a>
-                <a href={wa} className="vm-btn vm-btn-secondary">Trimite WhatsApp</a>
-              </div>
-              <div className="vm-trust-row">
-                <div className="vm-trust-card"><strong>Non-stop</strong><span>intervenții în funcție de disponibilitate</span></div>
-                <div className="vm-trust-card"><strong>La locația ta</strong><span>acasă, la birou, în parcare sau pe drum</span></div>
-                <div className="vm-trust-card"><strong>Dotare mobilă</strong><span>pentru reparații, schimb și echilibrare</span></div>
-              </div>
-            </div>
-            <div className="vm-hero-card">
-              <h2>Ai nevoie de ajutor acum?</h2>
-              <p style={{ color: "var(--muted)", margin: 0 }}>
-                Spune-ne unde ești în Miroslava, ce tip de vehicul ai și ce s-a întâmplat cu roata. Îți confirmăm rapid disponibilitatea și costul estimativ.
-              </p>
-              <ul>
-                <li>Reparații pene cauciuc pe loc</li>
-                <li>Schimb anvelope vară / iarnă</li>
-                <li>Echilibrare roți cu echipamente mobile</li>
-                <li>Autoturisme, dube, autoutilitare, camioane și tiruri</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="vm-section">
-        <div className="vm-container">
-          <div className="vm-section-title">
-            <h2>Când ai nevoie de vulcanizare mobilă în Miroslava?</h2>
-            <p>Serviciul este util atunci când nu poți deplasa mașina în siguranță sau când vrei să eviți timpul pierdut cu drumul până la service.</p>
-          </div>
-          <div className="vm-grid-3">
-            {[
-              ["1", "Pană acasă sau în parcare", "Dacă ai găsit roata dezumflată în curte, în fața blocului sau într-o parcare rezidențială, intervenim direct la locație."],
-              ["2", "Problemă în drum spre Iași", "Pentru cei care fac naveta zilnic din Miroslava spre Iași, o pană poate bloca programul. Ne poți suna pentru asistență mobilă."],
-              ["3", "Schimb sezonier fără deplasare", "Venim pentru schimb anvelope vară / iarnă direct la domiciliu, la birou sau la sediul firmei, în funcție de disponibilitate."],
-            ].map(([n, t, d]) => (
-              <div key={n} className="vm-card">
-                <div className="vm-icon">{n}</div>
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </div>
+      {open && (
+        <nav className="border-t border-border bg-background lg:hidden">
+          <div className="mx-auto flex max-w-7xl flex-col px-4 py-3">
+            {NAV.map(n => (
+              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="border-b border-border py-3 text-sm font-semibold">{n.label}</a>
             ))}
           </div>
-        </div>
-      </section>
+        </nav>
+      )}
+    </header>
+  );
+}
 
-      <section id="servicii" className="vm-section vm-section-soft">
-        <div className="vm-container">
-          <div className="vm-grid-2">
+function SectionHeading({ kicker, title, sub }: { kicker?: string; title: string; sub?: string }) {
+  return (
+    <div className="mx-auto max-w-3xl text-center">
+      {kicker && <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">{kicker}</p>}
+      <h2 className="font-display text-3xl leading-tight sm:text-4xl lg:text-5xl">{title}</h2>
+      {sub && <p className="mt-4 text-base text-muted-foreground sm:text-lg">{sub}</p>}
+    </div>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
+      <div className="absolute inset-0 opacity-60">
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={heroVan} />
+          <img src={heroVanMobile} alt="" width={1920} height={1080} fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
+        </picture>
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/70 to-secondary/40" />
+      </div>
+      <div className="speed-lines relative mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:py-24">
+        <div className="relative z-10">
+          <p className="text-xs text-secondary-foreground/70"><a href="/" className="hover:text-primary">Acasă</a> / Vulcanizare mobilă Miroslava</p>
+          <span className="mt-4 inline-flex items-center gap-2 rounded-full border border-brand-green/50 bg-brand-green/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" /> Non-stop în Miroslava
+          </span>
+          <h1 className="mt-5 font-display text-4xl leading-[0.95] text-white sm:text-5xl lg:text-7xl">
+            Vulcanizare Mobilă <span className="text-primary">Miroslava</span>
+          </h1>
+          <p className="mt-5 max-w-xl text-base text-secondary-foreground/80 sm:text-lg">
+            Ai făcut pană în Miroslava, Uricani, Horpaz sau Valea Adâncă? Venim la tine pentru reparații pene, schimb anvelope și echilibrare roți pe loc.
+          </p>
+          <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {["Disponibil NON STOP", "Intervenții în toată comuna Miroslava", "Autoturisme, dube, camioane, tiruri", "Plată corectă, emitem factură"].map(t => (
+              <li key={t} className="flex items-start gap-2 text-sm text-secondary-foreground/90">
+                <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-green" /> {t}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-7 flex w-full flex-col gap-3 sm:flex-row">
+            <CallBtn label={`Sună acum: ${PHONE_DISPLAY}`} className="w-full text-base lg:text-lg" />
+            <WaBtn label="Trimite locația pe WhatsApp" className="w-full" />
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
+              <Navigation className="h-4 w-4 text-white" /> Venim la locația ta în Miroslava
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EmergencyBar() {
+  return (
+    <section className="mx-2.5 mt-20 border-4 border-primary bg-white">
+      <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 py-10 lg:grid-cols-[1.2fr_2fr_auto]">
+        <div className="flex items-center gap-3">
+          <AlertTriangle className="h-8 w-8 flex-shrink-0 text-primary" />
+          <h2 className="font-display text-xl uppercase leading-tight text-primary sm:text-2xl">
+            AI PANĂ ÎN MIROSLAVA ACUM?
+            <br />
+            NU TE DEPLASA CU ROATA AVARIATĂ.
+          </h2>
+        </div>
+        <ol className="grid gap-3 sm:grid-cols-3">
+          {["Suni sau scrii pe WhatsApp", "Ne trimiți locația exactă", "Venim și rezolvăm pe loc"].map((t, i) => (
+            <li key={t} className="flex items-start gap-3 rounded-md bg-primary/10 p-3">
+              <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary font-display text-sm font-bold text-white">{i + 1}</span>
+              <span className="text-sm font-semibold text-foreground">{t}</span>
+            </li>
+          ))}
+        </ol>
+        <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 rounded-md bg-secondary px-5 py-4 font-display text-base font-bold uppercase tracking-wide text-secondary-foreground transition hover:bg-black">
+          <Phone className="h-4 w-4" /> Solicită intervenție
+        </a>
+      </div>
+    </section>
+  );
+}
+
+function ForWhom() {
+  const items = [
+    { i: AlertTriangle, t: "Pană în drum spre Iași", d: "Pentru cei care fac naveta zilnic din Miroslava spre Iași, intervenim direct pe traseu." },
+    { i: Car, t: "Roată dezumflată acasă", d: "Te ajutăm dacă găsești roata dezumflată în curte, în fața casei sau în parcare." },
+    { i: Wrench, t: "Schimb sezonier de anvelope", d: "Schimbăm anvelopele de vară/iarnă la domiciliu, în Miroslava și satele apropiate." },
+    { i: Truck, t: "Flotă, dubă sau camion", d: "Intervenim pentru autoutilitare, dube de marfă, camioane și tiruri din zona Miroslava." },
+  ];
+  return (
+    <section className="py-20">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeading kicker="Pentru cine" title="Când ai nevoie de vulcanizare mobilă în Miroslava" />
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map(({ i: I, t, d }) => (
+            <article key={t} className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary hover:shadow-card">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary"><I className="h-6 w-6" /></div>
+              <h3 className="font-display text-lg">{t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Services() {
+  const items = [
+    { i: Wrench, t: "Reparații pene cauciuc", d: "Verificăm anvelopa și reparăm pana pe loc atunci când starea ei permite intervenția în siguranță." },
+    { i: Car, t: "Schimb anvelope la domiciliu", d: "Schimbăm anvelopele direct la locația ta în Miroslava, fără drum până la o vulcanizare fixă." },
+    { i: Gauge, t: "Echilibrare roți pe loc", d: "Echilibrare profesională cu echipamente mobile, pentru confort și stabilitate la drum." },
+    { i: Settings, t: "Schimb cauciuc deteriorat", d: "Înlocuire roată sau anvelopă când pana nu mai poate fi reparată în siguranță." },
+    { i: ShieldCheck, t: "Verificare TPMS", d: "Verificări pentru senzori de presiune și probleme legate de sistemul TPMS." },
+    { i: Truck, t: "Vulcanizare dube și tiruri", d: "Intervenții pentru autoutilitare, camioane și tiruri în Miroslava și împrejurimi." },
+  ];
+  return (
+    <section id="servicii" className="bg-secondary py-20 text-secondary-foreground">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeading kicker="Servicii" title="Servicii de vulcanizare mobilă în Miroslava" sub="Tot ce ai nevoie pentru roți și anvelope, direct la locația ta." />
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map(({ i: I, t, d }) => (
+            <article key={t} className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/40 p-6 transition hover:border-primary">
+              <div className="absolute right-0 top-0 h-24 w-24 -translate-y-12 translate-x-12 rounded-full bg-primary/20 blur-2xl transition group-hover:bg-primary/40" />
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground"><I className="h-6 w-6" /></div>
+              <h3 className="font-display text-xl">{t}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-secondary-foreground/70">{d}</p>
+              <a href={WA_LINK} target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-primary hover:underline">
+                Solicită intervenție →
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhyUs() {
+  const items = [
+    { t: "Venim noi la tine", d: "Nu mai pierzi timp cu drumul până la service — intervenim direct în Miroslava." },
+    { t: "Disponibilitate non-stop", d: "Intervenim 24/7 în Miroslava și zona metropolitană Iași." },
+    { t: "Echipamente profesionale", d: "Autospeciale dotate pentru vulcanizare, schimb anvelope și echilibrare roți." },
+    { t: "Pentru orice vehicul", d: "Autoturisme, autoutilitare, dube, camioane și tiruri." },
+    { t: "Contact rapid", d: "Telefon sau WhatsApp — trimiți locația și primești ajutor fără formulare complicate." },
+  ];
+  return (
+    <section className="py-20">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-2 lg:items-center">
+        <div className="relative">
+          <img src={whyUs} alt="Autospecială GoFix în Miroslava" width={1200} height={1400} loading="lazy" className="rounded-2xl object-cover shadow-card" />
+          <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-primary p-6 text-primary-foreground shadow-glow sm:block">
+            <p className="font-display text-4xl leading-none">24/7</p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-wider">Non-Stop Miroslava</p>
+          </div>
+        </div>
+        <div>
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">De ce GoFix</p>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl">De ce aleg șoferii din Miroslava GoFix</h2>
+          <ul className="mt-8 space-y-5">
+            {items.map((it, i) => (
+              <li key={it.t} className="flex gap-4">
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-secondary font-display text-secondary-foreground">{i + 1}</span>
+                <div>
+                  <h3 className="font-display text-lg">{it.t}</h3>
+                  <p className="text-sm text-muted-foreground">{it.d}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8"><CallBtn label="Sună GoFix acum" /></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HowItWorks() {
+  const steps = [
+    { i: Phone, t: "Ne contactezi", d: `Suni la ${PHONE_DISPLAY} sau trimiți mesaj pe WhatsApp.` },
+    { i: MapPin, t: "Ne trimiți locația", d: "Ne spui unde ești în Miroslava: acasă, la birou, în parcare sau pe drum." },
+    { i: Wrench, t: "Venim și rezolvăm pe loc", d: "Echipa GoFix ajunge cu autospeciala și intervine rapid." },
+  ];
+  return (
+    <section id="cum-functioneaza" className="bg-muted py-20">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeading kicker="Proces simplu" title="Cum primești ajutor în 3 pași simpli" />
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {steps.map(({ i: I, t, d }, idx) => (
+            <div key={t} className="relative rounded-xl border border-border bg-card p-7">
+              <span className="absolute -top-5 left-7 flex h-10 w-10 items-center justify-center rounded-full bg-primary font-display text-lg text-primary-foreground shadow-glow">{idx + 1}</span>
+              <I className="h-9 w-9 text-primary" />
+              <h3 className="mt-4 font-display text-xl">{t}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{d}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 text-center"><WaBtn label="Trimite locația pe WhatsApp" /></div>
+      </div>
+    </section>
+  );
+}
+
+function Zones() {
+  return (
+    <section id="zone" className="py-20">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeading kicker="Acoperire" title="Zone deservite în comuna Miroslava" sub="Intervenim în Miroslava și satele apropiate, în funcție de disponibilitate și acces." />
+        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <div className="rounded-2xl border border-border bg-secondary p-2 text-secondary-foreground">
+            <iframe
+              title="Hartă comuna Miroslava"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=27.45%2C47.10%2C27.62%2C47.20&layer=mapnik&marker=47.1428%2C27.5028"
+              className="h-80 w-full rounded-xl border-0 lg:h-full"
+              loading="lazy"
+            />
+          </div>
+          <div className="space-y-6">
             <div>
-              <div className="vm-section-title">
-                <h2>Servicii de vulcanizare mobilă disponibile în Miroslava</h2>
-                <p>GoFix oferă intervenții mobile pentru cele mai frecvente probleme legate de anvelope și roți.</p>
-              </div>
-              <div className="vm-service-list">
-                {[
-                  ["Reparații pene cauciuc", "Verificăm anvelopa și reparăm pana pe loc atunci când starea anvelopei permite intervenția în siguranță."],
-                  ["Schimb anvelope la domiciliu", "Schimbăm anvelopele direct la locația ta, fără drum până la o vulcanizare fixă."],
-                  ["Echilibrare roți pe loc", "Oferim echilibrare roți cu echipamente mobile, pentru confort și stabilitate la drum."],
-                  ["Vulcanizare pentru dube, camioane și tiruri", "Intervenim și pentru vehicule comerciale, în funcție de locație, dimensiunea roții și tipul problemei."],
-                ].map(([t, d]) => (
-                  <div key={t} className="vm-service-item">
-                    <span className="vm-check">✓</span>
-                    <div>
-                      <strong>{t}</strong>
-                      <span>{d}</span>
-                    </div>
-                  </div>
+              <h3 className="font-display text-xl text-primary">Sate deservite</h3>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {AREAS.map(a => (
+                  <span key={a} className="rounded-full border border-border bg-card px-3 py-1.5 text-sm font-semibold">{a}</span>
                 ))}
               </div>
             </div>
-            <div id="zone" className="vm-local-highlight">
-              <h2>Zone deservite în comuna Miroslava</h2>
-              <p style={{ color: "var(--muted)", margin: 0 }}>
-                Intervenim în Miroslava și în satele apropiate din comună, în funcție de disponibilitate și acces.
-                Dacă nu ești sigur că ajungem la adresa ta, sună și îți confirmăm rapid.
-              </p>
-              <div className="vm-area-list">
-                {AREAS.map((a) => <span key={a}>{a}</span>)}
-              </div>
-            </div>
+            <p className="text-sm text-muted-foreground">Dacă nu ești sigur că ajungem la adresa ta, sună și îți confirmăm rapid disponibilitatea.</p>
+            <WaBtn label="Verifică disponibilitatea în zona ta" />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      <section id="cum" className="vm-section">
-        <div className="vm-container">
-          <div className="vm-section-title">
-            <h2>Cum funcționează intervenția?</h2>
-            <p>Proces simplu, potrivit pentru urgențe, dar și pentru schimburi de anvelope programate.</p>
-          </div>
-          <div className="vm-grid-3">
-            {[
-              ["Ne spui locația", "Trimiți adresa sau pin-ul din Miroslava și câteva detalii despre problemă: pană, roată dezumflată, schimb anvelope sau echilibrare."],
-              ["Primești estimarea", "Îți confirmăm disponibilitatea, costul estimativ și ce informații mai sunt necesare: tip vehicul, dimensiune roată sau acces la locație."],
-              ["Intervenim pe loc", "Venim cu autospeciala dotată și rezolvăm problema direct la tine, dacă anvelopa și condițiile permit intervenția în siguranță."],
-            ].map(([t, d], i) => (
-              <div key={t} className="vm-card vm-step">
-                <span className="vm-step-num">{i + 1}</span>
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+function FAQItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="border-b border-border">
+      <button onClick={() => setOpen(v => !v)} className="flex w-full items-center justify-between gap-4 py-5 text-left">
+        <span className="font-display text-base sm:text-lg">{q}</span>
+        <ChevronDown className={`h-5 w-5 flex-shrink-0 text-primary transition ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && <p className="pb-5 text-sm text-muted-foreground sm:text-base">{a}</p>}
+    </div>
+  );
+}
 
-      <section className="vm-section vm-section-soft">
-        <div className="vm-container">
-          <div className="vm-section-title">
-            <h2>De ce să alegi GoFix pentru vulcanizare mobilă în Miroslava?</h2>
-            <p>Miroslava este o zonă rezidențială și de tranzit importantă lângă Iași. Când ai o problemă cu roata, timpul pierdut poate însemna program dat peste cap, drumuri anulate sau mașină blocată în parcare.</p>
-          </div>
-          <div className="vm-grid-3">
-            {[
-              ["Nu mai cauți platformă", "În multe cazuri, nu trebuie să deplasezi mașina până la service. Venim noi la tine și verificăm ce se poate rezolva pe loc."],
-              ["Potrivit pentru familii și firme", "Intervenim pentru mașini personale, dar și pentru autoutilitare sau vehicule comerciale, în funcție de situație."],
-              ["Disponibilitate extinsă", "Serviciul este disponibil non-stop în Iași și zona metropolitană, inclusiv Miroslava, cu confirmare telefonică înainte de deplasare."],
-            ].map(([t, d]) => (
-              <div key={t} className="vm-card">
-                <h3>{t}</h3>
-                <p>{d}</p>
-              </div>
-            ))}
-          </div>
+function FAQ() {
+  return (
+    <section id="faq" className="py-20">
+      <div className="mx-auto max-w-3xl px-4">
+        <SectionHeading kicker="FAQ" title="Întrebări frecvente despre vulcanizarea mobilă în Miroslava" />
+        <div className="mt-10 rounded-2xl border border-border bg-card px-6 shadow-card">
+          {FAQS.map(([q, a]) => <FAQItem key={q} q={q} a={a} />)}
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      <section className="vm-section">
-        <div className="vm-container">
-          <div className="vm-cta-box">
-            <div>
-              <h2>Ai pană în Miroslava sau ai nevoie de schimb anvelope la locație?</h2>
-              <p>Sună acum și spune-ne unde ești. Îți confirmăm disponibilitatea, costul estimativ și următorii pași.</p>
-            </div>
-            <div className="vm-cta-buttons">
-              <a href={`tel:${tel}`} className="vm-btn">Sună +40 332 630 507</a>
-              <a href={wa} className="vm-btn vm-btn-secondary">WhatsApp</a>
-            </div>
-          </div>
+function FinalCTA() {
+  return (
+    <section className="relative overflow-hidden bg-checker py-20 text-secondary-foreground">
+      <div className="absolute -left-32 top-0 h-96 w-96 rounded-full bg-primary/30 blur-3xl" />
+      <div className="absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-primary/20 blur-3xl" />
+      <div className="relative mx-auto max-w-4xl px-4 text-center">
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">Acționează acum</p>
+        <h2 className="font-display text-4xl leading-tight sm:text-5xl lg:text-6xl">Ai nevoie de vulcanizare mobilă în Miroslava <span className="text-primary">chiar acum?</span></h2>
+        <p className="mx-auto mt-5 max-w-2xl text-base text-secondary-foreground/80 sm:text-lg">Nu risca să mergi cu roata avariată. GoFix vine direct la tine, non-stop, oriunde te afli în Miroslava sau împrejurimi.</p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <CallBtn label={`Sună acum: ${PHONE_DISPLAY}`} className="text-base lg:text-lg" />
+          <WaBtn label="Trimite locația pe WhatsApp" />
         </div>
-      </section>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wider text-secondary-foreground/80">
+          <span className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" /> Non-stop</span>
+          <span className="flex items-center gap-2"><Zap className="h-4 w-4 text-primary" /> Intervenție rapidă</span>
+          <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-primary" /> Miroslava + Iași</span>
+          <span className="flex items-center gap-2"><Settings className="h-4 w-4 text-primary" /> Autospeciale dotate</span>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-      <section id="faq" className="vm-section vm-section-soft">
-        <div className="vm-container">
-          <div className="vm-section-title">
-            <h2>Întrebări frecvente despre vulcanizare mobilă în Miroslava</h2>
-            <p>Răspunsuri rapide pentru cele mai comune situații întâlnite în Miroslava și împrejurimi.</p>
+function Footer() {
+  const servicii = ["Vulcanizare mobilă", "Reparații pene", "Schimb anvelope", "Echilibrare roți", "Verificări TPMS", "Tractări auto"];
+  return (
+    <footer id="contact" className="bg-black text-white/80">
+      <div className="mx-auto max-w-7xl px-4 py-16">
+        <div className="grid gap-10 lg:grid-cols-3">
+          <div className="lg:col-span-1">
+            <h2 className="font-display text-2xl text-white">GoFix Vulcanizare Mobilă Iași</h2>
+            <p className="mt-3 text-sm">Serviciu non-stop de vulcanizare mobilă în Iași, Miroslava și zona metropolitană.</p>
           </div>
-          <div className="vm-faq">
-            {FAQS.map(([q, a]) => (
-              <details key={q}>
-                <summary>{q}</summary>
-                <p>{a}</p>
-              </details>
-            ))}
+          <div className="lg:col-span-2">
+            <h3 className="font-display text-base text-white">Contact</h3>
+            <ul className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
+              <li><a href={`tel:${PHONE}`} className="flex items-center gap-2 hover:text-primary"><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
+              <li><a href={WA_LINK} target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-primary"><MessageCircle className="h-4 w-4 text-primary" />0750 291 020</a></li>
+              <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" />Strada Golia 3, 700259 Iași</li>
+              <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" />Deschis non-stop</li>
+            </ul>
           </div>
         </div>
-      </section>
+        <div className="my-12 border-t border-white/10" />
+        <div>
+          <h3 className="font-display text-xl text-white">Servicii</h3>
+          <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+            {servicii.map(s => (<li key={s}><a href="#servicii" className="hover:text-primary">{s}</a></li>))}
+          </ul>
+        </div>
+        <div className="my-12 border-t border-white/10" />
+        <div>
+          <h3 className="font-display text-xl text-white">Sate deservite în Miroslava</h3>
+          <ul className="mt-4 grid gap-x-4 gap-y-2 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {AREAS.map(l => (<li key={l}>{l}</li>))}
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs sm:flex-row">
+          <p>© {new Date().getFullYear()} GoFix Vulcanizare Mobilă Iași. Toate drepturile rezervate.</p>
+          <div className="flex gap-4"><a href="/" className="hover:text-primary">Acasă</a></div>
+        </div>
+      </div>
+    </footer>
+  );
+}
 
-      <section className="vm-section vm-section-dark">
-        <div className="vm-container">
-          <div className="vm-section-title">
-            <h2>Serviciu local pentru Miroslava și zona metropolitană Iași</h2>
-            <p>Pagina este dedicată intervențiilor de vulcanizare mobilă în Miroslava. Pentru alte zone, poți consulta pagina principală GoFix sau poți suna direct pentru confirmare.</p>
-          </div>
-          <div className="vm-card" style={{ background: "#0b1220", borderColor: "#1e293b", color: "#cbd5e1" }}>
-            <h3 style={{ color: "#fff" }}>Ai nevoie de intervenție rapidă?</h3>
-            <p style={{ color: "#cbd5e1" }}>
-              Cel mai simplu este să suni, să ne spui locația exactă și problema roții. Îți spunem rapid dacă putem interveni și ce cost estimativ are deplasarea.
-            </p>
-            <div style={{ marginTop: 16 }}>
-              <a href={`tel:${tel}`} className="vm-btn vm-btn-primary">Sună pentru vulcanizare mobilă</a>
-            </div>
-          </div>
-        </div>
-      </section>
+function MobileStickyBar() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShow(window.scrollY > 500);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <div className={`fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/95 p-2 backdrop-blur transition-transform duration-300 lg:hidden ${show ? "translate-y-0" : "translate-y-full"}`}>
+      <a href={`tel:${PHONE}`} className="flex items-center justify-center gap-2 rounded-md bg-primary py-3 font-display text-sm font-bold uppercase text-primary-foreground shadow-glow">
+        <Phone className="h-4 w-4" /> Sună acum
+      </a>
+      <a href={WA_LINK} target="_blank" rel="noopener" className="flex items-center justify-center gap-2 rounded-md bg-whatsapp py-3 font-display text-sm font-bold uppercase text-whatsapp-foreground">
+        <MessageCircle className="h-4 w-4" /> WhatsApp
+      </a>
+    </div>
+  );
+}
 
-      <footer className="vm-footer">
-        <div className="vm-container">
-          <div className="vm-footer-grid">
-            <div>
-              <h2>GoFix Vulcanizare Mobilă Iași</h2>
-              <p>Serviciu non-stop de vulcanizare mobilă în Iași, Miroslava și zona metropolitană.</p>
-            </div>
-            <div>
-              <h3>Contact</h3>
-              <p><a href={`tel:${tel}`}>+40 332 630 507</a></p>
-              <p><a href={wa}>WhatsApp GoFix</a></p>
-            </div>
-            <div>
-              <h3>Adresă</h3>
-              <p>Strada Golia 3<br />Iași, 700259<br />România</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+function MiroslavaPage() {
+  return (
+    <div className="pb-20 lg:pb-0">
+      <Header />
+      <main>
+        <Hero />
+        <EmergencyBar />
+        <ForWhom />
+        <Services />
+        <WhyUs />
+        <HowItWorks />
+        <Zones />
+        <FAQ />
+        <FinalCTA />
+      </main>
+      <Footer />
+      <MobileStickyBar />
     </div>
   );
 }
