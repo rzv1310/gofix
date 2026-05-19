@@ -563,17 +563,10 @@ function Hero() {
             <WaBtn label="Trimite locația pe WhatsApp" className="w-full" />
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm">
-              <span className="text-white">5<sup className="text-yellow-400">*****</sup></span>
-              <span className="tracking-wider">
-                <span style={{ color: "#4285F4" }}>G</span>
-                <span style={{ color: "#EA4335" }}>o</span>
-                <span style={{ color: "#FBBC05" }}>o</span>
-                <span style={{ color: "#4285F4" }}>g</span>
-                <span style={{ color: "#34A853" }}>l</span>
-                <span style={{ color: "#EA4335" }}>e</span>
-              </span>
-            </div>
+            <a href="https://www.google.com/search?q=GoFix+Vulcanizare+Mobila+Iasi" target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white transition hover:bg-white/10">
+              <span className="flex text-yellow-400">{'\u2605'.repeat(5)}</span>
+              <span>5.0 · Recenzii Google</span>
+            </a>
             <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
               <Navigation className="h-4 w-4 text-white" /> Venim la locația ta
             </div>
