@@ -7,7 +7,8 @@ import {
   Download, Apple, PlayCircle,
 } from "lucide-react";
 import logo from "@/assets/gofix-logo.png";
-import heroVan from "@/assets/hero-van.jpg";
+import heroVan from "@/assets/hero-van-desktop.png";
+import heroVanMobile from "@/assets/hero-van-mobile.png";
 import serviceTire from "@/assets/service-tire.jpg";
 import whyUs from "@/assets/why-us.jpg";
 import vehicles from "@/assets/vehicles.jpg";
@@ -103,7 +104,10 @@ function Hero() {
   return (
     <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
       <div className="absolute inset-0 opacity-60">
-        <img src={heroVan} alt="" className="h-full w-full object-cover" width={1600} height={1200} />
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={heroVan} />
+          <img src={heroVanMobile} alt="" className="h-full w-full object-cover" />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/85 to-secondary/30" />
       </div>
       <div className="speed-lines relative mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-2 lg:py-24">
@@ -144,7 +148,7 @@ function Hero() {
         </div>
         <div className="relative hidden lg:block">
           <div className="absolute -inset-6 rounded-3xl bg-gradient-to-tr from-primary/30 via-transparent to-transparent blur-2xl" />
-          <img src={heroVan} alt="Autospecială GoFix vulcanizare mobilă Iași" width={1600} height={1200} className="relative rounded-2xl border border-white/10 object-cover shadow-glow" />
+          <img src={heroVan} alt="Autospecială GoFix vulcanizare mobilă Iași" className="relative rounded-2xl border border-white/10 object-cover shadow-glow" />
         </div>
       </div>
     </section>
