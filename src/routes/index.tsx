@@ -65,9 +65,12 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 lg:py-3">
-        <a href="#" className="flex items-center gap-2">
-          <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
-        </a>
+        <div className="flex items-center gap-2">
+          <a href="#" className="flex items-center gap-2">
+            <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
+          </a>
+          <button onClick={() => setOpen(v => !v)} aria-label="Meniu" className="rounded-md border border-border p-2.5 lg:hidden">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
+        </div>
         <nav className="hidden items-center gap-6 lg:flex">
           {NAV.map(n => (
             <a key={n.href} href={n.href} className="text-sm font-semibold text-foreground/80 transition hover:text-primary">{n.label}</a>
@@ -83,7 +86,6 @@ function Header() {
         <div className="flex items-center gap-1 lg:hidden">
           <a href={`tel:${PHONE}`} aria-label="Sună" className="rounded-md bg-primary p-2.5 text-primary-foreground"><Phone className="h-5 w-5" /></a>
           <a href={WA_LINK} aria-label="WhatsApp" className="rounded-md bg-whatsapp p-2.5 text-whatsapp-foreground"><MessageCircle className="h-5 w-5" /></a>
-          <button onClick={() => setOpen(v => !v)} aria-label="Meniu" className="rounded-md border border-border p-2.5">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
         </div>
       </div>
       {open && (
