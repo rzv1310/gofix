@@ -78,6 +78,8 @@
 
   --surface: oklch(0.13 0 0);
   --surface-foreground: oklch(0.98 0 0);
+
+  --brand-green: oklch(0.7 0.25 145);
 }
 
 @layer base {
