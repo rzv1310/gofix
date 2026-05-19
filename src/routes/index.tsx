@@ -901,7 +901,6 @@ function Reviews() {
             </div>
           ))}
         </div>
-        <p className="mt-8 text-center text-sm text-muted-foreground">Adăugăm continuu recenzii reale din Google Business Profile.</p>
       </div>
     </section>
   );
