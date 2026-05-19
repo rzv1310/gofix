@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Phone, MessageCircle, MapPin, Clock, Wrench, Truck, Car, Gauge,
   ShieldCheck, Zap, CheckCircle2, ChevronDown, Menu, X, Navigation,
