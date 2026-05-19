@@ -496,7 +496,7 @@ function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 lg:py-3">
         <div className="flex items-center gap-2">
           <Link to="/" aria-label="Mergi la pagina principală GoFix" aria-current="page" className="flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
-            <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
+            <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" title="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
           </Link>
           <button onClick={() => setOpen(v => !v)} aria-label="Meniu" className="rounded-md border border-border p-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent lg:hidden">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
         </div>
@@ -536,7 +536,7 @@ function Hero() {
       <div className="absolute inset-0 opacity-60">
         <picture>
           <source media="(min-width: 1024px)" srcSet={heroVan} />
-          <img src={heroVanMobile} alt="" width={1920} height={1080} fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
+          <img src={heroVanMobile} alt="Vulcanizare Non Stop Iasi" title="Vulcanizare Non Stop" width={1920} height={1080} fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
         </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/70 to-secondary/40" />
       </div>
@@ -687,7 +687,7 @@ function WhyUs() {
     <section className="py-20">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-2 lg:items-center">
         <div className="relative">
-          <img src={whyUs} alt="Autospecială GoFix pe drum" width={1200} height={1400} loading="lazy" className="rounded-2xl object-cover shadow-card" />
+          <img src={whyUs} alt="Autospecială GoFix pe drum" title="Autospecială GoFix pe drum" width={1200} height={1400} loading="lazy" className="rounded-2xl object-cover shadow-card" />
           <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-primary p-6 text-primary-foreground shadow-glow sm:block">
             <p className="font-display text-4xl leading-none">24/7</p>
             <p className="mt-1 text-xs font-semibold uppercase tracking-wider">Non-Stop Iași</p>
@@ -921,6 +921,7 @@ function AppSection() {
           <img
             src={appVulcanizareMobila}
             alt="Aplicația Vulcanizare Mobilă"
+            title="Vulcanizare Mobilă App"
             className="relative h-[440px] w-auto rounded-[2.5rem] shadow-glow"
             loading="lazy"
           />
