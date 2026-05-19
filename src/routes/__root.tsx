@@ -117,17 +117,49 @@ function RootComponent() {
   const router = useRouter();
 
   useEffect(() => {
+    // Try to scroll to a hash target; retry briefly to wait for lazy/late content.
+    // Falls back to top if the element is never found.
+    const scrollToHash = (hash: string) => {
+      const id = hash.replace(/^#/, "");
+      if (!id) {
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+        return;
+      }
+      let tries = 0;
+      const maxTries = 20; // ~1s at 50ms
+      const tick = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+        if (++tries >= maxTries) {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          return;
+        }
+        setTimeout(tick, 50);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    // Handle initial page load with a hash in the URL
+    if (window.location.hash) {
+      scrollToHash(window.location.hash);
+    }
+
+    // Handle in-page anchor clicks (e.g. <a href="#contact">) on the same route
+    const onHashChange = () => {
+      if (window.location.hash) scrollToHash(window.location.hash);
+    };
+    window.addEventListener("hashchange", onHashChange);
+
     let isPop = false;
     const onPop = () => { isPop = true; };
     window.addEventListener("popstate", onPop);
 
     const unsub = router.subscribe("onResolved", ({ toLocation, fromLocation }) => {
-      // Hash navigation → let browser scroll to element (scroll-padding handles offset)
       if (toLocation.hash) {
-        const el = document.getElementById(toLocation.hash.replace(/^#/, ""));
-        if (el) {
-          requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth", block: "start" }));
-        }
+        scrollToHash(toLocation.hash);
         isPop = false;
         return;
       }
@@ -141,11 +173,11 @@ function RootComponent() {
       // Same path, no hash change → don't scroll
       if (fromLocation && fromLocation.pathname === toLocation.pathname) return;
 
-      // New navigation → smooth scroll to top
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     });
 
     return () => {
+      window.removeEventListener("hashchange", onHashChange);
       window.removeEventListener("popstate", onPop);
       unsub();
     };
