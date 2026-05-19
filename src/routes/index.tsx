@@ -47,7 +47,7 @@ const NAV = [
 
 function CallBtn({ className = "", label = "Sună Non-Stop" }: { className?: string; label?: string }) {
   return (
-    <a href={`tel:${PHONE}`} className={`group inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 font-display text-base font-bold uppercase tracking-wide text-primary-foreground shadow-glow transition hover:brightness-110 active:scale-[0.98] ${className}`}>
+    <a href={`tel:${PHONE}`} className={`group inline-flex items-center justify-center gap-2 rounded-md bg-brand-green px-5 py-3 font-display text-base font-bold uppercase tracking-wide text-white shadow-glow-green transition hover:brightness-110 active:scale-[0.98] ${className}`}>
       <span className="relative flex h-2.5 w-2.5"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75" /><span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-white" /></span>
       <Phone className="h-4 w-4" /> {label}
     </a>
@@ -112,8 +112,8 @@ function Hero() {
       </div>
       <div className="speed-lines relative mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-2 lg:py-24">
         <div className="relative z-10">
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-primary" /> Non-Stop · 24/7 · Iași
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-green/50 bg-brand-green/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" /> Non-Stop · 24/7 · Iași
           </span>
           <h1 className="mt-5 font-display text-4xl leading-[0.95] text-white sm:text-5xl lg:text-7xl">
             Go<span className="text-primary">Fix</span> Vulcanizare Mobilă Iași
@@ -124,7 +124,7 @@ function Hero() {
           <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {["Disponibil non-stop, 24/7", "Deplasare rapidă în Iași + zona metropolitană", "Autoturisme, dube, autoutilitare, camioane", "Plată corectă, intervenție profesionistă"].map(t => (
               <li key={t} className="flex items-start gap-2 text-sm text-secondary-foreground/90">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" /> {t}
+                <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-green" /> {t}
               </li>
             ))}
           </ul>
@@ -133,9 +133,8 @@ function Hero() {
             <WaBtn label="Trimite locația pe WhatsApp" />
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold">
-              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-              <span className="text-white">5</span>
+            <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm">
+              <span className="flex items-center text-yellow-400">*****</span>
               <span className="tracking-wider">
                 <span style={{ color: "#4285F4" }}>G</span>
                 <span style={{ color: "#EA4335" }}>o</span>
@@ -146,7 +145,7 @@ function Hero() {
               </span>
             </div>
             <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
-              <Navigation className="h-4 w-4 text-primary" /> Venim la locația ta
+              <Navigation className="h-4 w-4 text-white" /> Venim la locația ta
             </div>
           </div>
         </div>
