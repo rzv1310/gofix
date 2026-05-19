@@ -184,7 +184,7 @@ function Reviews() {
   const reviews = [
     {
       initials: "D.S.",
-      text: "Mi-au schimbat anvelopele acasă, în Miroslava. Au venit la ora stabilită, bine organizați, cu toate echipamentele necesare. Curat și rapid.",
+      text: "Mi-au schimbat anvelopele acasă, în Valea Adanca. Au venit la ora stabilită, bine organizați, cu toate echipamentele necesare. Curat și rapid.",
     },
     {
       initials: "M.R.",
