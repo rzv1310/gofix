@@ -100,6 +100,17 @@
   }
 }
 
+@media (hover: none) and (pointer: coarse) {
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  input, textarea, [contenteditable] {
+    -webkit-user-select: auto;
+    user-select: auto;
+  }
+}
+
 @layer utilities {
   .bg-checker {
     background-image:
