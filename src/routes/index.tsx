@@ -1004,7 +1004,7 @@ function Footer() {
             <p className="mt-3 text-sm">GoFix Vulcanizare Mobilă Iași oferă servicii de vulcanizare mobilă, schimb anvelope și echilibrare roți la locație, non-stop.</p>
           </div>
           <div className="lg:col-span-2">
-            <h4 className="font-display text-base text-white">Contact</h4>
+            <h3 className="font-display text-base text-white">Contact</h3>
             <ul className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
               <li><a href={`tel:${PHONE}`} className="flex items-center gap-2 hover:text-primary"><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
               <li><a href={WA_LINK} target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-primary"><MessageCircle className="h-4 w-4 text-primary" />0750 291 020</a></li>
