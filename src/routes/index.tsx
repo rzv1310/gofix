@@ -1004,7 +1004,7 @@ function Footer() {
             <p className="mt-3 text-sm">GoFix Vulcanizare Mobilă Iași oferă servicii de vulcanizare mobilă, schimb anvelope și echilibrare roți la locație, non-stop.</p>
           </div>
           <div className="lg:col-span-2">
-            <h4 className="font-display text-base text-white">Contact</h4>
+            <h3 className="font-display text-base text-white">Contact</h3>
             <ul className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
               <li><a href={`tel:${PHONE}`} className="flex items-center gap-2 hover:text-primary"><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
               <li><a href={WA_LINK} target="_blank" rel="noopener" className="flex items-center gap-2 hover:text-primary"><MessageCircle className="h-4 w-4 text-primary" />0750 291 020</a></li>
@@ -1018,7 +1018,7 @@ function Footer() {
 
         {/* Servicii */}
         <div>
-          <h2 className="font-display text-xl text-white">Servicii</h2>
+          <h3 className="font-display text-xl text-white">Servicii</h3>
           <ul className="mt-4 grid gap-2 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {servicii.map(s => (
               <li key={s}><a href="#servicii" className="hover:text-primary">{s}</a></li>
@@ -1030,7 +1030,7 @@ function Footer() {
 
         {/* Cartiere deservite */}
         <div>
-          <h2 className="font-display text-xl text-white">Cartiere deservite</h2>
+          <h3 className="font-display text-xl text-white">Cartiere deservite</h3>
           <p className="mt-4 text-sm">{cartiere.join(", ")}.</p>
         </div>
 
@@ -1038,7 +1038,7 @@ function Footer() {
 
         {/* Zona Metropolitană Iași */}
         <div>
-          <h2 className="font-display text-xl text-white">Zona Metropolitană Iași</h2>
+          <h3 className="font-display text-xl text-white">Zona Metropolitană Iași</h3>
           <ul className="mt-4 grid gap-x-4 gap-y-2 text-sm sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {metroLocalities.map(l => (
               <li key={l} className="hover:text-primary">{l}</li>
