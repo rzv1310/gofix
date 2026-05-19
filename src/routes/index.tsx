@@ -681,7 +681,7 @@ function WhyUs() {
     { t: "Disponibilitate non-stop", d: "Intervenim 24/7 în Iași și zona metropolitană." },
     { t: "Echipamente profesionale", d: "Autospeciale dotate pentru vulcanizare, schimb anvelope și echilibrare roți." },
     { t: "Pentru orice tip de vehicul", d: "Autoturisme, autoutilitare, dube, camioane și tiruri." },
-    { t: "Contact rapid", d: "Telefon sau WhatsApp — trimiți locația și primești ajutor fără formulare complicate." },
+    
   ];
   return (
     <section className="py-20">
