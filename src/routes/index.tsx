@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Phone, MessageCircle, MapPin, Clock, Wrench, Truck, Car, Gauge,
@@ -1004,7 +1004,7 @@ function Footer() {
         {/* Header + Description + Contact */}
         <div className="grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-1">
-            <h2 className="font-display text-2xl text-white"><a href="/" className="hover:text-primary transition">GoFix Vulcanizare Mobilă Iași</a></h2>
+            <h2 className="font-display text-2xl text-white"><Link to="/" aria-label="Mergi la pagina principală GoFix Vulcanizare Mobilă Iași" className="hover:text-primary transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">GoFix Vulcanizare Mobilă Iași</Link></h2>
             <p className="mt-3 text-sm">GoFix Vulcanizare Mobilă Iași oferă servicii de vulcanizare mobilă, schimb anvelope și echilibrare roți la locație, non-stop.</p>
           </div>
           <div className="lg:col-span-2">
