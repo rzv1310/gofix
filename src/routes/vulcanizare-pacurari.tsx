@@ -204,7 +204,7 @@ function Reviews() {
     },
     {
       initials: "I.L.",
-      text: "Pană pe Aleea Mihail Kogălniceanu la 11 seara... credeam că rămân pe marginea drumului. Dar băieții de la GoFix au venit ca niște salvatori, au reparat cauciucul și am plecat acasă liniștit. Mulțumesc frumos!",
+      text: "Pană pe Aleea Mihail Kogălniceanu la 11 seara... credeam că rămân pe marginea drumului. Dar băieții de la GoFix au venit ca niște supermeni, au reparat cauciucul și am plecat acasă liniștit. Mulțumesc frumos!",
     },
   ];
   return (
