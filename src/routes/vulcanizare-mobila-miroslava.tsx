@@ -121,7 +121,7 @@ function Hero() {
             <span className="h-2 w-2 animate-pulse rounded-full bg-brand-green" /> Non-stop în Miroslava
           </span>
           <h1 className="mt-5 font-display text-4xl leading-[0.95] text-white sm:text-5xl lg:text-7xl">
-            Vulcanizare Mobilă <span className="text-primary">Miroslava</span>
+            GO<span className="text-primary">FIX</span> Vulcanizare Mobilă Miroslava
           </h1>
           <p className="mt-5 max-w-xl text-base text-secondary-foreground/80 sm:text-lg">
             Ai făcut pană în Miroslava, Uricani, Horpaz sau Valea Adâncă? Venim la tine pentru reparații pene, schimb anvelope și echilibrare roți pe loc.
