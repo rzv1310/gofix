@@ -456,14 +456,14 @@ const NAV = [
 
 function CallBtn({ className = "", label = "Sună Non-Stop" }: { className?: string; label?: string }) {
   return (
-    <a href={`tel:${PHONE}`} className={`group inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 font-display text-base font-bold uppercase tracking-wide text-primary-foreground shadow-glow transition hover:brightness-110 active:scale-[0.98] ${className}`}>
+    <a href={`tel:${PHONE}`} className={`group inline-flex items-center justify-center gap-2 rounded-md bg-primary px-5 py-3 font-display text-base font-bold uppercase tracking-wide text-primary-foreground shadow-glow transition hover:brightness-110 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${className}`}>
       <Phone className="h-4 w-4" /> {label}
     </a>
   );
 }
 function WaBtn({ className = "", label = "WhatsApp" }: { className?: string; label?: string }) {
   return (
-    <a href={WA_LINK} target="_blank" rel="noopener" className={`inline-flex items-center justify-center gap-2 rounded-md bg-whatsapp px-5 py-3 font-display text-base font-bold uppercase tracking-wide text-whatsapp-foreground transition hover:brightness-110 active:scale-[0.98] ${className}`}>
+    <a href={WA_LINK} target="_blank" rel="noopener" className={`inline-flex items-center justify-center gap-2 rounded-md bg-whatsapp px-5 py-3 font-display text-base font-bold uppercase tracking-wide text-whatsapp-foreground transition hover:brightness-110 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${className}`}>
       <MessageCircle className="h-4 w-4" /> {label}
     </a>
   );
@@ -475,14 +475,14 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 lg:py-3">
         <div className="flex items-center gap-2">
-          <a href="#" className="flex items-center gap-2">
+          <a href="#" className="flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
             <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
           </a>
-          <button onClick={() => setOpen(v => !v)} aria-label="Meniu" className="rounded-md border border-border p-2.5 lg:hidden">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
+          <button onClick={() => setOpen(v => !v)} aria-label="Meniu" className="rounded-md border border-border p-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent lg:hidden">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
         </div>
         <nav className="hidden items-center gap-6 lg:flex">
           {NAV.map(n => (
-            <a key={n.href} href={n.href} className="text-sm font-semibold text-foreground/80 transition hover:text-primary">{n.label}</a>
+            <a key={n.href} href={n.href} className="rounded-sm text-sm font-semibold text-foreground/80 transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">{n.label}</a>
           ))}
         </nav>
         <div className="hidden items-center gap-2 lg:flex">
@@ -493,15 +493,15 @@ function Header() {
           <WaBtn />
         </div>
         <div className="flex items-center gap-2 lg:hidden">
-          <a href={`tel:${PHONE}`} aria-label="Sună" className="rounded-md bg-primary p-2.5 text-primary-foreground"><Phone className="h-5 w-5" /></a>
-          <a href={WA_LINK} aria-label="WhatsApp" className="rounded-md bg-whatsapp p-2.5 text-whatsapp-foreground"><MessageCircle className="h-5 w-5" /></a>
+          <a href={`tel:${PHONE}`} aria-label="Sună" className="rounded-md bg-primary p-2.5 text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"><Phone className="h-5 w-5" /></a>
+          <a href={WA_LINK} aria-label="WhatsApp" className="rounded-md bg-whatsapp p-2.5 text-whatsapp-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"><MessageCircle className="h-5 w-5" /></a>
         </div>
       </div>
       {open && (
         <nav className="border-t border-border bg-background lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col px-4 py-3">
             {NAV.map(n => (
-              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="border-b border-border py-3 text-sm font-semibold">{n.label}</a>
+              <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="border-b border-border py-3 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">{n.label}</a>
             ))}
           </div>
         </nav>
@@ -588,7 +588,7 @@ function EmergencyBar() {
             </li>
           ))}
         </ol>
-        <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 rounded-md bg-secondary px-5 py-4 font-display text-base font-bold uppercase tracking-wide text-secondary-foreground transition hover:bg-black">
+        <a href={`tel:${PHONE}`} className="inline-flex items-center justify-center gap-2 rounded-md bg-secondary px-5 py-4 font-display text-base font-bold uppercase tracking-wide text-secondary-foreground transition hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
           <Phone className="h-4 w-4" /> Solicită intervenție
         </a>
       </div>
@@ -912,11 +912,11 @@ function AppSection() {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl">Descarcă aplicația Vulcanizare Mobilă</h2>
           <p className="mt-4 text-secondary-foreground/80">Pentru intervenții rapide în Iași și zona metropolitană, descarcă aplicația și solicită ajutor direct din telefon.</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href="#" className="inline-flex items-center gap-3 rounded-md border border-white/20 bg-black px-5 py-3 transition hover:border-primary">
+            <a href="#" className="inline-flex items-center gap-3 rounded-md border border-white/20 bg-black px-5 py-3 transition hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">
               <Apple className="h-7 w-7" />
               <span><span className="block text-[10px] uppercase opacity-70">Descarcă din</span><span className="block font-display text-base">App Store</span></span>
             </a>
-            <a href="#" className="inline-flex items-center gap-3 rounded-md border border-white/20 bg-black px-5 py-3 transition hover:border-primary">
+            <a href="#" className="inline-flex items-center gap-3 rounded-md border border-white/20 bg-black px-5 py-3 transition hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">
               <PlayCircle className="h-7 w-7" />
               <span><span className="block text-[10px] uppercase opacity-70">Disponibil pe</span><span className="block font-display text-base">Google Play</span></span>
             </a>
@@ -1061,7 +1061,7 @@ function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs sm:flex-row">
           <p>© {new Date().getFullYear()} GoFix Vulcanizare Mobilă Iași. Toate drepturile rezervate.</p>
           <div className="flex gap-4">
-            <Link to="/" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Acasă</Link>
+            <Link to="/" aria-current="page" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Acasă</Link>
             <Link to="/" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Politică de confidențialitate</Link>
             <Link to="/" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Termeni</Link>
             <Link to="/" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Cookies</Link>
@@ -1082,10 +1082,10 @@ function MobileStickyBar() {
   }, []);
   return (
     <div className={`fixed bottom-0 left-0 right-0 z-50 grid grid-cols-2 gap-2 border-t border-border bg-background/95 p-2 backdrop-blur transition-transform duration-300 lg:hidden ${show ? "translate-y-0" : "translate-y-full"}`}>
-      <a href={`tel:${PHONE}`} className="flex items-center justify-center gap-2 rounded-md bg-primary py-3 font-display text-sm font-bold uppercase text-primary-foreground shadow-glow">
+      <a href={`tel:${PHONE}`} aria-label="Sună acum la GoFix" className="flex items-center justify-center gap-2 rounded-md bg-primary py-3 font-display text-sm font-bold uppercase text-primary-foreground shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
         <Phone className="h-4 w-4" /> Sună acum
       </a>
-      <a href={WA_LINK} target="_blank" rel="noopener" className="flex items-center justify-center gap-2 rounded-md bg-whatsapp py-3 font-display text-sm font-bold uppercase text-whatsapp-foreground">
+      <a href={WA_LINK} target="_blank" rel="noopener" aria-label="Scrie pe WhatsApp" className="flex items-center justify-center gap-2 rounded-md bg-whatsapp py-3 font-display text-sm font-bold uppercase text-whatsapp-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
         <MessageCircle className="h-4 w-4" /> WhatsApp
       </a>
     </div>
