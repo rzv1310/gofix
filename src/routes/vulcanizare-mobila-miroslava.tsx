@@ -429,7 +429,6 @@ function MiroslavaPage() {
         <ForWhom />
         <Services />
         <WhyUs />
-        <HowItWorks />
         <Zones />
         <FAQ />
         <FinalCTA />
