@@ -1030,7 +1030,7 @@ function Footer() {
 
         {/* Cartiere deservite */}
         <div>
-          <h2 className="font-display text-xl text-white">Cartiere deservite</h2>
+          <h3 className="font-display text-xl text-white">Cartiere deservite</h3>
           <p className="mt-4 text-sm">{cartiere.join(", ")}.</p>
         </div>
 
