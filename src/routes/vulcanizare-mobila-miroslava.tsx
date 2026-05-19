@@ -485,6 +485,10 @@ export const Route = createFileRoute("/vulcanizare-mobila-miroslava")({
       { property: "og:description", content: "Vulcanizare mobilă în Miroslava: reparații pene, schimb anvelope, echilibrare roți și intervenții pentru autoturisme, dube, camioane și tiruri." },
       { property: "og:url", content: "https://gofix.lovable.app/vulcanizare-mobila-miroslava" },
       { property: "og:image", content: "https://gofix.lovable.app/gofix-logo-og.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Vulcanizare Mobilă Miroslava Non-Stop | GoFix Iași" },
+      { name: "twitter:description", content: "Vulcanizare mobilă în Miroslava: reparații pene, schimb anvelope, echilibrare roți și intervenții pentru autoturisme, dube, camioane și tiruri." },
+      { name: "twitter:image", content: "https://gofix.lovable.app/gofix-logo-og.png" },
     ],
     links: [
       { rel: "canonical", href: "https://gofix.lovable.app/vulcanizare-mobila-miroslava" },
