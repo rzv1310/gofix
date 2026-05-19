@@ -9,9 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VulcanizareMobilaMiroslavaRouteImport } from './routes/vulcanizare-mobila-miroslava'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VulcanizareMobilaMiroslavaRoute =
+  VulcanizareMobilaMiroslavaRouteImport.update({
+    id: '/vulcanizare-mobila-miroslava',
+    path: '/vulcanizare-mobila-miroslava',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -26,31 +33,42 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap.xml'
+  fullPaths: '/' | '/sitemap.xml' | '/vulcanizare-mobila-miroslava'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap.xml'
-  id: '__root__' | '/' | '/sitemap.xml'
+  to: '/' | '/sitemap.xml' | '/vulcanizare-mobila-miroslava'
+  id: '__root__' | '/' | '/sitemap.xml' | '/vulcanizare-mobila-miroslava'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  VulcanizareMobilaMiroslavaRoute: typeof VulcanizareMobilaMiroslavaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/vulcanizare-mobila-miroslava': {
+      id: '/vulcanizare-mobila-miroslava'
+      path: '/vulcanizare-mobila-miroslava'
+      fullPath: '/vulcanizare-mobila-miroslava'
+      preLoaderRoute: typeof VulcanizareMobilaMiroslavaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -71,17 +89,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  VulcanizareMobilaMiroslavaRoute: VulcanizareMobilaMiroslavaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
