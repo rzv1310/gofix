@@ -11,7 +11,6 @@ import {
 
 import appCss from "../styles.css?url";
 import { CookieConsent } from "../components/CookieConsent";
-import { initTracking } from "../lib/tracking";
 
 function NotFoundComponent() {
   return (
@@ -119,9 +118,6 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const router = useRouter();
-  useEffect(() => {
-    initTracking();
-  }, []);
 
   useEffect(() => {
     // Try to scroll to a hash target; retry briefly to wait for lazy/late content.
