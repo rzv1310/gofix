@@ -209,8 +209,7 @@ function CookiesPage() {
           </p>
 
           <h2>14. Contact</h2>
-          <p>Pentru întrebări privind utilizarea cookie-urilor pe Site, ne puteți contacta la:</p>
-          <p>Telefon: 0332 630 507</p>
+          <p>Pentru întrebări privind utilizarea cookie-urilor pe Site, ne puteți contacta la email rzv131005@gmail.com</p>
 
           <p className="mt-8 not-prose">
             <Link to="/" className="text-primary underline">← Înapoi la pagina principală</Link>
