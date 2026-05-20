@@ -622,7 +622,7 @@ function SectionHeading({ kicker, title, sub }: { kicker?: string; title: ReactN
 function ForWhom() {
   const items = [
     { i: AlertTriangle, t: "Ai făcut pană în trafic", d: "Venim la tine dacă ești blocat pe marginea drumului, în parcare sau în apropierea orașului." },
-    { i: Car, t: "Roată dezumflată acasă sau la bloc", d: "Nu mai mergi la service. Intervenim direct la adresa ta." },
+    { i: Car, t: "Roată dezumflată la casă sau la bloc", d: "Nu mai mergi la service. Intervenim direct la adresa ta." },
     { i: Wrench, t: "Schimb sezonier de anvelope", d: "Schimbăm anvelopele de vară/iarnă la domiciliu sau la birou." },
     { i: Truck, t: "Flotă, dubă sau vehicul de serviciu", d: "Intervenim pentru mașini de firmă, autoutilitare, dube marfă și camioane." },
   ];
