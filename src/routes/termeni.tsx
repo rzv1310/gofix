@@ -206,7 +206,20 @@ function TermeniPage() {
             Pentru întrebări privind acești Termeni și Condiții sau funcționarea site-ului, ne puteți contacta la:
           </p>
           <p>
-            Telefon: 0332 630 507
+            Telefon: <a href="tel:+40332630507">0332 630 507</a>
+          </p>
+
+          <p>
+            Pentru sesizări privind funcționarea site-ului GoFix, ne puteți contacta la
+            <a href="tel:+40332630507">0332 630 507</a>.
+            Pentru litigii privind serviciile efective de vulcanizare, utilizatorul se va adresa prestatorului care a executat intervenția.
+          </p>
+
+          <p>
+            Consumatorii pot accesa informații privind soluționarea alternativă a litigiilor prin ANPC:
+            <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="noopener">SAL - ANPC</a>
+            sau platforma europeană de soluționare online a litigiilor:
+            <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">SOL - Comisia Europeană</a>.
           </p>
 
           <div className="mt-6 not-prose flex flex-wrap gap-4 text-sm">
