@@ -18,18 +18,21 @@ async function getServerEntry(): Promise<ServerEntry> {
   return serverEntryPromise;
 }
 
-const SECURITY_HEADERS: Record<string, string> = {
-  "X-Frame-Options": "SAMEORIGIN",
+const BASE_SECURITY_HEADERS: Record<string, string> = {
   "Referrer-Policy": "strict-origin-when-cross-origin",
   "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()",
 };
 
-function withSecurityHeaders(response: Response): Response {
+function withSecurityHeaders(response: Response, request?: Request): Response {
   const headers = new Headers(response.headers);
-  for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
-    if (!headers.has(name)) {
-      headers.set(name, value);
-    }
+  for (const [name, value] of Object.entries(BASE_SECURITY_HEADERS)) {
+    if (!headers.has(name)) headers.set(name, value);
+  }
+  // Only set X-Frame-Options on production hosts (not Lovable preview/sandbox iframes)
+  const host = request?.headers.get("host") ?? "";
+  const isPreview = /lovable(project)?\.(app|dev)$/i.test(host) || host.includes("lovableproject.com");
+  if (!isPreview && !headers.has("X-Frame-Options")) {
+    headers.set("X-Frame-Options", "SAMEORIGIN");
   }
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
