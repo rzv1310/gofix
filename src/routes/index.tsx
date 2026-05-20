@@ -59,6 +59,8 @@ export const Route = createFileRoute("/")({
       { rel: "canonical", href: "https://vulcanizaremobila-iasi.ro/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "" },
+      { rel: "preload", as: "image", href: heroVanMobile, media: "(max-width: 1023px)", fetchPriority: "high" } as any,
+      { rel: "preload", as: "image", href: heroVan, media: "(min-width: 1024px)", fetchPriority: "high" } as any,
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" },
     ],
     scripts: [
