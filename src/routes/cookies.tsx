@@ -11,6 +11,8 @@ export const Route = createFileRoute("/cookies")({
           "Politică de cookies GoFix Vulcanizare Mobilă Iași: ce cookie-uri sunt folosite, cum gestionăm consimțământul și cum le puteți dezactiva.",
       },
       { name: "robots", content: "index,follow" },
+      { name: "author", content: "GoFix Vulcanizare Mobilă Iași" },
+      { name: "publisher", content: "GoFix Vulcanizare Mobilă Iași" },
     ],
     links: [
       { rel: "canonical", href: "https://vulcanizaremobila-iasi.ro/cookies" },
