@@ -11,6 +11,8 @@ export const Route = createFileRoute("/gdpr")({
           "Politica de confidențialitate GoFix Vulcanizare Mobilă Iași: ce date colectăm, cum sunt folosite și drepturile utilizatorilor conform GDPR.",
       },
       { name: "robots", content: "index,follow" },
+      { name: "author", content: "GoFix Vulcanizare Mobilă Iași" },
+      { name: "publisher", content: "GoFix Vulcanizare Mobilă Iași" },
     ],
     links: [
       { rel: "canonical", href: "https://vulcanizaremobila-iasi.ro/gdpr" },

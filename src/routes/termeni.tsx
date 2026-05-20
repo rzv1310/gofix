@@ -11,6 +11,8 @@ export const Route = createFileRoute("/termeni")({
           "Termenii și condițiile de utilizare a site-ului GoFix Vulcanizare Mobilă Iași și a serviciului de intermediere a solicitărilor.",
       },
       { name: "robots", content: "index,follow" },
+      { name: "author", content: "GoFix Vulcanizare Mobilă Iași" },
+      { name: "publisher", content: "GoFix Vulcanizare Mobilă Iași" },
     ],
     links: [
       { rel: "canonical", href: "https://vulcanizaremobila-iasi.ro/termeni" },
