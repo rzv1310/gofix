@@ -229,6 +229,13 @@ export function CookieConsent() {
 
               <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
                 <button
+                  type="button"
+                  onClick={rejectAll}
+                  className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent"
+                >
+                  Respinge toate
+                </button>
+                <button
                   type="submit"
                   className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
                 >
@@ -240,13 +247,6 @@ export function CookieConsent() {
                   className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent"
                 >
                   Accept toate
-                </button>
-                <button
-                  type="button"
-                  onClick={rejectAll}
-                  className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent"
-                >
-                  Respinge toate
                 </button>
                 {!showBanner && (
                   <button
