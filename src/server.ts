@@ -72,18 +72,18 @@ function isCatastrophicSsrErrorBody(body: string, responseStatus: number): boole
 
 // h3 swallows in-handler throws into a normal 500 Response with body
 // {"unhandled":true,"message":"HTTPError"} - try/catch alone never fires for those.
-async function normalizeCatastrophicSsrResponse(response: Response, request: Request): Promise<Response> {
-  if (response.status < 500) return withSecurityHeaders(response, request);
+async function normalizeCatastrophicSsrResponse(response: Response): Promise<Response> {
+  if (response.status < 500) return withSecurityHeaders(response);
   const contentType = response.headers.get("content-type") ?? "";
-  if (!contentType.includes("application/json")) return withSecurityHeaders(response, request);
+  if (!contentType.includes("application/json")) return withSecurityHeaders(response);
 
   const body = await response.clone().text();
   if (!isCatastrophicSsrErrorBody(body, response.status)) {
-    return withSecurityHeaders(response, request);
+    return withSecurityHeaders(response);
   }
 
   console.error(consumeLastCapturedError() ?? new Error(`h3 swallowed SSR error: ${body}`));
-  return brandedErrorResponse(request);
+  return brandedErrorResponse();
 }
 
 export default {
@@ -91,10 +91,11 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response, request);
+      return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
       console.error(error);
-      return brandedErrorResponse(request);
+      return brandedErrorResponse();
     }
   },
+};
 };
