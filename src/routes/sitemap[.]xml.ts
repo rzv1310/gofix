@@ -6,12 +6,11 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const lastmod = new Date().toISOString().slice(0, 10);
         const urls = SITE_PAGES.map((e) =>
           [
             `  <url>`,
             `    <loc>${SITE_BASE_URL}${e.path}</loc>`,
-            `    <lastmod>${lastmod}</lastmod>`,
+            `    <lastmod>${e.updatedAt}</lastmod>`,
             `    <changefreq>${e.changefreq}</changefreq>`,
             `    <priority>${e.priority}</priority>`,
             `  </url>`,

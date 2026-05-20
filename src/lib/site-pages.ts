@@ -5,6 +5,7 @@ export interface SitePage {
   keywords: string;
   changefreq: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority: string;
+  updatedAt: string;
 }
 
 export const SITE_BASE_URL = "https://gofix.lovable.app";
@@ -20,6 +21,7 @@ export const SITE_PAGES: SitePage[] = [
       "vulcanizare mobila Iasi, vulcanizare non-stop Iasi, pana cauciuc Iasi, schimb anvelope la domiciliu, echilibrare roti mobila, GoFix Iasi, asistenta rutiera Iasi 24/7",
     changefreq: "weekly",
     priority: "1.0",
+    updatedAt: "2026-05-20",
   },
   {
     path: "/vulcanizare-mobila-miroslava",
@@ -30,6 +32,7 @@ export const SITE_PAGES: SitePage[] = [
       "vulcanizare mobila Miroslava, vulcanizare Uricani, vulcanizare Valea Adanca, vulcanizare Horpaz, schimb anvelope Miroslava, pana cauciuc Miroslava, GoFix Miroslava",
     changefreq: "monthly",
     priority: "0.5",
+    updatedAt: "2026-05-20",
   },
   {
     path: "/vulcanizare-pacurari",
@@ -40,6 +43,7 @@ export const SITE_PAGES: SitePage[] = [
       "vulcanizare Pacurari, vulcanizare mobila Pacurari, pana cauciuc Pacurari, schimb anvelope Pacurari, vulcanizare Canta, vulcanizare Moara de Foc, GoFix Pacurari",
     changefreq: "monthly",
     priority: "0.5",
+    updatedAt: "2026-05-20",
   },
   {
     path: "/gdpr",
@@ -50,6 +54,7 @@ export const SITE_PAGES: SitePage[] = [
       "GDPR GoFix, politica confidentialitate vulcanizare Iasi, prelucrare date personale, drepturi utilizatori",
     changefreq: "yearly",
     priority: "0.3",
+    updatedAt: "2026-05-20",
   },
   {
     path: "/termeni",
@@ -60,6 +65,7 @@ export const SITE_PAGES: SitePage[] = [
       "termeni si conditii GoFix, reguli utilizare site vulcanizare, intermediere solicitari",
     changefreq: "yearly",
     priority: "0.3",
+    updatedAt: "2026-05-20",
   },
   {
     path: "/cookies",
@@ -70,5 +76,6 @@ export const SITE_PAGES: SitePage[] = [
       "politica cookies GoFix, cookie-uri site vulcanizare, gestionare cookies",
     changefreq: "yearly",
     priority: "0.3",
+    updatedAt: "2026-05-20",
   },
 ];
