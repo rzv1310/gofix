@@ -139,9 +139,6 @@ function TermeniPage() {
           <p>
             Orice reclamație privind lucrarea efectivă trebuie adresată prestatorului care a executat intervenția.
           </p>
-          <p>
-            Această limitare a răspunderii se aplică în măsura permisă de legislația aplicabilă.
-          </p>
 
           <h2>8. Disponibilitatea serviciului</h2>
           <p>
@@ -202,13 +199,7 @@ function TermeniPage() {
             Pentru întrebări privind acești Termeni și Condiții sau funcționarea site-ului, ne puteți contacta la:
           </p>
           <p>
-            Telefon: <a href="tel:+40332630507">0332 630 507</a>
-          </p>
-          <p>
-            Website:{" "}
-            <a href="https://gofix-vulcanizaremobila-iasi.ro/">
-              gofix-vulcanizaremobila-iasi.ro
-            </a>
+            Telefon: 0332 630 507
           </p>
 
           <p className="mt-8">
