@@ -5,6 +5,7 @@ export interface SitePage {
   keywords: string;
   changefreq: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority: string;
+  updatedAt: string;
 }
 
 export const SITE_BASE_URL = "https://gofix.lovable.app";
