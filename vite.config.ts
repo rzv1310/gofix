@@ -5,6 +5,7 @@
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import netlify from "@netlify/vite-plugin-tanstack-start";
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import type { Plugin } from "vite";
@@ -58,13 +59,27 @@ function noEmDashPlugin(): Plugin {
   };
 }
 
+// The Netlify plugin only needs to run during `vite build`, where it bundles the
+// server entry into a Netlify function. Running it during `vite dev` would load
+// Netlify's full platform emulation middleware, which can 404 requests behind the
+// Lovable editor preview proxy. Dev uses TanStack Start's native handler instead.
+const isBuild = process.argv.includes("build");
+
 // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-// @cloudflare/vite-plugin builds from this — wrangler.jsonc main alone is insufficient.
+// At build, the Netlify plugin bundles that entry into a Netlify serverless function.
 export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
+  // Disable the preset's Cloudflare build plugin - this app deploys to Netlify.
+  cloudflare: false,
+  // Appended after the preset's internal tanstackStart() plugin (required ordering).
+  plugins: isBuild ? [netlify()] : [],
   vite: {
     plugins: [noEmDashPlugin()],
+    // The preset defaults local dev to port 8080, which collides with Docker
+    // Desktop on this machine (127.0.0.1:8080). Use 5173 instead. The Lovable
+    // sandbox ignores this and forces 8080 - fine, it has no such conflict.
+    server: { port: 5173 },
   },
 });
