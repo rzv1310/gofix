@@ -549,7 +549,7 @@ function Hero() {
             Go<span className="text-primary">Fix</span> Vulcanizare Mobilă Iași
           </h1>
           <p className="mt-5 max-w-xl text-base text-secondary-foreground/80 sm:text-lg">
-            Ai făcut pană în Iași sau împrejurimi? <span className="hero-underline">Intervenim rapid la domiciliu, la birou sau pe marginea drumului</span> pentru reparații pene, schimb anvelope și echilibrare roți pe loc.
+            Ai făcut pană în Iași sau împrejurimi? <span className="hero-underline">Intervenim rapid la domiciliu</span>, la birou sau pe marginea drumului pentru reparații pene, schimb anvelope și echilibrare roți pe loc.
           </p>
           <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {["Disponibil NON STOP", "Deplasare în Iași + zona metropolitană", "Autoturisme, dube, autoutilitare, camioane", "Plată corectă, emitem factură"].map(t => (
