@@ -178,6 +178,12 @@ function GdprPage() {
           <h2>18. Contact</h2>
           <p>Pentru întrebări privind această Politică de Confidențialitate sau modul în care sunt prelucrate datele personale, ne puteți contacta la email: rzv131005@gmail.com</p>
 
+          <div className="mt-6 not-prose flex flex-wrap gap-4 text-sm">
+            <span className="text-muted-foreground">Pagini legale:</span>
+            <Link to="/termeni" className="text-primary underline">Termeni și Condiții</Link>
+            <Link to="/cookies" className="text-primary underline">Politică de Cookies</Link>
+          </div>
+
           <p className="mt-8 not-prose">
             <Link to="/" className="text-primary underline">← Înapoi la pagina principală</Link>
           </p>
