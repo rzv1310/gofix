@@ -155,9 +155,9 @@ function EmergencyBar() {
         <div className="flex items-center gap-3">
           <AlertTriangle className="h-8 w-8 flex-shrink-0 text-primary" />
           <h2 className="font-display text-xl uppercase leading-tight text-primary sm:text-2xl">
-            AI PANĂ ÎN MIROSLAVA ACUM?
+            Ai pană de cauciuc chiar acum?
             <br />
-            NU TE DEPLASA CU ROATA AVARIATĂ.
+            Nu te deplasa cu roata avariată.
           </h2>
         </div>
         <ol className="grid gap-3 sm:grid-cols-3">
