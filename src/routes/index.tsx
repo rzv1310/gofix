@@ -437,7 +437,7 @@ export const Route = createFileRoute("/")({
                 },
                 {
                   "@type": "Question",
-                  name: "Cât costă intervenția?",
+                  name: "Cât costă o vulcanizare mobila?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Prețul depinde de locație, tipul vehiculului și serviciul necesar. Cel mai rapid este să suni sau să trimiți mesaj pe WhatsApp pentru estimare.",
