@@ -148,10 +148,10 @@ function CookiesPage() {
           <p>Cookie-urile pot fi:</p>
           <ul>
             <li>
-              <strong>cookie-uri de sesiune</strong> – sunt șterse automat atunci când închideți browserul;
+              <strong>cookie-uri de sesiune</strong> - sunt șterse automat atunci când închideți browserul;
             </li>
             <li>
-              <strong>cookie-uri persistente</strong> – rămân stocate pe dispozitiv pentru o perioadă determinată sau până când sunt șterse manual.
+              <strong>cookie-uri persistente</strong> - rămân stocate pe dispozitiv pentru o perioadă determinată sau până când sunt șterse manual.
             </li>
           </ul>
           <p>
