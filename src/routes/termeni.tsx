@@ -209,6 +209,12 @@ function TermeniPage() {
             Telefon: 0332 630 507
           </p>
 
+          <div className="mt-6 not-prose flex flex-wrap gap-4 text-sm">
+            <span className="text-muted-foreground">Pagini legale:</span>
+            <Link to="/gdpr" className="text-primary underline">GDPR</Link>
+            <Link to="/cookies" className="text-primary underline">Politică de Cookies</Link>
+          </div>
+
           <p className="mt-8">
             <Link to="/" className="text-primary underline">← Înapoi la pagina principală</Link>
           </p>

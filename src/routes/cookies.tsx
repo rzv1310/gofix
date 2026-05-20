@@ -211,6 +211,12 @@ function CookiesPage() {
           <h2>14. Contact</h2>
           <p>Pentru întrebări privind utilizarea cookie-urilor pe Site, ne puteți contacta la email rzv131005@gmail.com</p>
 
+          <div className="mt-6 not-prose flex flex-wrap gap-4 text-sm">
+            <span className="text-muted-foreground">Pagini legale:</span>
+            <Link to="/gdpr" className="text-primary underline">GDPR</Link>
+            <Link to="/termeni" className="text-primary underline">Termeni și Condiții</Link>
+          </div>
+
           <p className="mt-8 not-prose">
             <Link to="/" className="text-primary underline">← Înapoi la pagina principală</Link>
           </p>
