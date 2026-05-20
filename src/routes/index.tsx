@@ -543,8 +543,8 @@ function Hero() {
     <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
       <div className="absolute inset-0 opacity-60">
         <picture>
-          <source media="(min-width: 1024px)" srcSet={heroVan} />
-          <img src={heroVanMobile} alt="Vulcanizare Non Stop Iasi" title="Vulcanizare Non Stop" width={1920} height={1080} fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
+          <source media="(min-width: 1024px)" sizes="100vw" srcSet={`${heroVanD640} 640w, ${heroVanD960} 960w, ${heroVanD1280} 1280w, ${heroVan} 1672w`} />
+          <img src={heroVanMobile} srcSet={`${heroVanM640} 640w, ${heroVanMobile} 941w`} sizes="100vw" alt="Vulcanizare Non Stop Iasi" title="Vulcanizare Non Stop" width={1920} height={1080} fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
         </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/70 to-secondary/40" />
       </div>
