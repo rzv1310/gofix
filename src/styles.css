@@ -146,4 +146,11 @@
   .text-7xl  { font-size: 73px; }
   body { font-size: 17px; }
   h2, h2 * { font-size: revert; }
+
+  /* Per-request fine tuning (mobile only) */
+  .m-faq-q     { font-size: 19px; } /* FAQ questions: base 17 +2 */
+  .m-price-call{ font-size: 15px; } /* "Se comunică telefonic": sm 16 -1 */
+  .m-biz-seg   { font-size: 17px; } /* business segment chips: sm 16 +1 */
+  .m-cta-soft  { font-size: 15px; } /* "Solicită intervenție →": xs 13 +2 */
+  .m-flow-step { font-size: 17px; } /* Suni/Ne trimiți/Venim steps: sm 16 +1 */
 }
