@@ -27,7 +27,7 @@ const FAQS: Array<[string, string]> = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vulcanizare Mobilă Iași Non-Stop 24/7 - GoFix la tine în 30 min" },
+      { title: "Vulcanizare Mobilă Iași Non Stop 24/7 - GoFix vine în 30 min" },
       { name: "description", content: "Vulcanizare mobilă Iași non-stop. Reparații pene, schimb anvelope și echilibrare roți la domiciliu, birou sau pe marginea drumului. Sună 0332 630 507." },
       { name: "keywords", content: "vulcanizare mobila Iasi, vulcanizare non-stop Iasi, pana cauciuc Iasi, schimb anvelope la domiciliu, echilibrare roti mobila, GoFix Iasi, asistenta rutiera Iasi 24/7" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },

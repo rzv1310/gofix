@@ -510,8 +510,8 @@ function PacurariPage() {
 export const Route = createFileRoute("/vulcanizare-pacurari")({
   head: () => ({
     meta: [
-      { title: "Vulcanizare Păcurari Iași | GoFix Vulcanizare Mobilă Non-Stop" },
-      { name: "description", content: "Ai făcut pană în Păcurari, Iași? GoFix vine la tine pentru vulcanizare mobilă, reparații pene, schimb anvelope și echilibrare roți pe loc. Sună pentru intervenție rapidă." },
+      { title: "Vulcanizare Păcurari Iași | GoFix Vulcanizare Mobilă NonStop" },
+      { name: "description", content: "Ai făcut pană în Păcurari? GoFix vine la tine pentru vulcanizare mobilă, reparații pene, schimb anvelope și echilibrare roți pe loc. Sună acum!" },
       { name: "keywords", content: "vulcanizare Pacurari, vulcanizare mobila Pacurari, pana cauciuc Pacurari, schimb anvelope Pacurari, vulcanizare Canta, vulcanizare Moara de Foc, GoFix Pacurari" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "googlebot", content: "index, follow" },
