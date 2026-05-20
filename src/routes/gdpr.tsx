@@ -12,6 +12,9 @@ export const Route = createFileRoute("/gdpr")({
       },
       { name: "robots", content: "index,follow" },
     ],
+    links: [
+      { rel: "canonical", href: "https://vulcanizaremobila-iasi.ro/gdpr" },
+    ],
   }),
 });
 
