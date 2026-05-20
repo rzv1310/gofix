@@ -498,7 +498,7 @@ function Header() {
       <div className="mx-auto grid max-w-7xl grid-cols-3 items-center gap-4 px-4 py-2.5 lg:flex lg:justify-between lg:py-3">
         <div className="flex items-center justify-start">
           <Link to="/" aria-label="Mergi la pagina principală GoFix" aria-current="page" className="flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
-            <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" title="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
+            <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" title="GoFix Vulcanizare Mobilă Iași" width={1122} height={1402} className="h-12 w-auto lg:h-14" />
           </Link>
         </div>
         <div className="flex items-center justify-center lg:hidden">
