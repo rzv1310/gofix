@@ -38,7 +38,7 @@ function TermeniPage() {
           <h2>1. Introducere</h2>
           <p>
             Bine ați venit pe site-ul GoFix Vulcanizare Mobilă Iași, disponibil la adresa{" "}
-            <strong>gofix-vulcanizaremobila-iasi.ro</strong>.
+            <strong>vulcanizaremobila-iasi.ro</strong>.
           </p>
           <p>
             Acești Termeni și Condiții stabilesc regulile de utilizare a site-ului și modul în care funcționează serviciul de intermediere a solicitărilor pentru vulcanizare mobilă în Iași și zona metropolitană.

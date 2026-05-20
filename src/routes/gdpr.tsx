@@ -40,7 +40,7 @@ function GdprPage() {
           <h2>1. Introducere</h2>
           <p>
             Această Politică de Confidențialitate explică modul în care sunt colectate, utilizate, stocate și protejate datele personale ale utilizatorilor care accesează site-ul{" "}
-            <strong>gofix-vulcanizaremobila-iasi.ro</strong>, denumit în continuare „Site-ul”.
+            <strong>vulcanizaremobila-iasi.ro</strong>, denumit în continuare „Site-ul”.
           </p>
           <p>
             Site-ul GoFix Vulcanizare Mobilă Iași funcționează ca platformă de intermediere / generare solicitări pentru servicii de vulcanizare mobilă în Iași și zona metropolitană. Prin intermediul Site-ului, utilizatorii pot transmite solicitări care pot fi redirecționate către vulcanizatori independenți.
