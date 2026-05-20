@@ -38,11 +38,11 @@ function withSecurityHeaders(response: Response): Response {
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
 
-function brandedErrorResponse(request?: Request): Response {
+function brandedErrorResponse(): Response {
   return withSecurityHeaders(new Response(renderErrorPage(), {
     status: 500,
     headers: { "content-type": "text/html; charset=utf-8" },
-  }), request);
+  }));
 }
 
 function isCatastrophicSsrErrorBody(body: string, responseStatus: number): boolean {
