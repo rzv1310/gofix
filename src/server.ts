@@ -24,7 +24,12 @@ const BASE_SECURITY_HEADERS: Record<string, string> = {
 };
 
 function shouldDisableXFrameOptions(): boolean {
-  return process.env.DISABLE_X_FRAME_OPTIONS === "1" || process.env.DISABLE_X_FRAME_OPTIONS === "true";
+  try {
+    const v = typeof process !== "undefined" ? process.env?.DISABLE_X_FRAME_OPTIONS : undefined;
+    return v === "1" || v === "true";
+  } catch {
+    return false;
+  }
 }
 
 function withSecurityHeaders(response: Response): Response {
