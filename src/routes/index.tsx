@@ -775,7 +775,7 @@ function Vehicles() {
   return (
     <section className="relative overflow-hidden bg-secondary py-20 text-secondary-foreground">
       <div className="relative mx-auto max-w-7xl px-4">
-        <SectionHeading kicker="Tipuri de vehicule" title="Servicii pentru autoturisme, dube, camioane și vehicule de serviciu" />
+        <SectionHeading kicker="Tipuri de vehicule" title="Servicii pentru autoturisme, dube, camioane, microbuze și vehicule de serviciu" />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map(({ i: I, t, d }) => (
             <article key={t} className="rounded-xl border border-white/10 bg-black/60 p-6 backdrop-blur transition hover:border-primary">
