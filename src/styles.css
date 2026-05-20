@@ -131,6 +131,28 @@
 }
 .animate-pulse-ring { animation: pulse-ring 2s infinite; }
 
+@keyframes underline-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.hero-underline {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+.hero-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underline-grow 0.8s ease-out 1s forwards;
+}
+
 /* Mobile: bump all text sizes by 1px, except h2 */
 @media (max-width: 767px) {
   .text-xs   { font-size: 13px; }
