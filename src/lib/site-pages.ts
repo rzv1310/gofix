@@ -29,7 +29,7 @@ export const SITE_PAGES: SitePage[] = [
     keywords:
       "vulcanizare mobila Miroslava, vulcanizare Uricani, vulcanizare Valea Adanca, vulcanizare Horpaz, schimb anvelope Miroslava, pana cauciuc Miroslava, GoFix Miroslava",
     changefreq: "monthly",
-    priority: "0.8",
+    priority: "0.5",
   },
   {
     path: "/vulcanizare-pacurari",
@@ -39,6 +39,36 @@ export const SITE_PAGES: SitePage[] = [
     keywords:
       "vulcanizare Pacurari, vulcanizare mobila Pacurari, pana cauciuc Pacurari, schimb anvelope Pacurari, vulcanizare Canta, vulcanizare Moara de Foc, GoFix Pacurari",
     changefreq: "monthly",
-    priority: "0.8",
+    priority: "0.5",
+  },
+  {
+    path: "/gdpr",
+    title: "Politica de Confidențialitate GDPR | GoFix Iași",
+    description:
+      "Politica de confidențialitate GoFix Vulcanizare Mobilă Iași. Cum colectăm, folosim și protejăm datele personale conform GDPR.",
+    keywords:
+      "GDPR GoFix, politica confidentialitate vulcanizare Iasi, prelucrare date personale, drepturi utilizatori",
+    changefreq: "yearly",
+    priority: "0.3",
+  },
+  {
+    path: "/termeni",
+    title: "Termeni și Condiții | GoFix Vulcanizare Mobilă Iași",
+    description:
+      "Termenii și condițiile de utilizare a site-ului GoFix Vulcanizare Mobilă Iași și a serviciului de intermediere a solicitărilor.",
+    keywords:
+      "termeni si conditii GoFix, reguli utilizare site vulcanizare, intermediere solicitari",
+    changefreq: "yearly",
+    priority: "0.3",
+  },
+  {
+    path: "/cookies",
+    title: "Politică de Cookies | GoFix Vulcanizare Mobilă Iași",
+    description:
+      "Politica de cookies a site-ului GoFix Vulcanizare Mobilă Iași. Ce cookie-uri folosim și cum le gestionăm.",
+    keywords:
+      "politica cookies GoFix, cookie-uri site vulcanizare, gestionare cookies",
+    changefreq: "yearly",
+    priority: "0.3",
   },
 ];
