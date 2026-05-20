@@ -8,7 +8,7 @@ export interface SitePage {
   updatedAt: string;
 }
 
-export const SITE_BASE_URL = "https://gofix.lovable.app";
+export const SITE_BASE_URL = "https://vulcanizaremobila-iasi.ro";
 export const SITE_NAME = "GoFix Vulcanizare Mobilă Iași";
 
 export const SITE_PAGES: SitePage[] = [

@@ -41,7 +41,7 @@ function CookiesPage() {
           <h2>1. Introducere</h2>
           <p>
             Această Politică de Cookies explică modul în care site-ul{" "}
-            <strong>gofix-vulcanizaremobila-iasi.ro</strong>, denumit în continuă „Site-ul”, utilizează cookie-uri și tehnologii similare.
+            <strong>vulcanizaremobila-iasi.ro</strong>, denumit în continuă „Site-ul”, utilizează cookie-uri și tehnologii similare.
           </p>
           <p>
             Site-ul GoFix Vulcanizare Mobilă Iași funcționează ca platformă de intermediare / generare solicitări pentru servicii de vulcanizare mobilă în Iași și zona metropolitană.
