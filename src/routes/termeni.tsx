@@ -25,6 +25,13 @@ function TermeniPage() {
           [&_p]:my-3 [&_p]:leading-relaxed
           [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:my-3 [&_li]:my-1
           [&_a]:text-primary [&_a]:underline hover:[&_a]:opacity-80">
+          <nav aria-label="Breadcrumb" className="text-sm mb-4 not-prose">
+            <ol className="flex items-center gap-2 text-muted-foreground">
+              <li><Link to="/" className="hover:text-primary">Acasă</Link></li>
+              <li aria-hidden="true">/</li>
+              <li className="text-foreground" aria-current="page">Termeni și Condiții</li>
+            </ol>
+          </nav>
           <h1>Termeni și Condiții</h1>
           <p>Ultima actualizare: 20.05.2026</p>
 
