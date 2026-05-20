@@ -833,21 +833,21 @@ function Pricing() {
     <section id="tarife" className="bg-muted py-20">
       <div className="mx-auto max-w-5xl px-4">
         <SectionHeading kicker="Tarife" title="Prețuri corecte, comunicate înainte de intervenție" sub="Costul poate varia în funcție de locație, tipul vehiculului, dimensiunea roții și serviciul necesar. Înainte de deplasare, îți comunicăm estimarea clară, fără surprize." />
-        <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-card shadow-card">
-          <table className="w-full">
+        <div className="mt-10 overflow-x-auto rounded-2xl border border-border bg-card shadow-card">
+          <table className="w-full min-w-[500px]">
             <thead className="bg-secondary text-secondary-foreground">
               <tr>
-                <th className="px-5 py-4 text-left font-display text-sm uppercase">Serviciu</th>
-                <th className="px-5 py-4 text-left font-display text-sm uppercase">Detalii</th>
-                <th className="px-5 py-4 text-left font-display text-sm uppercase">Preț</th>
+                <th className="px-5 py-4 text-left font-display text-sm uppercase whitespace-nowrap">Serviciu</th>
+                <th className="px-5 py-4 text-left font-display text-sm uppercase whitespace-nowrap">Detalii</th>
+                <th className="px-5 py-4 text-left font-display text-sm uppercase whitespace-nowrap">Preț</th>
               </tr>
             </thead>
             <tbody>
               {rows.map(([s, d], i) => (
                 <tr key={s} className={i % 2 ? "bg-muted/40" : ""}>
-                  <td className="px-5 py-4 font-semibold">{s}</td>
-                  <td className="px-5 py-4 text-sm text-muted-foreground">{d}</td>
-                  <td className="px-5 py-4 text-sm font-semibold text-primary m-price-call">Se comunică telefonic</td>
+                  <td className="px-5 py-4 font-semibold whitespace-nowrap">{s}</td>
+                  <td className="px-5 py-4 text-sm text-muted-foreground whitespace-nowrap">{d}</td>
+                  <td className="px-5 py-4 text-sm font-semibold text-primary m-price-call whitespace-nowrap">Se comunică telefonic</td>
                 </tr>
               ))}
             </tbody>
