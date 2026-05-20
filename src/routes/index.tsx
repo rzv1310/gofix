@@ -429,7 +429,7 @@ export const Route = createFileRoute("/")({
                 },
                 {
                   "@type": "Question",
-                  name: "Lucrați și pentru dube sau camioane?",
+                  name: "Interveniți și pentru camioane?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Da, oferim servicii pentru autoturisme, autoutilitare, dube, camioane și tiruri.",
