@@ -23,25 +23,26 @@ const BASE_SECURITY_HEADERS: Record<string, string> = {
   "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()",
 };
 
-function withSecurityHeaders(response: Response, request?: Request): Response {
+function shouldDisableXFrameOptions(): boolean {
+  return process.env.DISABLE_X_FRAME_OPTIONS === "1" || process.env.DISABLE_X_FRAME_OPTIONS === "true";
+}
+
+function withSecurityHeaders(response: Response): Response {
   const headers = new Headers(response.headers);
   for (const [name, value] of Object.entries(BASE_SECURITY_HEADERS)) {
     if (!headers.has(name)) headers.set(name, value);
   }
-  // Only set X-Frame-Options on production hosts (not Lovable preview/sandbox iframes)
-  const host = request?.headers.get("host") ?? "";
-  const isPreview = /lovable(project)?\.(app|dev)$/i.test(host) || host.includes("lovableproject.com");
-  if (!isPreview && !headers.has("X-Frame-Options")) {
+  if (!shouldDisableXFrameOptions() && !headers.has("X-Frame-Options")) {
     headers.set("X-Frame-Options", "SAMEORIGIN");
   }
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
 
-function brandedErrorResponse(request?: Request): Response {
+function brandedErrorResponse(): Response {
   return withSecurityHeaders(new Response(renderErrorPage(), {
     status: 500,
     headers: { "content-type": "text/html; charset=utf-8" },
-  }), request);
+  }));
 }
 
 function isCatastrophicSsrErrorBody(body: string, responseStatus: number): boolean {
@@ -71,18 +72,18 @@ function isCatastrophicSsrErrorBody(body: string, responseStatus: number): boole
 
 // h3 swallows in-handler throws into a normal 500 Response with body
 // {"unhandled":true,"message":"HTTPError"} - try/catch alone never fires for those.
-async function normalizeCatastrophicSsrResponse(response: Response, request: Request): Promise<Response> {
-  if (response.status < 500) return withSecurityHeaders(response, request);
+async function normalizeCatastrophicSsrResponse(response: Response): Promise<Response> {
+  if (response.status < 500) return withSecurityHeaders(response);
   const contentType = response.headers.get("content-type") ?? "";
-  if (!contentType.includes("application/json")) return withSecurityHeaders(response, request);
+  if (!contentType.includes("application/json")) return withSecurityHeaders(response);
 
   const body = await response.clone().text();
   if (!isCatastrophicSsrErrorBody(body, response.status)) {
-    return withSecurityHeaders(response, request);
+    return withSecurityHeaders(response);
   }
 
   console.error(consumeLastCapturedError() ?? new Error(`h3 swallowed SSR error: ${body}`));
-  return brandedErrorResponse(request);
+  return brandedErrorResponse();
 }
 
 export default {
@@ -90,10 +91,10 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response, request);
+      return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
       console.error(error);
-      return brandedErrorResponse(request);
+      return brandedErrorResponse();
     }
   },
 };
