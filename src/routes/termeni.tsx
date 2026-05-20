@@ -12,6 +12,9 @@ export const Route = createFileRoute("/termeni")({
       },
       { name: "robots", content: "index,follow" },
     ],
+    links: [
+      { rel: "canonical", href: "https://vulcanizaremobila-iasi.ro/termeni" },
+    ],
   }),
 });
 
