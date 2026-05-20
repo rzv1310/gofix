@@ -631,10 +631,9 @@ function ForWhom() {
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeading kicker="Pentru cine" title="Vulcanizare mobilă pentru orice situație în Iași" />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map(({ i: I, t, d }) => (
+          {items.map(({ t, d }) => (
             <article key={t} className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary hover:shadow-card">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary"><I className="h-6 w-6" /></div>
-              <h3 className="font-display text-lg">{t}</h3>
+              <h3 className="text-lg text-primary font-normal">{t}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
             </article>
           ))}
