@@ -122,12 +122,12 @@ export function CookieConsent() {
               Poți accepta toate cookie-urile, le poți respinge pe cele neesențiale sau îți poți
               personaliza preferințele.
             </p>
-            <div className="mt-3 flex flex-wrap gap-4 text-sm">
+            <div className="mt-3 flex flex-row gap-4 text-sm">
               <Link to="/gdpr" className="text-primary underline hover:opacity-80">
-                Politica de Confidențialitate
+                GDPR
               </Link>
               <Link to="/cookies" className="text-primary underline hover:opacity-80">
-                Politica de Cookies
+                Politica Cookies
               </Link>
             </div>
             <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
@@ -148,7 +148,7 @@ export function CookieConsent() {
               <button
                 type="button"
                 onClick={acceptAll}
-                className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
+                className="mt-[15px] inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 sm:mt-0"
               >
                 Accept
               </button>
