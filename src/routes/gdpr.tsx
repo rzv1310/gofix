@@ -4,7 +4,7 @@ export const Route = createFileRoute("/gdpr")({
   component: GdprPage,
   head: () => ({
     meta: [
-      { title: "Politică de Confidențialitate (GDPR) | GoFix Vulcanizare Mobilă Iași" },
+      { title: "GDPR | GoFix Vulcanizare Mobilă Iași" },
       {
         name: "description",
         content:
