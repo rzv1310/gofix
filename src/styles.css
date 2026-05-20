@@ -153,4 +153,12 @@
   .m-biz-seg   { font-size: 17px; } /* business segment chips: sm 16 +1 */
   .m-cta-soft  { font-size: 15px; } /* "Solicită intervenție →": xs 13 +2 */
   .m-flow-step { font-size: 17px; } /* Suni/Ne trimiți/Venim steps: sm 16 +1 */
+
+  /* Hero text bump (+10px on mobile) */
+  .hero-section .text-xs  { font-size: 23px; }
+  .hero-section .text-sm  { font-size: 26px; }
+  .hero-section .text-base{ font-size: 27px; }
+  .hero-section .text-4xl { font-size: 47px; }
+  .hero-section .text-5xl { font-size: 59px; }
+  .hero-section .text-7xl { font-size: 83px; }
 }
