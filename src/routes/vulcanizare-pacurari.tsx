@@ -5,10 +5,10 @@ import {
   ShieldCheck, Zap, CheckCircle2, ChevronDown, Menu, X, Navigation,
   Settings, AlertTriangle, Star, MoreVertical, ThumbsUp,
 } from "lucide-react";
-import logo from "@/assets/gofix-logo.png";
-import heroVan from "@/assets/hero-van-desktop.png";
-import heroVanMobile from "@/assets/hero-van-mobile.png";
-import whyUs from "@/assets/why-us.jpg";
+import logo from "@/assets/gofix-logo.webp";
+import heroVan from "@/assets/hero-van-desktop.webp";
+import heroVanMobile from "@/assets/hero-van-mobile.webp";
+import whyUs from "@/assets/why-us.webp";
 
 
 const FAQS: Array<[string, string]> = [

@@ -6,12 +6,12 @@ import {
   Settings, AlertTriangle, Star, Building2, GraduationCap, Hospital,
   Download, Apple, PlayCircle, MoreVertical, ThumbsUp, Bus,
 } from "lucide-react";
-import logo from "@/assets/gofix-logo.png";
-import heroVan from "@/assets/hero-van-desktop.png";
-import heroVanMobile from "@/assets/hero-van-mobile.png";
-import appVulcanizareMobila from "@/assets/app-vulcanizare-mobila.jpeg";
-import serviceTire from "@/assets/service-tire.jpg";
-import whyUs from "@/assets/why-us.jpg";
+import logo from "@/assets/gofix-logo.webp";
+import heroVan from "@/assets/hero-van-desktop.webp";
+import heroVanMobile from "@/assets/hero-van-mobile.webp";
+import appVulcanizareMobila from "@/assets/app-vulcanizare-mobila.webp";
+import serviceTire from "@/assets/service-tire.webp";
+import whyUs from "@/assets/why-us.webp";
 
 
 const FAQS: Array<[string, string]> = [
