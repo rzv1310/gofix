@@ -104,10 +104,10 @@ function GdprPage() {
           <h2>6. Temeiul legal al prelucrării</h2>
           <p>Prelucrăm datele personale în baza unuia sau mai multor temeiuri legale, după caz:</p>
           <ul>
-            <li><strong>Consimțământul utilizatorului</strong> – atunci când transmiteți voluntar date prin formular, WhatsApp sau alte canale de comunicare.</li>
-            <li><strong>Interesul legitim</strong> – pentru gestionarea solicitărilor, redirecționarea acestora către prestatori, prevenirea abuzurilor și îmbunătățirea Site-ului.</li>
-            <li><strong>Executarea unor demersuri la cererea utilizatorului</strong> – atunci când solicitați să fiți contactat sau să vi se faciliteze o intervenție.</li>
-            <li><strong>Obligații legale</strong> – atunci când păstrarea sau transmiterea unor date este necesară conform legislației aplicabile.</li>
+            <li><strong>Consimțământul utilizatorului</strong> - atunci când transmiteți voluntar date prin formular, WhatsApp sau alte canale de comunicare.</li>
+            <li><strong>Interesul legitim</strong> - pentru gestionarea solicitărilor, redirecționarea acestora către prestatori, prevenirea abuzurilor și îmbunătățirea Site-ului.</li>
+            <li><strong>Executarea unor demersuri la cererea utilizatorului</strong> - atunci când solicitați să fiți contactat sau să vi se faciliteze o intervenție.</li>
+            <li><strong>Obligații legale</strong> - atunci când păstrarea sau transmiterea unor date este necesară conform legislației aplicabile.</li>
           </ul>
 
           <h2>7. Transmiterea datelor către vulcanizatori independenți</h2>
@@ -135,9 +135,9 @@ function GdprPage() {
           <p>Site-ul poate utiliza cookie-uri și tehnologii similare pentru funcționarea corectă a paginilor, analizarea traficului, îmbunătățirea experienței utilizatorilor și măsurarea eficienței campaniilor de promovare.</p>
           <p>Cookie-urile pot fi:</p>
           <ul>
-            <li><strong>necesare</strong> – pentru funcționarea tehnică a Site-ului;</li>
-            <li><strong>analitice</strong> – pentru măsurarea traficului și a comportamentului utilizatorilor;</li>
-            <li><strong>marketing</strong> – pentru măsurarea și optimizarea campaniilor publicitare.</li>
+            <li><strong>necesare</strong> - pentru funcționarea tehnică a Site-ului;</li>
+            <li><strong>analitice</strong> - pentru măsurarea traficului și a comportamentului utilizatorilor;</li>
+            <li><strong>marketing</strong> - pentru măsurarea și optimizarea campaniilor publicitare.</li>
           </ul>
           <p>Dacă Site-ul utilizează cookie-uri non-esențiale, acestea ar trebui activate doar după acordul utilizatorului, printr-un banner de consimțământ.</p>
           <p>Detalii suplimentare pot fi prezentate într-o Politică de Cookie-uri separată.</p>
