@@ -134,7 +134,7 @@
 /* Mobile: bump all text sizes by 1px, except h2 */
 @media (max-width: 767px) {
   .text-xs   { font-size: 13px; }
-  .text-sm   { font-size: 15px; }
+  .text-sm   { font-size: 16px; }
   .text-base { font-size: 17px; }
   .text-lg   { font-size: 19px; }
   .text-xl   { font-size: 21px; }
