@@ -938,11 +938,11 @@ function AppSection() {
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl">Descarcă aplicația Vulcanizare Mobilă</h2>
           <p className="mt-4 text-secondary-foreground/80">Pentru intervenții rapide în Iași și zona metropolitană, descarcă aplicația și solicită ajutor direct din telefon.</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href="#" className="inline-flex items-center gap-3 rounded-md border border-white/20 bg-black px-5 py-3 transition hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">
+            <a href="https://apps.apple.com/app/vulcanizare-mobila/id6744375087" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-md border border-white/20 bg-black px-5 py-3 transition hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">
               <Apple className="h-7 w-7" />
               <span><span className="block text-[10px] uppercase opacity-70">Descarcă din</span><span className="block font-display text-base">App Store</span></span>
             </a>
-            <a href="#" className="inline-flex items-center gap-3 rounded-md border border-white/20 bg-black px-5 py-3 transition hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">
+            <a href="https://play.google.com/store/apps/details?id=com.vulcanizaremobila.client" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-md border border-white/20 bg-black px-5 py-3 transition hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">
               <PlayCircle className="h-7 w-7" />
               <span><span className="block text-[10px] uppercase opacity-70">Disponibil pe</span><span className="block font-display text-base">Google Play</span></span>
             </a>
