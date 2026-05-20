@@ -660,8 +660,10 @@ function Services() {
           {items.map(({ i: I, t, d }) => (
             <article key={t} className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/40 p-6 transition hover:border-primary">
               <div className="absolute right-0 top-0 h-24 w-24 -translate-y-12 translate-x-12 rounded-full bg-primary/20 blur-2xl transition group-hover:bg-primary/40" />
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground"><I className="h-6 w-6" /></div>
-              <h3 className="font-display text-xl">{t}</h3>
+              <div className="flex items-center gap-3 sm:block">
+                <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground sm:mb-4 sm:h-12 sm:w-12"><I className="h-5 w-5 sm:h-6 sm:w-6" /></div>
+                <h3 className="font-display text-base sm:text-xl">{t}</h3>
+              </div>
               <p className="mt-2 text-sm leading-relaxed text-secondary-foreground/70">{d}</p>
               <a href={WA_LINK} target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-primary hover:underline m-cta-soft">
                 Solicită intervenție →
