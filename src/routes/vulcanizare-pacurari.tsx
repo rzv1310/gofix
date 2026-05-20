@@ -168,7 +168,7 @@ function EmergencyBar() {
           {["Suni sau scrii pe WhatsApp", "Ne trimiți locația exactă", "Venim și rezolvăm pe loc"].map((t, i) => (
             <li key={t} className="flex items-start gap-3 rounded-md bg-white p-3">
               <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary font-display text-sm font-bold text-white">{i + 1}</span>
-              <span className="text-sm font-semibold text-foreground">{t}</span>
+              <span className="text-sm font-semibold text-foreground m-flow-step">{t}</span>
             </li>
           ))}
         </ol>
@@ -280,7 +280,7 @@ function Services() {
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground"><I className="h-6 w-6" /></div>
               <h3 className="font-display text-xl">{t}</h3>
               <p className="mt-2 text-sm leading-relaxed text-secondary-foreground/70">{d}</p>
-              <a href={WA_LINK} target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">
+              <a href={WA_LINK} target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm m-cta-soft">
                 Solicită intervenție →
               </a>
             </article>

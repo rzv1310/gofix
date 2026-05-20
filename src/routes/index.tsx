@@ -597,7 +597,7 @@ function EmergencyBar() {
           ].map((t, i) => (
             <li key={t} className="flex items-start gap-3 rounded-md bg-white p-3">
               <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-primary font-display text-sm font-bold text-white">{i + 1}</span>
-              <span className="text-sm font-semibold text-foreground">{t}</span>
+              <span className="text-sm font-semibold text-foreground m-flow-step">{t}</span>
             </li>
           ))}
         </ol>
@@ -664,7 +664,7 @@ function Services() {
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground"><I className="h-6 w-6" /></div>
               <h3 className="font-display text-xl">{t}</h3>
               <p className="mt-2 text-sm leading-relaxed text-secondary-foreground/70">{d}</p>
-              <a href={WA_LINK} target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-primary hover:underline">
+              <a href={WA_LINK} target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-primary hover:underline m-cta-soft">
                 Solicită intervenție →
               </a>
             </article>
@@ -806,7 +806,7 @@ function BusinessSegment() {
           {items.map(({ i: I, t, show }) => (
             <div key={t} className={`${show} flex items-center gap-3 rounded-xl border border-border bg-card p-3 sm:p-4 transition hover:border-primary hover:shadow-card`}>
               <I className="h-6 w-6 sm:h-7 sm:w-7 text-primary shrink-0" />
-              <p className="font-display text-sm sm:text-base">{t}</p>
+              <p className="font-display text-sm sm:text-base m-biz-seg">{t}</p>
             </div>
           ))}
         </div>
@@ -842,7 +842,7 @@ function Pricing() {
                 <tr key={s} className={i % 2 ? "bg-muted/40" : ""}>
                   <td className="px-5 py-4 font-semibold">{s}</td>
                   <td className="px-5 py-4 text-sm text-muted-foreground">{d}</td>
-                  <td className="px-5 py-4 text-sm font-semibold text-primary">Se comunică telefonic</td>
+                  <td className="px-5 py-4 text-sm font-semibold text-primary m-price-call">Se comunică telefonic</td>
                 </tr>
               ))}
             </tbody>
@@ -952,7 +952,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   return (
     <div className="border-b border-border">
       <button onClick={() => setOpen(v => !v)} className="flex w-full items-center justify-between gap-4 py-5 text-left">
-        <span className="font-display text-base sm:text-lg">{q}</span>
+        <span className="m-faq-q font-display text-base sm:text-lg">{q}</span>
         <ChevronDown className={`h-5 w-5 flex-shrink-0 text-primary transition ${open ? "rotate-180" : ""}`} />
       </button>
       {open && <p className="pb-5 text-sm text-muted-foreground sm:text-base">{a}</p>}
