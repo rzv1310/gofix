@@ -143,7 +143,7 @@ export function CookieConsent() {
                 onClick={() => setShowSettings(true)}
                 className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent"
               >
-                Setării
+                Setări
               </button>
               <button
                 type="button"
@@ -237,14 +237,14 @@ export function CookieConsent() {
                 </button>
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
+                  className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent"
                 >
                   Salvează preferințele
                 </button>
                 <button
                   type="button"
                   onClick={acceptAll}
-                  className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition hover:bg-accent"
+                  className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
                 >
                   Accept toate
                 </button>
