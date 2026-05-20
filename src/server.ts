@@ -23,15 +23,16 @@ const BASE_SECURITY_HEADERS: Record<string, string> = {
   "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()",
 };
 
-function withSecurityHeaders(response: Response, request?: Request): Response {
+function shouldDisableXFrameOptions(): boolean {
+  return process.env.DISABLE_X_FRAME_OPTIONS === "1" || process.env.DISABLE_X_FRAME_OPTIONS === "true";
+}
+
+function withSecurityHeaders(response: Response): Response {
   const headers = new Headers(response.headers);
   for (const [name, value] of Object.entries(BASE_SECURITY_HEADERS)) {
     if (!headers.has(name)) headers.set(name, value);
   }
-  // Only set X-Frame-Options on production hosts (not Lovable preview/sandbox iframes)
-  const host = request?.headers.get("host") ?? "";
-  const isPreview = /lovable(project)?\.(app|dev)$/i.test(host) || host.includes("lovableproject.com");
-  if (!isPreview && !headers.has("X-Frame-Options")) {
+  if (!shouldDisableXFrameOptions() && !headers.has("X-Frame-Options")) {
     headers.set("X-Frame-Options", "SAMEORIGIN");
   }
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
