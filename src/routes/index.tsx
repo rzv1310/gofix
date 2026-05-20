@@ -429,7 +429,7 @@ export const Route = createFileRoute("/")({
                 },
                 {
                   "@type": "Question",
-                  name: "Lucrați și pentru dube sau camioane?",
+                  name: "Interveniți și pentru camioane?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Da, oferim servicii pentru autoturisme, autoutilitare, dube, camioane și tiruri.",
@@ -437,7 +437,7 @@ export const Route = createFileRoute("/")({
                 },
                 {
                   "@type": "Question",
-                  name: "Cât costă intervenția?",
+                  name: "Cât costă o vulcanizare mobila?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Prețul depinde de locație, tipul vehiculului și serviciul necesar. Cel mai rapid este să suni sau să trimiți mesaj pe WhatsApp pentru estimare.",
@@ -971,8 +971,8 @@ function FAQ() {
     ["Veniți la domiciliu sau la birou?", "Da. Putem interveni acasă, la birou, în parcare sau în alte locații accesibile."],
     ["Reparați pene pe loc?", "Da. În funcție de starea anvelopei, putem repara pana direct la locație."],
     ["Faceți și echilibrare roți?", "Da, oferim echilibrare roți pe loc, cu echipamente mobile profesionale."],
-    ["Lucrați și pentru dube sau camioane?", "Da, oferim servicii pentru autoturisme, autoutilitare, dube, camioane și tiruri."],
-    ["Cât costă intervenția?", "Prețul depinde de locație, tipul vehiculului și serviciul necesar. Cel mai rapid este să suni sau să trimiți mesaj pe WhatsApp pentru estimare."],
+    ["Interveniți și pentru camioane?", "Da, oferim servicii pentru autoturisme, autoutilitare, dube, camioane și tiruri."],
+    ["Cât costă o vulcanizare mobila?", "Prețul depinde de locație, tipul vehiculului și serviciul necesar. Cel mai rapid este să suni sau să trimiți mesaj pe WhatsApp pentru estimare."],
     ["În ce zone din Iași ajungeți?", "Ajungem în principalele cartiere din Iași și în localitățile din zona metropolitană: Miroslava, Valea Lupului, Rediu, Tomești, Holboca, Ciurea, Lețcani și altele."],
   ];
   return (
