@@ -553,7 +553,7 @@ function Hero() {
           </p>
           <ul className="mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
             {["Disponibil NON STOP", "Deplasare în Iași + zona metropolitană", "Autoturisme, dube, autoutilitare, camioane", "Plată corectă, emitem factură"].map(t => (
-              <li key={t} className="flex items-start gap-2 text-sm text-secondary-foreground/90">
+              <li key={t} className={`flex items-start gap-2 text-sm text-secondary-foreground/90 ${t === "Autoturisme, dube, autoutilitare, camioane" ? "hidden sm:flex" : ""}`}>
                 <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand-green" /> {t}
               </li>
             ))}
