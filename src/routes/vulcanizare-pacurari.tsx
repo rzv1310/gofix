@@ -458,6 +458,7 @@ function Footer() {
             <Link to="/cookies" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Cookies</Link>
             <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow noopener" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">ANPC - SAL</a>
             <a href="https://consumer-redress.ec.europa.eu/index_en?prefLang=ro" target="_blank" rel="nofollow noopener" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">ANPC - SOL</a>
+            <button type="button" data-cookie-action="open-settings" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Setări cookie-uri</button>
           </div>
         </div>
       </div>
