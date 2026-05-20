@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VulcanizarePacurariRouteImport } from './routes/vulcanizare-pacurari'
 import { Route as VulcanizareMobilaMiroslavaRouteImport } from './routes/vulcanizare-mobila-miroslava'
+import { Route as TermeniRouteImport } from './routes/termeni'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as IndexRouteImport } from './routes/index'
@@ -26,6 +27,11 @@ const VulcanizareMobilaMiroslavaRoute =
     path: '/vulcanizare-mobila-miroslava',
     getParentRoute: () => rootRouteImport,
   } as any)
+const TermeniRoute = TermeniRouteImport.update({
+  id: '/termeni',
+  path: '/termeni',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/termeni': typeof TermeniRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
   '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
 }
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/termeni': typeof TermeniRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
   '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
 }
@@ -61,6 +69,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/llms.txt': typeof LlmsDottxtRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/termeni': typeof TermeniRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
   '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
 }
@@ -70,6 +79,7 @@ export interface FileRouteTypes {
     | '/'
     | '/llms.txt'
     | '/sitemap.xml'
+    | '/termeni'
     | '/vulcanizare-mobila-miroslava'
     | '/vulcanizare-pacurari'
   fileRoutesByTo: FileRoutesByTo
@@ -77,6 +87,7 @@ export interface FileRouteTypes {
     | '/'
     | '/llms.txt'
     | '/sitemap.xml'
+    | '/termeni'
     | '/vulcanizare-mobila-miroslava'
     | '/vulcanizare-pacurari'
   id:
@@ -84,6 +95,7 @@ export interface FileRouteTypes {
     | '/'
     | '/llms.txt'
     | '/sitemap.xml'
+    | '/termeni'
     | '/vulcanizare-mobila-miroslava'
     | '/vulcanizare-pacurari'
   fileRoutesById: FileRoutesById
@@ -92,6 +104,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermeniRoute: typeof TermeniRoute
   VulcanizareMobilaMiroslavaRoute: typeof VulcanizareMobilaMiroslavaRoute
   VulcanizarePacurariRoute: typeof VulcanizarePacurariRoute
 }
@@ -110,6 +123,13 @@ declare module '@tanstack/react-router' {
       path: '/vulcanizare-mobila-miroslava'
       fullPath: '/vulcanizare-mobila-miroslava'
       preLoaderRoute: typeof VulcanizareMobilaMiroslavaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termeni': {
+      id: '/termeni'
+      path: '/termeni'
+      fullPath: '/termeni'
+      preLoaderRoute: typeof TermeniRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -140,19 +160,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermeniRoute: TermeniRoute,
   VulcanizareMobilaMiroslavaRoute: VulcanizareMobilaMiroslavaRoute,
   VulcanizarePacurariRoute: VulcanizarePacurariRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
