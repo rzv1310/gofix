@@ -18,27 +18,30 @@ async function getServerEntry(): Promise<ServerEntry> {
   return serverEntryPromise;
 }
 
-const SECURITY_HEADERS: Record<string, string> = {
-  "X-Frame-Options": "SAMEORIGIN",
+const BASE_SECURITY_HEADERS: Record<string, string> = {
   "Referrer-Policy": "strict-origin-when-cross-origin",
   "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()",
 };
 
-function withSecurityHeaders(response: Response): Response {
+function withSecurityHeaders(response: Response, request?: Request): Response {
   const headers = new Headers(response.headers);
-  for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
-    if (!headers.has(name)) {
-      headers.set(name, value);
-    }
+  for (const [name, value] of Object.entries(BASE_SECURITY_HEADERS)) {
+    if (!headers.has(name)) headers.set(name, value);
+  }
+  // Only set X-Frame-Options on production hosts (not Lovable preview/sandbox iframes)
+  const host = request?.headers.get("host") ?? "";
+  const isPreview = /lovable(project)?\.(app|dev)$/i.test(host) || host.includes("lovableproject.com");
+  if (!isPreview && !headers.has("X-Frame-Options")) {
+    headers.set("X-Frame-Options", "SAMEORIGIN");
   }
   return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
 }
 
-function brandedErrorResponse(): Response {
+function brandedErrorResponse(request?: Request): Response {
   return withSecurityHeaders(new Response(renderErrorPage(), {
     status: 500,
     headers: { "content-type": "text/html; charset=utf-8" },
-  }));
+  }), request);
 }
 
 function isCatastrophicSsrErrorBody(body: string, responseStatus: number): boolean {
@@ -68,18 +71,18 @@ function isCatastrophicSsrErrorBody(body: string, responseStatus: number): boole
 
 // h3 swallows in-handler throws into a normal 500 Response with body
 // {"unhandled":true,"message":"HTTPError"} - try/catch alone never fires for those.
-async function normalizeCatastrophicSsrResponse(response: Response): Promise<Response> {
-  if (response.status < 500) return withSecurityHeaders(response);
+async function normalizeCatastrophicSsrResponse(response: Response, request: Request): Promise<Response> {
+  if (response.status < 500) return withSecurityHeaders(response, request);
   const contentType = response.headers.get("content-type") ?? "";
-  if (!contentType.includes("application/json")) return withSecurityHeaders(response);
+  if (!contentType.includes("application/json")) return withSecurityHeaders(response, request);
 
   const body = await response.clone().text();
   if (!isCatastrophicSsrErrorBody(body, response.status)) {
-    return withSecurityHeaders(response);
+    return withSecurityHeaders(response, request);
   }
 
   console.error(consumeLastCapturedError() ?? new Error(`h3 swallowed SSR error: ${body}`));
-  return brandedErrorResponse();
+  return brandedErrorResponse(request);
 }
 
 export default {
@@ -87,10 +90,10 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      return await normalizeCatastrophicSsrResponse(response, request);
     } catch (error) {
       console.error(error);
-      return brandedErrorResponse();
+      return brandedErrorResponse(request);
     }
   },
 };
