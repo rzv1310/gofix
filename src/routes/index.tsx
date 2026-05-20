@@ -1090,16 +1090,20 @@ function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs sm:flex-row">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-3 px-4 py-5 text-xs sm:flex-row sm:justify-between">
           <p>© {new Date().getFullYear()} GoFix Vulcanizare Mobilă Iași. Toate drepturile rezervate.</p>
-          <div className="flex gap-4">
-            <Link to="/" aria-current="page" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Acasă</Link>
-            <Link to="/gdpr" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">GDPR</Link>
-            <Link to="/termeni" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Termeni</Link>
-            <Link to="/cookies" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Cookies</Link>
-            <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow noopener" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">ANPC - SAL</a>
-            <a href="https://consumer-redress.ec.europa.eu/index_en?prefLang=ro" target="_blank" rel="nofollow noopener" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">ANPC - SOL</a>
-            <button type="button" data-cookie-action="open-settings" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Setări cookie-uri</button>
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-4">
+            <div className="flex gap-4">
+              <Link to="/" aria-current="page" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Acasă</Link>
+              <Link to="/gdpr" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">GDPR</Link>
+              <Link to="/termeni" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Termeni</Link>
+              <Link to="/cookies" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Cookies</Link>
+            </div>
+            <div className="flex gap-4">
+              <a href="https://anpc.ro/ce-este-sal/" target="_blank" rel="nofollow noopener" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">ANPC - SAL</a>
+              <a href="https://consumer-redress.ec.europa.eu/index_en?prefLang=ro" target="_blank" rel="nofollow noopener" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">ANPC - SOL</a>
+              <button type="button" data-cookie-action="open-settings" className="hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm">Setări cookie-uri</button>
+            </div>
           </div>
         </div>
       </div>
