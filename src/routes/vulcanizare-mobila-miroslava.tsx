@@ -60,7 +60,7 @@ function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 lg:py-3">
         <div className="flex items-center gap-2">
           <Link to="/" aria-label="Mergi la pagina principală GoFix" className="flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
-            <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
+            <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" width={1122} height={1402} className="h-12 w-auto lg:h-14" />
           </Link>
           <button onClick={() => setOpen(v => !v)} aria-label="Meniu" className="rounded-md border border-border p-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent lg:hidden">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
         </div>
@@ -110,7 +110,7 @@ function Hero() {
       <div className="absolute inset-0 opacity-60">
         <picture>
           <source media="(min-width: 1024px)" srcSet={heroVan} />
-          <img src={heroVanMobile} alt="" width={1920} height={1080} fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
+          <img src={heroVanMobile} alt="Autospecială GoFix de vulcanizare mobilă non-stop în Miroslava, Iași" width={1920} height={1080} fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
         </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/70 to-secondary/40" />
       </div>
@@ -138,10 +138,6 @@ function Hero() {
             <WaBtn label="Trimite locația pe WhatsApp" className="w-full" />
           </div>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href="https://www.google.com/search?q=GoFix+Vulcanizare+Mobila+Iasi" target="_blank" rel="noopener" className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white transition hover:bg-white/10">
-              <span className="flex text-yellow-400">{'\u2605'.repeat(5)}</span>
-              <span>5.0 · Recenzii Google</span>
-            </a>
             <div className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm font-semibold text-white">
               <Navigation className="h-4 w-4 text-white" /> Venim la locația ta în Miroslava
             </div>
