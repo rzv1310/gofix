@@ -662,7 +662,7 @@ function Services() {
               <div className="absolute right-0 top-0 h-24 w-24 -translate-y-12 translate-x-12 rounded-full bg-primary/20 blur-2xl transition group-hover:bg-primary/40" />
               <div className="flex items-center gap-3 sm:block">
                 <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground sm:mb-4 sm:h-12 sm:w-12"><I className="h-5 w-5 sm:h-6 sm:w-6" /></div>
-                <h3 className="font-display text-base sm:text-xl">{t}</h3>
+                <h3 className="font-display text-base font-normal sm:text-xl sm:font-bold">{t}</h3>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-secondary-foreground/70">{d}</p>
               <a href={WA_LINK} target="_blank" rel="noopener" className="mt-4 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-primary hover:underline m-cta-soft">
@@ -782,7 +782,7 @@ function Vehicles() {
             <article key={t} className="rounded-xl border border-white/10 bg-black/60 p-6 backdrop-blur transition hover:border-primary">
               <div className="flex items-center gap-3">
                 <I className="h-8 w-8 shrink-0 text-primary" />
-                <h3 className="font-display text-lg">{t}</h3>
+                <h3 className="font-display text-lg font-normal sm:font-bold">{t}</h3>
               </div>
               <p className="mt-2 text-sm text-secondary-foreground/70">{d}</p>
             </article>
