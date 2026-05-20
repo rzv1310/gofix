@@ -929,6 +929,8 @@ function AppSection() {
             src={appVulcanizareMobila}
             alt="Aplicația Vulcanizare Mobilă"
             title="Vulcanizare Mobilă App"
+            width={898}
+            height={1920}
             className="relative h-[440px] w-auto rounded-[2.5rem] shadow-glow"
             loading="lazy"
           />
