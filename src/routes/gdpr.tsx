@@ -51,7 +51,7 @@ function GdprPage() {
 
           <h2>2. Operatorul datelor personale</h2>
           <p>
-            Operatorul datelor personale colectate prin intermediul acestui Site este Mexpera SRL, CUI: 47359702, J2022024913403, din București, sector 3, email: rzv131005@gmail.com, telefon: 0332630507.
+            Operatorul datelor personale colectate prin intermediul acestui Site este Mexpera SRL, CUI: 47359702, J2022024913403, din București, sector 3, email: rzv131005@gmail.com.
             GoFix Vulcanizare Mobilă Iași este denumirea comercială / brandul sub care funcționează Site-ul.
           </p>
 
