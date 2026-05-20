@@ -779,8 +779,10 @@ function Vehicles() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {items.map(({ i: I, t, d }) => (
             <article key={t} className="rounded-xl border border-white/10 bg-black/60 p-6 backdrop-blur transition hover:border-primary">
-              <I className="h-8 w-8 text-primary" />
-              <h3 className="mt-4 font-display text-lg">{t}</h3>
+              <div className="flex items-center gap-3">
+                <I className="h-8 w-8 shrink-0 text-primary" />
+                <h3 className="font-display text-lg">{t}</h3>
+              </div>
               <p className="mt-2 text-sm text-secondary-foreground/70">{d}</p>
             </article>
           ))}
