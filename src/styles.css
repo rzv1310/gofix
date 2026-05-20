@@ -138,7 +138,7 @@
 .hero-underline {
   position: relative;
   display: inline-block;
-  white-space: nowrap;
+  
 }
 .hero-underline::after {
   content: "";
