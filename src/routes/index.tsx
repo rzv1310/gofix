@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import {
   Phone, MessageCircle, MapPin, Clock, Wrench, Truck, Car, Gauge,
   ShieldCheck, Zap, CheckCircle2, ChevronDown, Menu, X, Navigation,
@@ -609,7 +609,7 @@ function EmergencyBar() {
   );
 }
 
-function SectionHeading({ kicker, title, sub }: { kicker?: string; title: string; sub?: string }) {
+function SectionHeading({ kicker, title, sub }: { kicker?: string; title: ReactNode; sub?: string }) {
   return (
     <div className="mx-auto max-w-3xl text-center">
       {kicker && <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">{kicker}</p>}
@@ -656,7 +656,7 @@ function Services() {
   return (
     <section id="servicii" className="bg-secondary py-20 text-secondary-foreground">
       <div className="mx-auto max-w-7xl px-4">
-        <SectionHeading kicker="Servicii" title="Servicii GoFix Vulcanizare Mobilă Iași" sub="Tot ce ai nevoie pentru roți și anvelope, direct la locația ta." />
+        <SectionHeading kicker="Servicii" title={<>Servicii Go<span className="text-primary">Fix</span> Vulcanizare Mobilă Iași</>} sub="Tot ce ai nevoie pentru roți și anvelope, direct la locația ta." />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {items.map(({ i: I, t, d }) => (
             <article key={t} className="group relative overflow-hidden rounded-xl border border-white/10 bg-black/40 p-6 transition hover:border-primary">
@@ -695,7 +695,7 @@ function WhyUs() {
         </div>
         <div>
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.25em] text-primary">De ce GoFix</p>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl">De ce aleg șoferii din Iași GoFix Vulcanizare Mobilă</h2>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl">De ce aleg șoferii din Iași Go<span className="text-primary">Fix</span> Vulcanizare Mobilă</h2>
           <ul className="mt-8 space-y-5">
             {items.map((it, i) => (
               <li key={it.t} className="flex gap-4">
@@ -887,7 +887,7 @@ function Reviews() {
   return (
     <section id="recenzii" className="py-20">
       <div className="mx-auto max-w-7xl px-4">
-        <SectionHeading kicker="Recenzii" title="Șoferii din Iași aleg GoFix pentru intervenții urgente" />
+        <SectionHeading kicker="Recenzii" title={<>Șoferii din Iași aleg Go<span className="text-primary">Fix</span> pentru intervenții urgente</>} />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {reviews.map(r => (
             <div key={r.initials + r.text.slice(0, 10)} className="rounded-xl border border-border bg-card p-6 shadow-card">
@@ -1023,7 +1023,7 @@ function Footer() {
         {/* Header + Description + Contact */}
         <div className="grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-1">
-            <h2 className="font-display text-2xl text-white"><Link to="/" aria-label="Mergi la pagina principală GoFix Vulcanizare Mobilă Iași" aria-current="page" className="hover:text-primary transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">GoFix Vulcanizare Mobilă Iași</Link></h2>
+            <h2 className="font-display text-2xl text-white"><Link to="/" aria-label="Mergi la pagina principală GoFix Vulcanizare Mobilă Iași" aria-current="page" className="hover:text-primary transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">Go<span className="text-primary">Fix</span> Vulcanizare Mobilă Iași</Link></h2>
             <p className="mt-3 text-sm">GoFix Vulcanizare Mobilă Iași oferă servicii de vulcanizare mobilă, schimb anvelope și echilibrare roți la locație, non-stop.</p>
           </div>
           <div className="lg:col-span-2">
