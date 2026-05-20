@@ -492,13 +492,15 @@ function WaBtn({ className = "", label = "WhatsApp" }: { className?: string; lab
 function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 lg:py-3">
-        <div className="flex items-center gap-2">
+    <header className="sticky top-0 z-50 border-b border-border bg-background">
+      <div className="mx-auto grid max-w-7xl grid-cols-3 items-center gap-4 px-4 py-2.5 lg:flex lg:justify-between lg:py-3">
+        <div className="flex items-center justify-start">
           <Link to="/" aria-label="Mergi la pagina principală GoFix" aria-current="page" className="flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">
             <img src={logo} alt="GoFix Vulcanizare Mobilă Iași" title="GoFix Vulcanizare Mobilă Iași" className="h-12 w-auto lg:h-14" />
           </Link>
-          <button onClick={() => setOpen(v => !v)} aria-label="Meniu" className="rounded-md border border-border p-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent lg:hidden">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
+        </div>
+        <div className="flex items-center justify-center lg:hidden">
+          <button onClick={() => setOpen(v => !v)} aria-label="Meniu" className="rounded-md border border-border p-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
         </div>
         <nav className="hidden items-center gap-6 lg:flex">
           {NAV.map(n => (
@@ -512,7 +514,7 @@ function Header() {
           </div>
           <WaBtn />
         </div>
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex items-center justify-end gap-2 lg:hidden">
           <a href={`tel:${PHONE}`} aria-label="Sună" className="rounded-md bg-primary p-2.5 text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"><Phone className="h-5 w-5" /></a>
           <a href={WA_LINK} aria-label="WhatsApp" className="rounded-md bg-whatsapp p-2.5 text-whatsapp-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"><MessageCircle className="h-5 w-5" /></a>
         </div>
