@@ -7,7 +7,11 @@ import {
 } from "lucide-react";
 import logo from "@/assets/gofix-logo.webp";
 import heroVan from "@/assets/hero-van-desktop.webp";
+import heroVanD1280 from "@/assets/hero-van-desktop-1280.webp";
+import heroVanD960 from "@/assets/hero-van-desktop-960.webp";
+import heroVanD640 from "@/assets/hero-van-desktop-640.webp";
 import heroVanMobile from "@/assets/hero-van-mobile.webp";
+import heroVanM640 from "@/assets/hero-van-mobile-640.webp";
 import whyUs from "@/assets/why-us.webp";
 
 
