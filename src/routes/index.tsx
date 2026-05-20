@@ -532,7 +532,7 @@ function Header() {
 
 function Hero() {
   return (
-    <section className="hero-section relative overflow-hidden bg-secondary text-secondary-foreground">
+    <section className="relative overflow-hidden bg-secondary text-secondary-foreground">
       <div className="absolute inset-0 opacity-60">
         <picture>
           <source media="(min-width: 1024px)" srcSet={heroVan} />
