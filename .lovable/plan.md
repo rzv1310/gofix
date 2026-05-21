@@ -1,26 +1,47 @@
-
 ## Obiectiv
 
-Înlocuiește pe tot proiectul orice referință la `gofix.lovable.app` și `gofix-vulcanizaremobila-iasi.ro` cu domeniul nou `https://vulcanizaremobila-iasi.ro` (fără slash final, cu excepția URL-urilor care îl au deja, ex. `/`).
+Înlocuiește pagina 404 existentă (textuală, în `src/routes/__root.tsx → NotFoundComponent`) cu o variantă vizuală bazată pe cele două imagini încărcate. Întreaga imagine devine link către `/`, iar imaginea ocupă tot viewportul.
 
-## Fișiere afectate
+## Pași
 
-- `src/lib/site-pages.ts` — `SITE_BASE_URL` → `https://vulcanizaremobila-iasi.ro`
-- `public/robots.txt` — directiva `Sitemap:`
-- `src/routes/index.tsx` — `og:url`, `og:image`, `twitter:image`, `canonical`, toate `@id` și `url` din JSON-LD
-- `src/routes/vulcanizare-mobila-miroslava.tsx` — la fel (meta + JSON-LD, inclusiv `@id`-uri cu `gofix-vulcanizaremobila-iasi.ro`)
-- `src/routes/vulcanizare-pacurari.tsx` — la fel
-- `src/routes/gdpr.tsx` — textul `gofix-vulcanizaremobila-iasi.ro` → `vulcanizaremobila-iasi.ro`
-- `src/routes/termeni.tsx` — la fel
+1. **Copiez imaginile** în `src/assets/`:
+   - `user-uploads://404_desktop.png` → `src/assets/404-desktop.png`
+   - `user-uploads://404_mobile.png` → `src/assets/404-mobile.png`
 
-Sitemap-ul (`src/routes/sitemap[.]xml.ts`) și `llms.txt` folosesc deja `SITE_BASE_URL` din `site-pages.ts`, deci se actualizează automat.
+2. **Rescriu `NotFoundComponent`** din `src/routes/__root.tsx`:
+   - Container `<Link to="/">` cu `block w-screen h-screen` (sau `min-h-dvh w-full`), fără padding/margin, fără chenar — clicul oriunde pe imagine duce la homepage.
+   - `<picture>` cu `<source media="(max-width: 767px)" srcSet={mobile} />` și `<img src={desktop} />`.
+   - Imaginea folosește `object-cover w-full h-full` pentru desktop și `object-contain` pe mobil (sau invers, în funcție de aspect — ambele imagini sunt deja designate să umple ecranul, deci `object-cover` pe ambele, cu `object-position: center`).
+   - `alt="404 - Pagina nu a fost găsită. Înapoi la homepage."`
+   - SEO: rămâne fără `head()` propriu (e fallback pe root).
 
-## Metodă
+3. **Verific** că imaginile sunt importate ca module ES6 (`import notFoundDesktop from "@/assets/404-desktop.png"`) ca să fie bundle-uite/optimizate de Vite.
 
-Un singur `sed -i` global pe toate fișierele relevante care înlocuiește ambele variante vechi cu noul domeniu, apoi verificare cu `rg` că nu mai apare nimic și că build-ul trece.
+## Detalii tehnice
+
+```tsx
+// src/routes/__root.tsx (înlocuiește doar NotFoundComponent)
+import notFoundDesktop from "@/assets/404-desktop.png";
+import notFoundMobile from "@/assets/404-mobile.png";
+
+function NotFoundComponent() {
+  return (
+    <Link to="/" aria-label="Înapoi la homepage" className="block h-dvh w-screen overflow-hidden">
+      <picture>
+        <source media="(max-width: 767px)" srcSet={notFoundMobile} />
+        <img
+          src={notFoundDesktop}
+          alt="404 - Pagina a făcut pană. Înapoi la homepage."
+          className="h-full w-full object-cover"
+        />
+      </picture>
+    </Link>
+  );
+}
+```
 
 ## Ce NU se schimbă
 
-- Asset-urile locale `@/assets/gofix-logo.webp` (nume de fișier, nu URL)
-- Numele brandului „GoFix" din copy
-- Handle-ul Twitter `@gofix_iasi`
+- `ErrorComponent` (eroarea SSR „This page didn't load") rămâne neatinsă.
+- Restul rutelor și meta tag-urilor.
+- Imaginile hero existente.
