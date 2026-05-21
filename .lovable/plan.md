@@ -1,17 +1,17 @@
-Înlocuiesc numărul de telefon `0332 630 507` cu `0332 630 508` (afișat ca `+40332630508` unde apare cu prefix internațional) în toate fișierele.
+## Ce e de făcut
 
-## Fișiere de modificat
-- `src/routes/index.tsx` — meta descriptions (3×), JSON-LD `telephone` (2×), constante `PHONE` și `PHONE_DISPLAY`
-- `src/routes/__root.tsx` — meta description, og:description, twitter:description
-- `src/routes/vulcanizare-pacurari.tsx` — FAQ, constante PHONE/PHONE_DISPLAY, twitter:description, JSON-LD telephone (3×)
-- `src/routes/vulcanizare-mobila-miroslava.tsx` — FAQ, constante PHONE/PHONE_DISPLAY, twitter:description, JSON-LD telephone (3×)
-- `src/routes/llms[.]txt.ts` — text contact
-- `src/lib/site-pages.ts` — descriere homepage
+Meta tag-urile `og:image` și `twitter:image` din `src/routes/vulcanizare-pacurari.tsx` indică deja către `https://vulcanizaremobila-iasi.ro/og-pacurari.jpg` (liniile 536 și 546). Nu e nevoie să modific codul.
 
-## Înlocuiri (literale)
-- `+40 332 630 507` → `+40 332 630 508`
-- `+40332630507` → `+40332630508`
-- `0332 630 507` → `0332 630 508`
-- `0332630507` → `0332630508`
+Tot ce trebuie făcut este să **înlocuiesc fișierul** `public/og-pacurari.jpg` cu imaginea pe care ai atașat-o (banner-ul cu duba GoFix și textul "VULCANIZARE MOBILĂ PĂCURARI · IAȘI" + numărul 0332 630 508).
 
-Numărul WhatsApp `0750 291 020` rămâne neschimbat.
+## Pași
+
+1. Copiez `user-uploads://vulcanizare_mobila_pacurari.jpg` peste `public/og-pacurari.jpg` (overwrite).
+2. Verific dimensiunile (ar trebui 1200×630 — dacă diferă, redimensionez la 1200×630 ca să corespundă cu `og:image:width/height` din meta).
+3. Confirm că noua imagine apare la URL-ul publicat.
+
+## Nu modific
+
+- Nu schimb codul din `vulcanizare-pacurari.tsx` — meta-urile sunt deja corecte.
+- Nu ating `og-home.jpg` sau `og-miroslava.jpg`.
+- Nu schimb `og:image:alt` / `twitter:image:alt` — descrierea actuală se potrivește cu noul banner.
