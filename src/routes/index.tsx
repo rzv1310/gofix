@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Vulcanizare Mobilă Iași Non Stop 24/7 - GoFix vine în 30 min" },
-      { name: "description", content: "Vulcanizare mobilă Iași non-stop. Reparații pene, schimb anvelope și echilibrare roți la domiciliu, birou sau pe marginea drumului. Sună 0332 630 507." },
+      { name: "description", content: "Vulcanizare mobilă Iași non-stop. Reparații pene, schimb anvelope și echilibrare roți la domiciliu, birou sau pe marginea drumului. Sună 0332 630 508." },
       { name: "keywords", content: "vulcanizare mobila Iasi, vulcanizare non-stop Iasi, pana cauciuc Iasi, schimb anvelope la domiciliu, echilibrare roti mobila, GoFix Iasi, asistenta rutiera Iasi 24/7" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
       { name: "googlebot", content: "index, follow" },
@@ -43,7 +43,7 @@ export const Route = createFileRoute("/")({
       { property: "og:locale", content: "ro_RO" },
       { property: "og:site_name", content: "GoFix Vulcanizare Mobilă Iași" },
       { property: "og:title", content: "Vulcanizare Mobilă Iași Non-Stop 24/7 - GoFix" },
-      { property: "og:description", content: "Intervenim 24/7 în Iași și zona metropolitană pentru pene, schimb anvelope și echilibrare roți. Sună 0332 630 507." },
+      { property: "og:description", content: "Intervenim 24/7 în Iași și zona metropolitană pentru pene, schimb anvelope și echilibrare roți. Sună 0332 630 508." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://vulcanizaremobila-iasi.ro/" },
       { property: "og:image", content: "https://vulcanizaremobila-iasi.ro/og-home.jpg" },
@@ -55,7 +55,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@gofix_iasi" },
       { name: "twitter:title", content: "Vulcanizare Mobilă Iași 24/7 - Pene, Anvelope, Echilibrare | GoFix" },
-      { name: "twitter:description", content: "Vulcanizare mobilă non-stop în Iași. Reparații pene, schimb anvelope și echilibrare roți la domiciliu. Sună 0332 630 507." },
+      { name: "twitter:description", content: "Vulcanizare mobilă non-stop în Iași. Reparații pene, schimb anvelope și echilibrare roți la domiciliu. Sună 0332 630 508." },
       { name: "twitter:image", content: "https://vulcanizaremobila-iasi.ro/og-home.jpg" },
       { name: "twitter:image:alt", content: "GoFix Vulcanizare Mobilă Iași - non-stop 24/7, intervenții la domiciliu pentru pene, schimb anvelope și echilibrare roți." },
     ],
@@ -81,7 +81,7 @@ export const Route = createFileRoute("/")({
               url: "https://vulcanizaremobila-iasi.ro/",
               logo: "https://vulcanizaremobila-iasi.ro/gofix-logo-og.png",
               image: "https://vulcanizaremobila-iasi.ro/gofix-logo-og.png",
-              telephone: "+40332630507",
+              telephone: "+40332630508",
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
@@ -114,7 +114,7 @@ export const Route = createFileRoute("/")({
               ],
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+40332630507",
+                telephone: "+40332630508",
                 contactType: "customer service",
                 areaServed: "RO",
                 availableLanguage: ["ro"],
@@ -467,8 +467,8 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const PHONE = "0332630507";
-const PHONE_DISPLAY = "0332 630 507";
+const PHONE = "0332630508";
+const PHONE_DISPLAY = "0332 630 508";
 const WHATSAPP = "40750291020";
 const WA_LINK = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Salut! Am nevoie de o vulcanizare mobilă în Iași. Mă puteți ajuta?")}`;
 
