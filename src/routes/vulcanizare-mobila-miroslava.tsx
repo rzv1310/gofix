@@ -30,8 +30,8 @@ const AREAS = ["Miroslava","Uricani","Horpaz","Valea Adâncă","Valea Ursului","
 
 
 
-const PHONE = "0332630507";
-const PHONE_DISPLAY = "0332 630 507";
+const PHONE = "+40332630507";
+const PHONE_DISPLAY = "+40 332 630 507";
 const WHATSAPP = "40750291020";
 const WA_LINK = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Salut! Am nevoie de vulcanizare mobilă în Miroslava. Mă puteți ajuta?")}`;
 
@@ -542,7 +542,7 @@ export const Route = createFileRoute("/vulcanizare-mobila-miroslava")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@gofix_iasi" },
       { name: "twitter:title", content: "Vulcanizare Mobilă Miroslava 24/7 - Pene, Anvelope la Domiciliu | GoFix" },
-      { name: "twitter:description", content: "Intervenim în Miroslava, Uricani, Horpaz, Valea Adâncă pentru pene, schimb anvelope și echilibrare roți. Sună 0332 630 507." },
+      { name: "twitter:description", content: "Intervenim în Miroslava, Uricani, Horpaz, Valea Adâncă pentru pene, schimb anvelope și echilibrare roți. Sună +40 332 630 507." },
       { name: "twitter:image", content: "https://vulcanizaremobila-iasi.ro/og-miroslava.jpg" },
       { name: "twitter:image:alt", content: "GoFix Vulcanizare Mobilă Miroslava - autospecială GoFix, intervenții non-stop pentru pene, schimb anvelope și echilibrare roți la domiciliu." },
     ],

@@ -2,7 +2,7 @@
 
 Meta tag-urile `og:image` și `twitter:image` din `src/routes/vulcanizare-pacurari.tsx` indică deja către `https://vulcanizaremobila-iasi.ro/og-pacurari.jpg` (liniile 536 și 546). Nu e nevoie să modific codul.
 
-Tot ce trebuie făcut este să **înlocuiesc fișierul** `public/og-pacurari.jpg` cu imaginea pe care ai atașat-o (banner-ul cu duba GoFix și textul "VULCANIZARE MOBILĂ PĂCURARI · IAȘI" + numărul 0332 630 508).
+Tot ce trebuie făcut este să **înlocuiesc fișierul** `public/og-pacurari.jpg` cu imaginea pe care ai atașat-o (banner-ul cu duba GoFix și textul "VULCANIZARE MOBILĂ PĂCURARI · IAȘI" + numărul +40 332 630 507).
 
 ## Pași
 

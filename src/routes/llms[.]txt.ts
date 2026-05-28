@@ -11,7 +11,7 @@ export const Route = createFileRoute("/llms.txt")({
           ``,
           `> Serviciu non-stop de vulcanizare mobilă în Iași și zona metropolitană: reparații pene de cauciuc, schimb anvelope și echilibrare roți la domiciliu, birou sau pe marginea drumului.`,
           ``,
-          `GoFix intervine 24/7 pentru autoturisme, autoutilitare, dube și camioane. Contact: 0332 630 507 sau WhatsApp +40 750 291 020.`,
+          `GoFix intervine 24/7 pentru autoturisme, autoutilitare, dube și camioane. Contact: +40 332 630 507 sau WhatsApp +40 750 291 020.`,
           ``,
           `## Pages`,
           ``,
