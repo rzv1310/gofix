@@ -22,7 +22,7 @@ const FAQS: Array<[string, string]> = [
   ["Faceți schimb anvelope vară / iarnă la domiciliu?", "Da. Putem face schimb sezonier de anvelope direct la domiciliu sau la sediul firmei, în funcție de program și disponibilitate."],
   ["Faceți echilibrare roți în Miroslava?", "Da, oferim echilibrare roți pe loc cu echipamente mobile profesionale, în funcție de tipul roții și de condițiile de lucru."],
   ["Lucrați și pentru dube, camioane sau tiruri?", "Da, putem interveni și pentru autoutilitare, dube, camioane și tiruri. Pentru o estimare corectă, transmite tipul vehiculului, dimensiunea roții și locația exactă."],
-  ["Cât costă o intervenție de vulcanizare mobilă în Miroslava?", "Costul depinde de locația exactă, ora solicitării, tipul vehiculului și serviciul necesar. Sună la +40 332 630 508 pentru estimare rapidă."],
+  ["Cât costă o intervenție de vulcanizare mobilă în Miroslava?", "Costul depinde de locația exactă, ora solicitării, tipul vehiculului și serviciul necesar. Sună la +40 332 630 507 pentru estimare rapidă."],
   ["Pot trimite locația pe WhatsApp?", "Da. Poți trimite locația pe WhatsApp, împreună cu o poză a roții și câteva detalii despre problemă."],
 ];
 
@@ -30,8 +30,8 @@ const AREAS = ["Miroslava","Uricani","Horpaz","Valea Adâncă","Valea Ursului","
 
 
 
-const PHONE = "0332630508";
-const PHONE_DISPLAY = "0332 630 508";
+const PHONE = "0332630507";
+const PHONE_DISPLAY = "0332 630 507";
 const WHATSAPP = "40750291020";
 const WA_LINK = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Salut! Am nevoie de vulcanizare mobilă în Miroslava. Mă puteți ajuta?")}`;
 
@@ -542,7 +542,7 @@ export const Route = createFileRoute("/vulcanizare-mobila-miroslava")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@gofix_iasi" },
       { name: "twitter:title", content: "Vulcanizare Mobilă Miroslava 24/7 - Pene, Anvelope la Domiciliu | GoFix" },
-      { name: "twitter:description", content: "Intervenim în Miroslava, Uricani, Horpaz, Valea Adâncă pentru pene, schimb anvelope și echilibrare roți. Sună 0332 630 508." },
+      { name: "twitter:description", content: "Intervenim în Miroslava, Uricani, Horpaz, Valea Adâncă pentru pene, schimb anvelope și echilibrare roți. Sună 0332 630 507." },
       { name: "twitter:image", content: "https://vulcanizaremobila-iasi.ro/og-miroslava.jpg" },
       { name: "twitter:image:alt", content: "GoFix Vulcanizare Mobilă Miroslava - autospecială GoFix, intervenții non-stop pentru pene, schimb anvelope și echilibrare roți la domiciliu." },
     ],
@@ -563,7 +563,7 @@ export const Route = createFileRoute("/vulcanizare-mobila-miroslava")({
               url: "https://vulcanizaremobila-iasi.ro/",
               logo: "https://vulcanizaremobila-iasi.ro/gofix-logo-og.png",
               image: "https://vulcanizaremobila-iasi.ro/gofix-logo-og.png",
-              telephone: "+40332630508",
+              telephone: "+40332630507",
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
@@ -596,7 +596,7 @@ export const Route = createFileRoute("/vulcanizare-mobila-miroslava")({
               ],
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+40332630508",
+                telephone: "+40332630507",
                 contactType: "customer service",
                 areaServed: "RO",
                 availableLanguage: ["ro"],
@@ -756,7 +756,7 @@ export const Route = createFileRoute("/vulcanizare-mobila-miroslava")({
                 "@type": "ServiceChannel",
                 servicePhone: {
                   "@type": "ContactPoint",
-                  telephone: "+40332630508",
+                  telephone: "+40332630507",
                   contactType: "customer service",
                   availableLanguage: ["ro"],
                 },
