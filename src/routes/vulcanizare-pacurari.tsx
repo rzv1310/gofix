@@ -22,7 +22,7 @@ const FAQS: Array<[string, string]> = [
   ["Faceți și echilibrare roți pe loc?", "Da, oferim echilibrare roți cu echipamente mobile, în funcție de tipul roții și condițiile de lucru de la locație."],
   ["Ajungeți și în Canta sau Moara de Foc?", "Da. Putem interveni și în zone apropiate de Păcurari, precum Canta, Moara de Foc, zona Gării, Copou, Valea Lupului sau Rediu, în funcție de disponibilitate."],
   ["Lucrați pentru dube, camioane sau tiruri?", "Da, putem interveni și pentru autoutilitare, dube, camioane și tiruri. Pentru estimare, transmite tipul vehiculului, dimensiunea roții și locația exactă."],
-  ["Cât costă o intervenție în Păcurari?", "Costul depinde de serviciul necesar, ora solicitării, tipul vehiculului și locația exactă. Sună la +40 332 630 508 pentru estimare rapidă."],
+  ["Cât costă o intervenție în Păcurari?", "Costul depinde de serviciul necesar, ora solicitării, tipul vehiculului și locația exactă. Sună la +40 332 630 507 pentru estimare rapidă."],
   ["Pot trimite locația pe WhatsApp?", "Da. Poți trimite pin-ul locației, o poză cu roata și câteva detalii despre problemă pentru o evaluare mai rapidă."],
 ];
 
@@ -30,8 +30,8 @@ const AREAS = ["Păcurari","Canta","Moara de Foc","Valea Lupului","Rediu","Copou
 
 
 
-const PHONE = "0332630508";
-const PHONE_DISPLAY = "0332 630 508";
+const PHONE = "0332630507";
+const PHONE_DISPLAY = "0332 630 507";
 const WHATSAPP = "40750291020";
 const WA_LINK = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Salut! Am nevoie de vulcanizare mobilă în Păcurari. Mă puteți ajuta?")}`;
 
@@ -542,7 +542,7 @@ export const Route = createFileRoute("/vulcanizare-pacurari")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@gofix_iasi" },
       { name: "twitter:title", content: "Vulcanizare Păcurari Iași 24/7 - Pene, Anvelope la Domiciliu | GoFix" },
-      { name: "twitter:description", content: "Intervenim în Păcurari, Canta, Moara de Foc, Copou, Valea Lupului pentru pene, schimb anvelope și echilibrare roți. Sună 0332 630 508." },
+      { name: "twitter:description", content: "Intervenim în Păcurari, Canta, Moara de Foc, Copou, Valea Lupului pentru pene, schimb anvelope și echilibrare roți. Sună 0332 630 507." },
       { name: "twitter:image", content: "https://vulcanizaremobila-iasi.ro/og-pacurari.jpg" },
       { name: "twitter:image:alt", content: "GoFix Vulcanizare Mobilă Păcurari Iași - autospecială GoFix, intervenții non-stop pentru pene, schimb anvelope și echilibrare roți la domiciliu." },
     ],
@@ -563,7 +563,7 @@ export const Route = createFileRoute("/vulcanizare-pacurari")({
               url: "https://vulcanizaremobila-iasi.ro/",
               logo: "https://vulcanizaremobila-iasi.ro/gofix-logo-og.png",
               image: "https://vulcanizaremobila-iasi.ro/gofix-logo-og.png",
-              telephone: "+40332630508",
+              telephone: "+40332630507",
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
@@ -588,7 +588,7 @@ export const Route = createFileRoute("/vulcanizare-pacurari")({
               ],
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+40332630508",
+                telephone: "+40332630507",
                 contactType: "customer service",
                 areaServed: "RO",
                 availableLanguage: ["ro"],
@@ -652,7 +652,7 @@ export const Route = createFileRoute("/vulcanizare-pacurari")({
               ],
               availableChannel: {
                 "@type": "ServiceChannel",
-                servicePhone: { "@type": "ContactPoint", telephone: "+40332630508", contactType: "customer service", availableLanguage: ["ro"] },
+                servicePhone: { "@type": "ContactPoint", telephone: "+40332630507", contactType: "customer service", availableLanguage: ["ro"] },
                 serviceUrl: "https://vulcanizaremobila-iasi.ro/vulcanizare-pacurari/",
               },
               hasOfferCatalog: {
