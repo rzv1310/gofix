@@ -432,7 +432,7 @@ function Footer() {
             <ul className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
               <li><a href={`tel:${PHONE}`} className="flex items-center gap-2 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm"><Phone className="h-4 w-4 text-primary" />{PHONE_DISPLAY}</a></li>
               <li><a href={WA_LINK} className="flex items-center gap-2 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm"><MessageCircle className="h-4 w-4 text-primary" />0750 291 020</a></li>
-              <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-primary" />Strada Golia 3, 700259 Iași</li>
+              <li><a href="https://maps.app.goo.gl/7NQtYKPg1FpQjsv89" target="_blank" rel="noopener" className="flex items-start gap-2 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm"><MapPin className="mt-0.5 h-4 w-4 text-primary" />Strada Golia 3, 700259 Iași, România</a></li>
               <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" />Deschis non-stop</li>
             </ul>
           </div>
