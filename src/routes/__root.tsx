@@ -95,6 +95,68 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": ["AutoRepair", "TireShop"],
+              "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness",
+              name: "GoFix Vulcanizare Mobilă Iași",
+              description: "Serviciu non-stop de vulcanizare mobilă în Iași și zona metropolitană. Intervenții rapide pentru pană de cauciuc, schimb anvelope, echilibrare roți și servicii pentru autoturisme, autoutilitare, dube, camioane și tiruri.",
+              url: "https://vulcanizaremobila-iasi.ro/",
+              logo: "https://vulcanizaremobila-iasi.ro/gofix-logo-og.png",
+              image: "https://vulcanizaremobila-iasi.ro/gofix-logo-og.png",
+              telephone: "+40332630507",
+              priceRange: "$$",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Strada Golia 3",
+                addressLocality: "Iași",
+                addressRegion: "Iași",
+                postalCode: "700259",
+                addressCountry: "RO",
+              },
+              hasMap: "https://maps.app.goo.gl/7NQtYKPg1FpQjsv89",
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 47.1664,
+                longitude: 27.5795,
+              },
+              openingHoursSpecification: [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                  opens: "00:00",
+                  closes: "23:59",
+                },
+              ],
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+40332630507",
+                contactType: "customer service",
+                areaServed: "RO",
+                availableLanguage: ["ro"],
+              },
+              areaServed: [
+                { "@type": "City", name: "Iași" },
+                { "@type": "AdministrativeArea", name: "Județul Iași" },
+              ],
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://vulcanizaremobila-iasi.ro/#website",
+              url: "https://vulcanizaremobila-iasi.ro/",
+              name: "GoFix Vulcanizare Mobilă Iași",
+              publisher: { "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness" },
+              inLanguage: "ro-RO",
+            },
+          ],
+        }),
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
