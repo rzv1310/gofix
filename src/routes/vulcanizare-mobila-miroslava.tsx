@@ -343,10 +343,12 @@ function Zones() {
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <div className="rounded-2xl border border-border bg-secondary p-2 text-secondary-foreground">
             <iframe
-              title="Hartă comuna Miroslava"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=27.45%2C47.10%2C27.62%2C47.20&layer=mapnik&marker=47.1428%2C27.5028"
+              title="Hartă vulcanizare mobilă în comuna Miroslava, Iași"
+              src="https://maps.google.com/maps?q=Miroslava,%20Ia%C8%99i&z=13&output=embed&hl=ro"
               className="h-80 w-full rounded-xl border-0 lg:h-full"
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
             />
           </div>
           <div className="space-y-6">
