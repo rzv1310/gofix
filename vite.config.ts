@@ -71,8 +71,6 @@ export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
-  // Disable the preset's Cloudflare build plugin - this app deploys to Netlify.
-  cloudflare: false,
   // Appended after the preset's internal tanstackStart() plugin (required ordering).
   plugins: isBuild ? [netlify()] : [],
   vite: {
