@@ -343,10 +343,12 @@ function Zones() {
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <div className="rounded-2xl border border-border bg-secondary p-2 text-secondary-foreground">
             <iframe
-              title="Hartă Păcurari Iași"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=27.52%2C47.15%2C27.60%2C47.20&layer=mapnik&marker=47.1745%2C27.5535"
+              title="Hartă vulcanizare mobilă în Păcurari, Iași"
+              src="https://maps.google.com/maps?q=P%C4%83curari,%20Ia%C8%99i&z=14&output=embed&hl=ro"
               className="h-80 w-full rounded-xl border-0 lg:h-full"
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
             />
           </div>
           <div className="space-y-6">

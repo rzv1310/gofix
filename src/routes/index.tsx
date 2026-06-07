@@ -416,10 +416,12 @@ function Zones() {
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           <div className="rounded-2xl border border-border bg-secondary p-2 text-secondary-foreground">
             <iframe
-              title="Hartă zonă deservită Iași"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=27.4%2C47.05%2C27.75%2C47.25&layer=mapnik&marker=47.158%2C27.601"
+              title="Hartă sediu GoFix Vulcanizare Mobilă Iași - Strada Golia 3"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2712.6944963534365!2d27.5896026!3d47.1638375!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2875af1345fa17a5%3A0x355982e9bc4cefa9!2sGoFix%20Vulcanizare%20Mobil%C4%83%20Ia%C8%99i!5e0!3m2!1sro!2ses!4v1780824504693!5m2!1sro!2ses"
               className="h-80 w-full rounded-xl border-0 lg:h-full"
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
             />
           </div>
           <div className="space-y-6">
