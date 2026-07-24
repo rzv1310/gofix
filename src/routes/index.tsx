@@ -75,6 +75,18 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@graph": [
             {
+              "@type": ["LocalBusiness", "AutoRepair", "TireShop"],
+              "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness",
+              name: "GoFix Vulcanizare Mobilă Iași",
+              url: "https://vulcanizaremobila-iasi.ro/",
+              sameAs: [
+                "https://www.linkedin.com/company/gofix-vulcanizare-mobil%C4%83-ia%C8%99i/",
+                "https://x.com/GoFixIasi",
+                "https://www.facebook.com/profile.php?id=61591034004039",
+                "https://www.instagram.com/gofixvulcanizaremobilaiasi/",
+              ],
+            },
+            {
               "@type": "FAQPage",
               "@id": "https://vulcanizaremobila-iasi.ro/#faq",
               url: "https://vulcanizaremobila-iasi.ro/",
@@ -82,6 +94,7 @@ export const Route = createFileRoute("/")({
               isPartOf: { "@id": "https://vulcanizaremobila-iasi.ro/#website" },
               about: { "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness" },
               inLanguage: "ro-RO",
+
               mainEntity: [
                 {
                   "@type": "Question",
