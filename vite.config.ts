@@ -64,10 +64,15 @@ function noEmDashPlugin(): Plugin {
 // Netlify's full platform emulation middleware, which can 404 requests behind the
 // Lovable editor preview proxy. Dev uses TanStack Start's native handler instead.
 const isBuild = process.argv.includes("build");
+// Netlify sets NETLIFY=true during builds. Disable Lovable's Nitro/Cloudflare
+// adapter there so TanStack Start emits dist/client for Netlify to publish.
+// Other environments keep Lovable's default deployment target.
+const isNetlifyBuild = process.env.NETLIFY === "true";
 
 // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
 // At build, the Netlify plugin bundles that entry into a Netlify serverless function.
 export default defineConfig({
+  ...(isNetlifyBuild ? { nitro: false } : {}),
   tanstackStart: {
     server: { entry: "server" },
   },
