@@ -23,7 +23,8 @@ export const SITE_PAGES: SitePage[] = [
       "vulcanizare mobila Iasi, vulcanizare non-stop Iasi, pana cauciuc Iasi, schimb anvelope la domiciliu, echilibrare roti mobila, GoFix Iasi, asistenta rutiera Iasi 24/7",
     changefreq: "weekly",
     priority: "1.0",
-    updatedAt: "2026-05-20",
+    updatedAt: "2026-07-24",
+    group: "core",
   },
   {
     path: "/vulcanizare-mobila-miroslava",
@@ -34,7 +35,8 @@ export const SITE_PAGES: SitePage[] = [
       "vulcanizare mobila Miroslava, vulcanizare Uricani, vulcanizare Valea Adanca, vulcanizare Horpaz, schimb anvelope Miroslava, pana cauciuc Miroslava, GoFix Miroslava",
     changefreq: "monthly",
     priority: "0.5",
-    updatedAt: "2026-05-20",
+    updatedAt: "2026-07-24",
+    group: "locations",
   },
   {
     path: "/vulcanizare-pacurari",
@@ -45,7 +47,8 @@ export const SITE_PAGES: SitePage[] = [
       "vulcanizare Pacurari, vulcanizare mobila Pacurari, pana cauciuc Pacurari, schimb anvelope Pacurari, vulcanizare Canta, vulcanizare Moara de Foc, GoFix Pacurari",
     changefreq: "monthly",
     priority: "0.5",
-    updatedAt: "2026-05-20",
+    updatedAt: "2026-07-24",
+    group: "locations",
   },
   {
     path: "/gdpr",
@@ -57,6 +60,7 @@ export const SITE_PAGES: SitePage[] = [
     changefreq: "yearly",
     priority: "0.3",
     updatedAt: "2026-05-20",
+    group: "legal",
   },
   {
     path: "/termeni",
@@ -68,6 +72,7 @@ export const SITE_PAGES: SitePage[] = [
     changefreq: "yearly",
     priority: "0.3",
     updatedAt: "2026-05-20",
+    group: "legal",
   },
   {
     path: "/cookies",
@@ -79,5 +84,7 @@ export const SITE_PAGES: SitePage[] = [
     changefreq: "yearly",
     priority: "0.3",
     updatedAt: "2026-05-20",
+    group: "legal",
   },
 ];
+
