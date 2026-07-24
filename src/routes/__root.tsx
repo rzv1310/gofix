@@ -144,6 +144,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 { "@type": "City", name: "Iași" },
                 { "@type": "AdministrativeArea", name: "Județul Iași" },
               ],
+              sameAs: [
+                "https://www.linkedin.com/company/gofix-vulcanizare-mobil%C4%83-ia%C8%99i/",
+                "https://x.com/GoFixIasi",
+                "https://www.facebook.com/profile.php?id=61591034004039",
+                "https://www.instagram.com/gofixvulcanizaremobilaiasi/",
+              ],
             },
             {
               "@type": "WebSite",
