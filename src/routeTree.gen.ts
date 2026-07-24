@@ -13,6 +13,8 @@ import { Route as VulcanizarePacurariRouteImport } from './routes/vulcanizare-pa
 import { Route as VulcanizareMobilaMiroslavaRouteImport } from './routes/vulcanizare-mobila-miroslava'
 import { Route as TermeniRouteImport } from './routes/termeni'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SitemapLocatiiDotxmlRouteImport } from './routes/sitemap-locatii[.]xml'
+import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as GdprRouteImport } from './routes/gdpr'
 import { Route as CookiesRouteImport } from './routes/cookies'
@@ -37,6 +39,16 @@ const TermeniRoute = TermeniRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapLocatiiDotxmlRoute = SitemapLocatiiDotxmlRouteImport.update({
+  id: '/sitemap-locatii.xml',
+  path: '/sitemap-locatii.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
+  id: '/sitemap-index.xml',
+  path: '/sitemap-index.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
@@ -65,6 +77,8 @@ export interface FileRoutesByFullPath {
   '/cookies': typeof CookiesRoute
   '/gdpr': typeof GdprRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
+  '/sitemap-locatii.xml': typeof SitemapLocatiiDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termeni': typeof TermeniRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
@@ -75,6 +89,8 @@ export interface FileRoutesByTo {
   '/cookies': typeof CookiesRoute
   '/gdpr': typeof GdprRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
+  '/sitemap-locatii.xml': typeof SitemapLocatiiDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termeni': typeof TermeniRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
@@ -86,6 +102,8 @@ export interface FileRoutesById {
   '/cookies': typeof CookiesRoute
   '/gdpr': typeof GdprRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
+  '/sitemap-locatii.xml': typeof SitemapLocatiiDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/termeni': typeof TermeniRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
@@ -98,6 +116,8 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/gdpr'
     | '/llms.txt'
+    | '/sitemap-index.xml'
+    | '/sitemap-locatii.xml'
     | '/sitemap.xml'
     | '/termeni'
     | '/vulcanizare-mobila-miroslava'
@@ -108,6 +128,8 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/gdpr'
     | '/llms.txt'
+    | '/sitemap-index.xml'
+    | '/sitemap-locatii.xml'
     | '/sitemap.xml'
     | '/termeni'
     | '/vulcanizare-mobila-miroslava'
@@ -118,6 +140,8 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/gdpr'
     | '/llms.txt'
+    | '/sitemap-index.xml'
+    | '/sitemap-locatii.xml'
     | '/sitemap.xml'
     | '/termeni'
     | '/vulcanizare-mobila-miroslava'
@@ -129,6 +153,8 @@ export interface RootRouteChildren {
   CookiesRoute: typeof CookiesRoute
   GdprRoute: typeof GdprRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
+  SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
+  SitemapLocatiiDotxmlRoute: typeof SitemapLocatiiDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermeniRoute: typeof TermeniRoute
   VulcanizareMobilaMiroslavaRoute: typeof VulcanizareMobilaMiroslavaRoute
@@ -163,6 +189,20 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-locatii.xml': {
+      id: '/sitemap-locatii.xml'
+      path: '/sitemap-locatii.xml'
+      fullPath: '/sitemap-locatii.xml'
+      preLoaderRoute: typeof SitemapLocatiiDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-index.xml': {
+      id: '/sitemap-index.xml'
+      path: '/sitemap-index.xml'
+      fullPath: '/sitemap-index.xml'
+      preLoaderRoute: typeof SitemapIndexDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/llms.txt': {
@@ -201,6 +241,8 @@ const rootRouteChildren: RootRouteChildren = {
   CookiesRoute: CookiesRoute,
   GdprRoute: GdprRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
+  SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,
+  SitemapLocatiiDotxmlRoute: SitemapLocatiiDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermeniRoute: TermeniRoute,
   VulcanizareMobilaMiroslavaRoute: VulcanizareMobilaMiroslavaRoute,
