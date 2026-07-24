@@ -1,43 +1,28 @@
 ## Obiectiv
 
-Fac `sameAs` explicit pe fiecare pagină, atașat unui nod `LocalBusiness` care corespunde paginii curente, nu doar în blocul global din `__root.tsx`.
+Aliniez schema JSON-LD la varianta furnizată de user. Schema conține 3 noduri (`LocalBusiness`/AutoRepair, `WebSite`, `FAQPage`) și corespunde homepage-ului.
 
 ## Modificări
 
-### 1. `src/routes/index.tsx`
-În `@graph`-ul paginii adaug un nod suplimentar care re-declară afacerea cu același `@id` global și include `sameAs` local:
+### 1. `src/routes/__root.tsx` (global, pe toate paginile)
+Înlocuiesc nodurile `LocalBusiness` și `WebSite` din `@graph` cu variantele noi:
+- `@type` devine doar `"AutoRepair"` (fără `LocalBusiness` și `TireShop` în array), conform noii scheme.
+- `geo` actualizat: `latitude: 47.1638211`, `longitude: 27.5895262` (înainte 47.1664 / 27.5795).
+- `openingHoursSpecification` devine obiect unic (nu array) — comportament identic pentru validator.
+- `contactPoint.areaServed` devine array cu City + AdministrativeArea (înainte era string `"RO"`).
+- `contactPoint.availableLanguage` devine string `"ro"` (înainte array).
+- `sameAs`, adresă, telefon, logo, image, hasMap, priceRange, description — rămân identice.
+- `WebSite` — identic (deja corect).
 
-```
-{
-  "@type": ["LocalBusiness", "AutoRepair", "TireShop"],
-  "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness",
-  name: "GoFix Vulcanizare Mobilă Iași",
-  url: "https://vulcanizaremobila-iasi.ro/",
-  sameAs: [
-    "https://www.linkedin.com/company/gofix-vulcanizare-mobil%C4%83-ia%C8%99i/",
-    "https://x.com/GoFixIasi",
-    "https://www.facebook.com/profile.php?id=61582917103139",
-    "https://www.instagram.com/gofixiasi/"
-  ]
-}
-```
+### 2. `src/routes/index.tsx`
+Înlocuiesc `@graph`-ul paginii cu doar nodul `FAQPage` (nodurile `LocalBusiness` și `WebSite` sunt injectate deja global din `__root.tsx`, cu același `@id`, deci pe homepage rezultatul final e exact `@graph`-ul cerut de user).
 
-### 2. `src/routes/vulcanizare-pacurari.tsx`
-Adaug în `@graph` același nod `LocalBusiness` cu `sameAs`, plus îl leg de `#webpage` prin `about`/`mainEntity` la nivel de pagină, astfel încât validatorul să vadă `sameAs` atașat direct entității paginii curente.
+Conținutul `FAQPage` din user match-uiește deja ce e în cod (aceleași 7 întrebări/răspunsuri, același `@id`, `isPartOf`, `about`, `publisher`) — practic doar elimin nodul duplicat `LocalBusiness` cu `sameAs` care fusese adăugat anterior pentru validator (nu mai e necesar acum că păstrăm nodul global consolidat).
 
-### 3. `src/routes/vulcanizare-mobila-miroslava.tsx`
-Identic cu pagina Păcurari.
-
-### 4. `__root.tsx`
-Rămâne neschimbat — `sameAs` continuă să existe și la nivel global pe entitatea `#localbusiness`. Duplicarea cu același `@id` pe pagini este validă în JSON-LD (nodurile cu același `@id` sunt îmbinate) și garantează că validatorul asociază `sameAs` cu entitatea paginii curente.
+### 3. Pagini locale (`vulcanizare-pacurari.tsx`, `vulcanizare-mobila-miroslava.tsx`)
+Nu se modifică schema — nu fac parte din cererea „replace schema" (schema furnizată e homepage-only, cu `url` și `FAQPage` specifice `/`). Nodurile `LocalBusiness` duplicate adăugate anterior în graph-urile lor rămân neatinse.
 
 ## Verificare
-
-După implementare:
 1. Build.
-2. Testez fiecare din cele 3 pagini în [Schema Markup Validator](https://validator.schema.org/) și confirm că `sameAs` apare pe nodul `LocalBusiness` al paginii curente.
-3. Rulez și Google Rich Results Test pentru a confirma că nu apar erori.
-
-## Notă tehnică
-
-`sameAs` nu produce rich snippet vizibil, deci nu va apărea în panoul „Rezultate îmbogățite" din Google Rich Results Test — dar va apărea în „Vizualizează codul testat" și în Schema Markup Validator, ceea ce confirmă că Google îl citește.
+2. Homepage în [Schema Markup Validator](https://validator.schema.org/) → confirm cele 3 noduri (`AutoRepair`, `WebSite`, `FAQPage`) fără erori.
+3. Paginile locale → schema lor existentă nu e afectată.
