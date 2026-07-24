@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": ["AutoRepair", "TireShop"],
+              "@type": ["LocalBusiness", "AutoRepair", "TireShop"],
               "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness",
               name: "GoFix Vulcanizare Mobilă Iași",
               description: "Serviciu non-stop de vulcanizare mobilă în Iași și zona metropolitană. Intervenții rapide pentru pană de cauciuc, schimb anvelope, echilibrare roți și servicii pentru autoturisme, autoutilitare, dube, camioane și tiruri.",
