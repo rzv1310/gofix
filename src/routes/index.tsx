@@ -16,6 +16,7 @@ import heroVanM640 from "@/assets/hero-van-mobile-640.webp";
 import appVulcanizareMobila from "@/assets/app-vulcanizare-mobila.webp";
 import serviceTire from "@/assets/service-tire.webp";
 import whyUs from "@/assets/why-us.webp";
+import { SocialLinks } from "@/components/SocialLinks";
 
 
 const FAQS: Array<[string, string]> = [
@@ -729,6 +730,7 @@ function Footer() {
               <li><a href="https://maps.app.goo.gl/7NQtYKPg1FpQjsv89" target="_blank" rel="noopener" className="flex items-start gap-2 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-sm"><MapPin className="mt-0.5 h-4 w-4 text-primary" />Strada Golia 3, 700259 Iași, România</a></li>
               <li className="flex items-center gap-2"><Clock className="h-4 w-4 text-primary" />Deschis non-stop</li>
             </ul>
+            <SocialLinks className="mt-5" />
           </div>
         </div>
 
