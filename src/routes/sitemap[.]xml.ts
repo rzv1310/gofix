@@ -6,7 +6,7 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const urls = SITE_PAGES.map((e) =>
+        const urls = SITE_PAGES.filter((e) => e.group !== "locations").map((e) =>
           [
             `  <url>`,
             `    <loc>${SITE_BASE_URL}${e.path}</loc>`,
@@ -26,11 +26,12 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         return new Response(xml, {
           headers: {
-            "Content-Type": "application/xml",
+            "Content-Type": "application/xml; charset=utf-8",
             "Cache-Control": "public, max-age=3600",
           },
         });
       },
+
     },
   },
 });
