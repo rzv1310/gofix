@@ -2,11 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { SITE_BASE_URL, SITE_PAGES } from "@/lib/site-pages";
 
-export const Route = createFileRoute("/sitemap.xml")({
+export const Route = createFileRoute("/sitemap-locatii.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const urls = SITE_PAGES.filter((e) => e.group !== "locations").map((e) =>
+        const urls = SITE_PAGES.filter((e) => e.group === "locations").map((e) =>
           [
             `  <url>`,
             `    <loc>${SITE_BASE_URL}${e.path}</loc>`,
@@ -31,7 +31,6 @@ export const Route = createFileRoute("/sitemap.xml")({
           },
         });
       },
-
     },
   },
 });
