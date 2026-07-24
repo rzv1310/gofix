@@ -75,26 +75,14 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": ["LocalBusiness", "AutoRepair", "TireShop"],
-              "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness",
-              name: "GoFix Vulcanizare Mobilă Iași",
-              url: "https://vulcanizaremobila-iasi.ro/",
-              sameAs: [
-                "https://www.linkedin.com/company/gofix-vulcanizare-mobil%C4%83-ia%C8%99i/",
-                "https://x.com/GoFixIasi",
-                "https://www.facebook.com/profile.php?id=61591034004039",
-                "https://www.instagram.com/gofixvulcanizaremobilaiasi/",
-              ],
-            },
-            {
               "@type": "FAQPage",
               "@id": "https://vulcanizaremobila-iasi.ro/#faq",
               url: "https://vulcanizaremobila-iasi.ro/",
               name: "Întrebări frecvente GoFix Vulcanizare Mobilă Iași",
-              isPartOf: { "@id": "https://vulcanizaremobila-iasi.ro/#website" },
-              about: { "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness" },
               inLanguage: "ro-RO",
-
+              isPartOf: { "@id": "https://vulcanizaremobila-iasi.ro/#website" },
+              publisher: { "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness" },
+              about: { "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness" },
               mainEntity: [
                 {
                   "@type": "Question",
@@ -138,7 +126,7 @@ export const Route = createFileRoute("/")({
                 },
                 {
                   "@type": "Question",
-                  name: "Cât costă o vulcanizare mobila?",
+                  name: "Cât costă o vulcanizare mobilă?",
                   acceptedAnswer: {
                     "@type": "Answer",
                     text: "Prețul depinde de locație, tipul vehiculului și serviciul necesar. Cel mai rapid este să suni sau să trimiți mesaj pe WhatsApp pentru estimare.",
@@ -155,6 +143,7 @@ export const Route = createFileRoute("/")({
               ],
             },
           ],
+
         }),
       },
     ],
