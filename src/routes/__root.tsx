@@ -102,15 +102,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@graph": [
             {
-              "@type": ["LocalBusiness", "AutoRepair", "TireShop"],
+              "@type": "AutoRepair",
               "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness",
               name: "GoFix Vulcanizare Mobilă Iași",
               description: "Serviciu non-stop de vulcanizare mobilă în Iași și zona metropolitană. Intervenții rapide pentru pană de cauciuc, schimb anvelope, echilibrare roți și servicii pentru autoturisme, autoutilitare, dube, camioane și tiruri.",
               url: "https://vulcanizaremobila-iasi.ro/",
+              sameAs: [
+                "https://www.linkedin.com/company/gofix-vulcanizare-mobil%C4%83-ia%C8%99i/",
+                "https://x.com/GoFixIasi",
+                "https://www.facebook.com/profile.php?id=61591034004039",
+                "https://www.instagram.com/gofixvulcanizaremobilaiasi/",
+              ],
               logo: "https://vulcanizaremobila-iasi.ro/gofix-logo-og.png",
               image: "https://vulcanizaremobila-iasi.ro/gofix-logo-og.png",
               telephone: "+40332630507",
               priceRange: "$$",
+              hasMap: "https://maps.app.goo.gl/7NQtYKPg1FpQjsv89",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Strada Golia 3",
@@ -119,36 +126,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 postalCode: "700259",
                 addressCountry: "RO",
               },
-              hasMap: "https://maps.app.goo.gl/7NQtYKPg1FpQjsv89",
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: 47.1664,
-                longitude: 27.5795,
+                latitude: 47.1638211,
+                longitude: 27.5895262,
               },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-                  opens: "00:00",
-                  closes: "23:59",
-                },
-              ],
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+                opens: "00:00",
+                closes: "23:59",
+              },
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+40332630507",
                 contactType: "customer service",
-                areaServed: "RO",
-                availableLanguage: ["ro"],
+                availableLanguage: "ro",
+                areaServed: [
+                  { "@type": "City", name: "Iași" },
+                  { "@type": "AdministrativeArea", name: "Județul Iași" },
+                ],
               },
               areaServed: [
                 { "@type": "City", name: "Iași" },
                 { "@type": "AdministrativeArea", name: "Județul Iași" },
-              ],
-              sameAs: [
-                "https://www.linkedin.com/company/gofix-vulcanizare-mobil%C4%83-ia%C8%99i/",
-                "https://x.com/GoFixIasi",
-                "https://www.facebook.com/profile.php?id=61591034004039",
-                "https://www.instagram.com/gofixvulcanizaremobilaiasi/",
               ],
             },
             {
@@ -156,10 +157,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               "@id": "https://vulcanizaremobila-iasi.ro/#website",
               url: "https://vulcanizaremobila-iasi.ro/",
               name: "GoFix Vulcanizare Mobilă Iași",
-              publisher: { "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness" },
               inLanguage: "ro-RO",
+              publisher: { "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness" },
             },
           ],
+
         }),
       },
     ],
