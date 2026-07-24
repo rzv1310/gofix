@@ -6,7 +6,9 @@ export interface SitePage {
   changefreq: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority: string;
   updatedAt: string;
+  group: "core" | "locations" | "legal";
 }
+
 
 export const SITE_BASE_URL = "https://vulcanizaremobila-iasi.ro";
 export const SITE_NAME = "GoFix Vulcanizare Mobilă Iași";
