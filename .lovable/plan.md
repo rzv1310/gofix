@@ -1,26 +1,43 @@
-Problema: utilizatorul raportează că `sameAs` nu apare în Google Rich Results Test, deși a fost adăugat în JSON-LD.
+## Obiectiv
 
-Constatări după verificare:
-- `sameAs` este prezent în HTML renderizat pe toate cele 3 pagini locale (`/`, `/vulcanizare-pacurari`, `/vulcanizare-mobila-miroslava`).
-- URL-urile sociale sunt accesibile și returnează HTTP 200.
-- Google Rich Results Test nu expune vizibil câmpul `sameAs` pentru tipurile `AutoRepair`/`TireShop`, pentru că acest câmp nu generează un rich snippet vizibil; el alimentează Knowledge Panel / entity reconciliation.
+Fac `sameAs` explicit pe fiecare pagină, atașat unui nod `LocalBusiness` care corespunde paginii curente, nu doar în blocul global din `__root.tsx`.
 
-Plan de acțiune:
+## Modificări
 
-1. **Îmbunătățirea entității LocalBusiness în `__root.tsx`**
-   - Adaug `LocalBusiness` ca tip explicit în array-ul `@type` (pe lângă `AutoRepair` și `TireShop`), pentru ca Google să identifice clar entitatea locală.
-   - Păstrez `@id: #localbusiness` și legăturile `publisher`/`about` existente.
+### 1. `src/routes/index.tsx`
+În `@graph`-ul paginii adaug un nod suplimentar care re-declară afacerea cu același `@id` global și include `sameAs` local:
 
-2. **Verificare și curățare URL-uri `sameAs`**
-   - Verific dacă URL-ul LinkedIn cu diacritice URL-encoded (`%C4%83`, `%C8%99`) poate fi normalizat la o variantă fără diacritice sau la forma finală de redirect, pentru a reduce riscul de respingere de către parserul Google.
-   - Păstrez celelalte URL-uri (X, Facebook, Instagram) dacă sunt stabile.
+```
+{
+  "@type": ["LocalBusiness", "AutoRepair", "TireShop"],
+  "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness",
+  name: "GoFix Vulcanizare Mobilă Iași",
+  url: "https://vulcanizaremobila-iasi.ro/",
+  sameAs: [
+    "https://www.linkedin.com/company/gofix-vulcanizare-mobil%C4%83-ia%C8%99i/",
+    "https://x.com/GoFixIasi",
+    "https://www.facebook.com/profile.php?id=61582917103139",
+    "https://www.instagram.com/gofixiasi/"
+  ]
+}
+```
 
-3. **Testare cu validatori alternativi**
-   - Rulez validarea JSON-LD prin Schema Markup Validator (validator.schema.org) și Google Search Console URL Inspection (la nivel conceptual) pentru a confirma că `sameAs` este citit corect.
-   - Raportez utilizatorului că Rich Results Test nu este indicatorul potrivit pentru `sameAs`; datele apar în Search Console / Knowledge Panel.
+### 2. `src/routes/vulcanizare-pacurari.tsx`
+Adaug în `@graph` același nod `LocalBusiness` cu `sameAs`, plus îl leg de `#webpage` prin `about`/`mainEntity` la nivel de pagină, astfel încât validatorul să vadă `sameAs` atașat direct entității paginii curente.
 
-4. **Documentare în memorie și comunicare**
-   - Actualizez memoria proiectului cu observația că `sameAs` nu este afișat în Rich Results Test, dar este valid și indexabil.
-   - Explic utilizatorului clar de ce nu apare și ce s-a îmbunătățit.
+### 3. `src/routes/vulcanizare-mobila-miroslava.tsx`
+Identic cu pagina Păcurari.
 
-Rezultat așteptat: schema rămâne validă, entitatea LocalBusiness este mai explicită, iar utilizatorul înțelege limitările Rich Results Test și pașii de verificare corecți.
+### 4. `__root.tsx`
+Rămâne neschimbat — `sameAs` continuă să existe și la nivel global pe entitatea `#localbusiness`. Duplicarea cu același `@id` pe pagini este validă în JSON-LD (nodurile cu același `@id` sunt îmbinate) și garantează că validatorul asociază `sameAs` cu entitatea paginii curente.
+
+## Verificare
+
+După implementare:
+1. Build.
+2. Testez fiecare din cele 3 pagini în [Schema Markup Validator](https://validator.schema.org/) și confirm că `sameAs` apare pe nodul `LocalBusiness` al paginii curente.
+3. Rulez și Google Rich Results Test pentru a confirma că nu apar erori.
+
+## Notă tehnică
+
+`sameAs` nu produce rich snippet vizibil, deci nu va apărea în panoul „Rezultate îmbogățite" din Google Rich Results Test — dar va apărea în „Vizualizează codul testat" și în Schema Markup Validator, ceea ce confirmă că Google îl citește.

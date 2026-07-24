@@ -562,6 +562,19 @@ export const Route = createFileRoute("/vulcanizare-mobila-miroslava")({
           "@context": "https://schema.org",
           "@graph": [
             {
+              "@type": ["LocalBusiness", "AutoRepair", "TireShop"],
+              "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness",
+              name: "GoFix Vulcanizare Mobilă Iași",
+              url: "https://vulcanizaremobila-iasi.ro/",
+              sameAs: [
+                "https://www.linkedin.com/company/gofix-vulcanizare-mobil%C4%83-ia%C8%99i/",
+                "https://x.com/GoFixIasi",
+                "https://www.facebook.com/profile.php?id=61591034004039",
+                "https://www.instagram.com/gofixvulcanizaremobilaiasi/",
+              ],
+            },
+            {
+
               "@type": "WebPage",
               "@id": "https://vulcanizaremobila-iasi.ro/vulcanizare-mobila-miroslava/#webpage",
               url: "https://vulcanizaremobila-iasi.ro/vulcanizare-mobila-miroslava/",
