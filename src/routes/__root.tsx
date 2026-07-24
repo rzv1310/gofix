@@ -151,6 +151,74 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 { "@type": "City", name: "Iași" },
                 { "@type": "AdministrativeArea", name: "Județul Iași" },
               ],
+              hasOfferCatalog: {
+                "@type": "OfferCatalog",
+                "@id": "https://vulcanizaremobila-iasi.ro/#catalog-servicii",
+                name: "Servicii de vulcanizare mobilă GoFix",
+                itemListElement: [
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      "@id": "https://vulcanizaremobila-iasi.ro/#service-vulcanizare-mobila",
+                      name: "Vulcanizare mobilă",
+                      serviceType: "Vulcanizare mobilă la locația clientului",
+                      description: "Servicii de vulcanizare mobilă la domiciliu, la birou, în parcare sau pe marginea drumului.",
+                      provider: { "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness" },
+                      areaServed: [
+                        { "@type": "City", name: "Iași" },
+                        { "@type": "AdministrativeArea", name: "Județul Iași" },
+                      ],
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      "@id": "https://vulcanizaremobila-iasi.ro/#service-schimb-anvelope",
+                      name: "Schimb anvelope",
+                      serviceType: "Schimb anvelope de vară și iarnă",
+                      description: "Montaj și schimb sezonier de anvelope direct la domiciliu, la birou sau în parcare.",
+                      provider: { "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness" },
+                      areaServed: [
+                        { "@type": "City", name: "Iași" },
+                        { "@type": "AdministrativeArea", name: "Județul Iași" },
+                      ],
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      "@id": "https://vulcanizaremobila-iasi.ro/#service-reparatii-pene",
+                      name: "Reparații pene de cauciuc",
+                      serviceType: "Reparație pană la locație",
+                      description: "Verificarea și repararea penelor de cauciuc direct la locația vehiculului, atunci când starea anvelopei permite intervenția în siguranță.",
+                      provider: { "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness" },
+                      areaServed: [
+                        { "@type": "City", name: "Iași" },
+                        { "@type": "AdministrativeArea", name: "Județul Iași" },
+                      ],
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    itemOffered: {
+                      "@type": "Service",
+                      "@id": "https://vulcanizaremobila-iasi.ro/#service-echilibrare-roti",
+                      name: "Echilibrare roți",
+                      serviceType: "Echilibrare mobilă a roților",
+                      description: "Echilibrare profesională a roților la locația clientului, cu echipamente mobile.",
+                      provider: { "@id": "https://vulcanizaremobila-iasi.ro/#localbusiness" },
+                      areaServed: [
+                        { "@type": "City", name: "Iași" },
+                        { "@type": "AdministrativeArea", name: "Județul Iași" },
+                      ],
+                    },
+                  },
+                ],
+              },
+
             },
             {
               "@type": "WebSite",
