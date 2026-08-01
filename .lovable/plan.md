@@ -1,48 +1,51 @@
+## URL-urile
+
+- Lista articolelor: `https://vulcanizaremobila-iasi.ro/blog`
+- Un articol: `https://vulcanizaremobila-iasi.ro/blog/nume-articol` (ex. `/blog/cum-repari-o-pana-de-cauciuc`)
+- Feed RSS: `https://vulcanizaremobila-iasi.ro/rss.xml`
+
 ## Obiectiv
 
-Sitemap dedicat pentru paginile locale, index de sitemap-uri, `lastmod` bazat pe modificări reale (nu bulk-update).
+Secțiune de blog cu articole scrise în cod (fără bază de date) + feed RSS generat automat din aceleași articole.
 
 ## Modificări
 
-### 1. `src/lib/site-pages.ts`
-- Adaug `group: "core" | "locations" | "legal"` pe fiecare pagină.
-- `updatedAt`:
-  - `/`, `/vulcanizare-pacurari`, `/vulcanizare-mobila-miroslava` → `2026-07-24` (HTML randat s-a modificat: schema `AutoRepair`/`WebSite`/`FAQPage` refăcută în turul anterior).
-  - `/gdpr`, `/termeni`, `/cookies` → rămân la `2026-05-20` (nicio modificare reală de conținut sau schemă).
+### 1. `src/lib/blog-posts.ts` (nou)
+Sursa unică de adevăr pentru articole:
 
-Paginile legale sunt indexabile (`robots: index,follow`), deci rămân în `/sitemap.xml`.
-
-### 2. `src/routes/sitemap[.]xml.ts` (existent)
-Filtrez `SITE_PAGES` la `group !== "locations"`. Rămân: `/`, `/gdpr`, `/termeni`, `/cookies`. Content-Type devine `application/xml; charset=utf-8`.
-
-### 3. `src/routes/sitemap-locatii[.]xml.ts` (nou)
-Doar paginile cu `group === "locations"`. Aceleași URL-uri canonice indexabile. Content-Type `application/xml; charset=utf-8`.
-
-### 4. `src/routes/sitemap-index[.]xml.ts` (nou)
-`lastmod` calculat dinamic: pentru fiecare sitemap referențiat, ia `max(updatedAt)` din paginile care îi aparțin. La fiecare bump viitor al unei pagini, indexul reflectă automat noua dată — fără valori hardcodate.
-
-```
-<sitemap>
-  <loc>.../sitemap.xml</loc>
-  <lastmod>{max updatedAt din core+legal}</lastmod>
-</sitemap>
-<sitemap>
-  <loc>.../sitemap-locatii.xml</loc>
-  <lastmod>{max updatedAt din locations}</lastmod>
-</sitemap>
+```ts
+export interface BlogPost {
+  slug: string;
+  title: string;        // titlu H1 + <title>
+  description: string;  // meta description + <description> în RSS
+  publishedAt: string;  // 2026-08-01
+  updatedAt: string;
+  image?: string;       // og:image (URL absolut)
+  content: ReactNode;   // corpul articolului
+}
 ```
 
-### 5. `public/robots.txt`
-`Sitemap:` → `https://vulcanizaremobila-iasi.ro/sitemap-index.xml`. Un singur index simplifică administrarea, trimiterea și monitorizarea în Google Search Console (Google acceptă și trimiteri separate, și index — nu declară o preferință).
+Pornesc cu 2-3 articole demonstrative pe teme relevante (pană de cauciuc, schimb anvelope sezonier, echilibrare roți), pe care le poți înlocui/extinde ulterior.
 
-## Neatins
+### 2. `src/routes/blog.index.tsx` (nou) - `/blog`
+Listă de carduri cu titlu, dată, descriere scurtă, link către articol. Același header/footer ca restul site-ului. `head()` propriu (title, description, og:*, canonical).
 
-- **FAQPage pe paginile locale**: deja adaptat per pagină (`url`, `@id`, `mainEntity` din `FAQS` local).
-- **`#localbusiness`**: identic pe tot site-ul.
-- **Linkuri interne HTML** către paginile locale: confirmat prezente în `src/routes/index.tsx` (secțiuni cartiere/localități + footer).
+### 3. `src/routes/blog.$slug.tsx` (nou) - `/blog/{slug}`
+Pagina articolului. Dacă slug-ul nu există -> `notFound()`. `head()` per articol: title, description, canonical, og:title/description/image, twitter:card. JSON-LD `BlogPosting` legat de `#localbusiness` ca `publisher`.
 
-## După implementare (task user)
+### 4. `src/routes/rss[.]xml.ts` (nou) - `/rss.xml`
+Feed RSS 2.0 din `BLOG_POSTS`, sortat descrescător după `publishedAt`: `<title>`, `<link>`, `<description>`, `<pubDate>` (RFC 822), `<guid isPermaLink="true">`, plus `<atom:link rel="self">`. Content-Type `application/rss+xml; charset=utf-8`.
 
-1. Republică.
-2. GSC → Sitemaps: trimite `sitemap-index.xml`.
-3. Opțional: URL Inspection → Request indexing pe cele 2 pagini locale.
+### 5. Sitemap
+- `src/lib/site-pages.ts`: adaug `/blog` cu `group: "core"`.
+- `src/routes/sitemap[.]xml.ts`: adaug articolele de blog (URL, `lastmod` din `updatedAt`, `changefreq: monthly`, `priority: 0.6`).
+
+### 6. Legături
+- `<link rel="alternate" type="application/rss+xml" href="/rss.xml">` în `__root.tsx`.
+- Link "Blog" în navigația din header și în footer, pe toate paginile.
+- `robots.txt` rămâne neschimbat (indexul de sitemap acoperă deja totul).
+
+## Note
+
+- Articolele se adaugă editând `src/lib/blog-posts.ts` - fără backend, fără costuri suplimentare.
+- Dacă vrei ulterior să scrii articole dintr-o interfață de admin, e nevoie de Lovable Cloud (bază de date); pot face migrarea oricând.
