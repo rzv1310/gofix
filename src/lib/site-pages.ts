@@ -51,6 +51,18 @@ export const SITE_PAGES: SitePage[] = [
     group: "locations",
   },
   {
+    path: "/blog",
+    title: "Blog Vulcanizare Mobilă Iași | Sfaturi GoFix",
+    description:
+      "Articole și sfaturi practice despre pene de cauciuc, schimb de anvelope și echilibrare roți, de la echipa GoFix Vulcanizare Mobilă Iași.",
+    keywords:
+      "blog vulcanizare Iasi, sfaturi anvelope, pana cauciuc sfaturi, echilibrare roti, schimb anvelope sezonier",
+    changefreq: "weekly",
+    priority: "0.6",
+    updatedAt: "2026-08-01",
+    group: "core",
+  },
+  {
     path: "/gdpr",
     title: "Politica de Confidențialitate GDPR | GoFix Iași",
     description:
