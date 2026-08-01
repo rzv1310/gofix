@@ -20,6 +20,7 @@ import { Route as GdprRouteImport } from './routes/gdpr'
 import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const VulcanizarePacurariRoute = VulcanizarePacurariRouteImport.update({
   id: '/vulcanizare-pacurari',
@@ -77,6 +78,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
   path: '/blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/termeni': typeof TermeniRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
   '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
@@ -102,6 +109,7 @@ export interface FileRoutesByTo {
   '/termeni': typeof TermeniRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
   '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
@@ -116,6 +124,7 @@ export interface FileRoutesById {
   '/termeni': typeof TermeniRoute
   '/vulcanizare-mobila-miroslava': typeof VulcanizareMobilaMiroslavaRoute
   '/vulcanizare-pacurari': typeof VulcanizarePacurariRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
@@ -131,6 +140,7 @@ export interface FileRouteTypes {
     | '/termeni'
     | '/vulcanizare-mobila-miroslava'
     | '/vulcanizare-pacurari'
+    | '/blog/$slug'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -144,6 +154,7 @@ export interface FileRouteTypes {
     | '/termeni'
     | '/vulcanizare-mobila-miroslava'
     | '/vulcanizare-pacurari'
+    | '/blog/$slug'
     | '/blog'
   id:
     | '__root__'
@@ -157,6 +168,7 @@ export interface FileRouteTypes {
     | '/termeni'
     | '/vulcanizare-mobila-miroslava'
     | '/vulcanizare-pacurari'
+    | '/blog/$slug'
     | '/blog/'
   fileRoutesById: FileRoutesById
 }
@@ -171,6 +183,7 @@ export interface RootRouteChildren {
   TermeniRoute: typeof TermeniRoute
   VulcanizareMobilaMiroslavaRoute: typeof VulcanizareMobilaMiroslavaRoute
   VulcanizarePacurariRoute: typeof VulcanizarePacurariRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
@@ -253,6 +266,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -267,6 +287,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermeniRoute: TermeniRoute,
   VulcanizareMobilaMiroslavaRoute: VulcanizareMobilaMiroslavaRoute,
   VulcanizarePacurariRoute: VulcanizarePacurariRoute,
+  BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
