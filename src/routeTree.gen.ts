@@ -15,6 +15,7 @@ import { Route as TermeniRouteImport } from './routes/termeni'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SitemapLocatiiDotxmlRouteImport } from './routes/sitemap-locatii[.]xml'
 import { Route as SitemapIndexDotxmlRouteImport } from './routes/sitemap-index[.]xml'
+import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
 import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as GdprRouteImport } from './routes/gdpr'
 import { Route as CookiesRouteImport } from './routes/cookies'
@@ -53,6 +54,11 @@ const SitemapIndexDotxmlRoute = SitemapIndexDotxmlRouteImport.update({
   path: '/sitemap-index.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RssDotxmlRoute = RssDotxmlRouteImport.update({
+  id: '/rss.xml',
+  path: '/rss.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
   id: '/llms.txt',
   path: '/llms.txt',
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/cookies': typeof CookiesRoute
   '/gdpr': typeof GdprRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-locatii.xml': typeof SitemapLocatiiDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByTo {
   '/cookies': typeof CookiesRoute
   '/gdpr': typeof GdprRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-locatii.xml': typeof SitemapLocatiiDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -118,6 +126,7 @@ export interface FileRoutesById {
   '/cookies': typeof CookiesRoute
   '/gdpr': typeof GdprRoute
   '/llms.txt': typeof LlmsDottxtRoute
+  '/rss.xml': typeof RssDotxmlRoute
   '/sitemap-index.xml': typeof SitemapIndexDotxmlRoute
   '/sitemap-locatii.xml': typeof SitemapLocatiiDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/gdpr'
     | '/llms.txt'
+    | '/rss.xml'
     | '/sitemap-index.xml'
     | '/sitemap-locatii.xml'
     | '/sitemap.xml'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/gdpr'
     | '/llms.txt'
+    | '/rss.xml'
     | '/sitemap-index.xml'
     | '/sitemap-locatii.xml'
     | '/sitemap.xml'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/cookies'
     | '/gdpr'
     | '/llms.txt'
+    | '/rss.xml'
     | '/sitemap-index.xml'
     | '/sitemap-locatii.xml'
     | '/sitemap.xml'
@@ -177,6 +189,7 @@ export interface RootRouteChildren {
   CookiesRoute: typeof CookiesRoute
   GdprRoute: typeof GdprRoute
   LlmsDottxtRoute: typeof LlmsDottxtRoute
+  RssDotxmlRoute: typeof RssDotxmlRoute
   SitemapIndexDotxmlRoute: typeof SitemapIndexDotxmlRoute
   SitemapLocatiiDotxmlRoute: typeof SitemapLocatiiDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -231,6 +244,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapIndexDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rss.xml': {
+      id: '/rss.xml'
+      path: '/rss.xml'
+      fullPath: '/rss.xml'
+      preLoaderRoute: typeof RssDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/llms.txt': {
       id: '/llms.txt'
       path: '/llms.txt'
@@ -281,6 +301,7 @@ const rootRouteChildren: RootRouteChildren = {
   CookiesRoute: CookiesRoute,
   GdprRoute: GdprRoute,
   LlmsDottxtRoute: LlmsDottxtRoute,
+  RssDotxmlRoute: RssDotxmlRoute,
   SitemapIndexDotxmlRoute: SitemapIndexDotxmlRoute,
   SitemapLocatiiDotxmlRoute: SitemapLocatiiDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
