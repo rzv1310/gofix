@@ -91,6 +91,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "shortcut icon", href: "/favicon.ico", type: "image/x-icon" },
       {
+        rel: "alternate",
+        type: "application/rss+xml",
+        title: "Blog GoFix Vulcanizare Mobilă Iași",
+        href: "https://vulcanizaremobila-iasi.ro/rss.xml",
+      },
+      {
         rel: "stylesheet",
         href: appCss,
       },
