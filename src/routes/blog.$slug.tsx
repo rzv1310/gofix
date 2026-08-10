@@ -84,7 +84,7 @@ function BlogPostPage() {
             </ol>
           </nav>
 
-          <h1>{post.title}</h1>
+          <h1>{post.h1 || post.title}</h1>
           <p className="text-sm text-muted-foreground">
             Publicat: {formatRoDate(post.publishedAt)}
           </p>
