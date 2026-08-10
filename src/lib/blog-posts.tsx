@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 export interface BlogPost {
   slug: string;
   title: string;
+  metaTitle?: string;
   h1?: string;
   description: string;
   publishedAt: string;
@@ -58,7 +59,8 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "cand-schimbi-anvelopele-de-iarna-si-de-vara",
-    title: "Anvelope de Iarnă/Vară în Iași: Ce Spune Legea și Cât Costă Schimbul",
+    title: "Anvelope de Iarnă/Vară în Iași: Ce spune Legea și cât e amenda",
+    metaTitle: "Anvelope de Iarnă/Vară în Iași: Ce spune Legea și cât e amenda | GoFix",
     h1: "Când schimbi anvelopele de iarnă și de vară: ce spune legea",
     description:
       "Când sunt obligatorii anvelopele de iarnă în Iași? Ce amenzi riști și cum faci schimbul de anvelope la domiciliu, rapid și fără cozi. Sună +40 332 630 507.",
@@ -154,7 +156,15 @@ export const BLOG_POSTS: BlogPost[] = [
           Programează-ți din timp schimbul sezonier și evită cozile de la vulcanizările fixe din Iași. <Link to="/" className="text-primary underline hover:opacity-80">GoFix</Link> vine la tine, non-stop, oriunde te-ai afla în oraș sau în zona metropolitană.
         </p>
         <p>
-          Sună acum: <a href="tel:+40332630507" className="text-primary underline hover:opacity-80">+40 332 630 507</a> · Trimite locația pe WhatsApp
+          Sună acum: <a href="tel:+40332630507" className="text-primary underline hover:opacity-80">+40 332 630 507</a> ·{" "}
+          <a
+            href="https://wa.me/40750291020?text=Salut!%20Am%20nevoie%20de%20un%20schimb%20de%20anvelope%20%C3%AEn%20Ia%C8%99i."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-whatsapp underline hover:opacity-80"
+          >
+            Trimite locația pe WhatsApp
+          </a>
         </p>
       </>
     ),
