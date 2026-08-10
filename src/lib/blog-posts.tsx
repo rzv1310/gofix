@@ -156,7 +156,15 @@ export const BLOG_POSTS: BlogPost[] = [
           Programează-ți din timp schimbul sezonier și evită cozile de la vulcanizările fixe din Iași. <Link to="/" className="text-primary underline hover:opacity-80">GoFix</Link> vine la tine, non-stop, oriunde te-ai afla în oraș sau în zona metropolitană.
         </p>
         <p>
-          Sună acum: <a href="tel:+40332630507" className="text-primary underline hover:opacity-80">+40 332 630 507</a> · Trimite locația pe WhatsApp
+          Sună acum: <a href="tel:+40332630507" className="text-primary underline hover:opacity-80">+40 332 630 507</a> ·{" "}
+          <a
+            href="https://wa.me/40750291020?text=Salut!%20Am%20nevoie%20de%20un%20schimb%20de%20anvelope%20%C3%AEn%20Ia%C8%99i."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-whatsapp underline hover:opacity-80"
+          >
+            Trimite locația pe WhatsApp
+          </a>
         </p>
       </>
     ),
