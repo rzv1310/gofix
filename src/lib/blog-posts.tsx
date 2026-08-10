@@ -59,7 +59,8 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "cand-schimbi-anvelopele-de-iarna-si-de-vara",
-    title: "Anvelope de Iarnă/Vară în Iași: Ce Spune Legea și Cât Costă Schimbul",
+    title: "Anvelope de Iarnă/Vară în Iași: Ce spune Legea și cât e amenda",
+    metaTitle: "Anvelope de Iarnă/Vară în Iași: Ce spune Legea și cât e amenda | GoFix",
     h1: "Când schimbi anvelopele de iarnă și de vară: ce spune legea",
     description:
       "Când sunt obligatorii anvelopele de iarnă în Iași? Ce amenzi riști și cum faci schimbul de anvelope la domiciliu, rapid și fără cozi. Sună +40 332 630 507.",
