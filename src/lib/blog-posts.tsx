@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
+import { Link } from "@tanstack/react-router";
 
 export interface BlogPost {
   slug: string;
   title: string;
+  h1?: string;
   description: string;
   publishedAt: string;
   updatedAt: string;
