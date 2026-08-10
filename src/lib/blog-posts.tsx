@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 export interface BlogPost {
   slug: string;
   title: string;
+  metaTitle?: string;
   h1?: string;
   description: string;
   publishedAt: string;
