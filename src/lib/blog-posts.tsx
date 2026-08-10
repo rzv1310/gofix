@@ -119,10 +119,10 @@ export const BLOG_POSTS: BlogPost[] = [
         </p>
         <ul>
           <li>
-            În cartierele Iașiului – Copou, Centrul istoric, Țicău, Tudor Vladimirescu, Tătărași, <Link to="/vulcanizare-pacurari" className="text-primary underline hover:opacity-80">Păcurari</Link>, C.U.G., Cantemir, Nicolina;
+            În cartierele Iașiului - Copou, Centrul istoric, Țicău, Tudor Vladimirescu, Tătărași, <Link to="/vulcanizare-pacurari" className="text-primary underline hover:opacity-80">Păcurari</Link>, C.U.G., Cantemir, Nicolina;
           </li>
           <li>
-            În zona metropolitană – <Link to="/vulcanizare-mobila-miroslava" className="text-primary underline hover:opacity-80">Miroslava</Link>, Ciurea, Holboca, Lețcani, Bârnova, Aroneanu, Rediu, Valea Lupului, Ungheni, Tomești și celelalte localități deservite;
+            În zona metropolitană - <Link to="/vulcanizare-mobila-miroslava" className="text-primary underline hover:opacity-80">Miroslava</Link>, Ciurea, Holboca, Lețcani, Bârnova, Aroneanu, Rediu, Valea Lupului, Ungheni, Tomești și celelalte localități deservite;
           </li>
           <li>
             La birou, dacă lucrezi în zona universitară sau în parcurile de business din Iași, fără să-ți întrerupi ziua de lucru.
