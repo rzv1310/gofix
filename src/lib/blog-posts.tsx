@@ -145,7 +145,7 @@ export const BLOG_POSTS: BlogPost[] = [
           <strong>Ce se întâmplă dacă mă prinde ninsoarea cu anvelope de vară montate?</strong> Ești în contravenție dacă circuli pe drum acoperit cu zăpadă, gheață sau polei, indiferent de dată, și riști o amendă considerabilă, pe lângă riscul real de accident.
         </p>
         <p>
-          <strong>Faceți schimb de anvelope și la birou, nu doar acasă?</strong> Da, <Link to="/" className="text-primary underline hover:opacity-80">GoFix</Link> vine oriunde te afli în Iași sau în zona metropolitană - acasă, la birou sau chiar pe marginea drumului.
+          <strong>Faceți schimb de anvelope și la birou, nu doar acasă?</strong> Da, GoFix vine oriunde te afli în Iași sau în zona metropolitană - acasă, la birou sau chiar pe marginea drumului.
         </p>
         <p>
           <strong>Cât durează un schimb de anvelope la domiciliu?</strong> De obicei între 20 și 40 de minute per vehicul, în funcție de tipul mașinii și de serviciile suplimentare solicitate (echilibrare inclusiv).
@@ -153,7 +153,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
         <h2>Nu aștepta prima ninsoare ca să faci schimbul de anvelope</h2>
         <p>
-          Programează-ți din timp schimbul sezonier și evită cozile de la vulcanizările fixe din Iași. <Link to="/" className="text-primary underline hover:opacity-80">GoFix</Link> vine la tine, non-stop, oriunde te-ai afla în oraș sau în zona metropolitană.
+          Programează-ți din timp schimbul sezonier și evită cozile de la vulcanizările fixe din Iași. GoFix vine la tine, non-stop, oriunde te-ai afla în oraș sau în zona metropolitană.
         </p>
         <p>
           Sună acum: <a href="tel:+40332630507" className="text-primary underline hover:opacity-80">+40 332 630 507</a> ·{" "}
