@@ -681,6 +681,42 @@ function FAQ() {
   );
 }
 
+const ROUTE_MAPS: Array<[string, string]> = [
+  [
+    "Hartă rute vulcanizare mobilă - bulevardele principale din Iași",
+    "https://www.google.com/maps/embed?pb=!1m58!1m12!1m3!1d43403.72488782917!2d27.541827904214838!3d47.163087273682464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m43!3e0!4m5!1s0x40cafca11ee2580f%3A0x60df1397c2a5fe53!2sBulevardul%20Carol%20I%2C%20Ia%C8%99i%2C%20Romania!3m2!1d47.1799926!2d27.5678694!4m5!1s0x40cafb776e112f37%3A0xdc4d5615f8f6cccc!2zQnVsZXZhcmR1bCDImHRlZmFuIGNlbCBNYXJlIMiZaSBTZsOibnQsIElhyJlpLCBSb21hbmlh!3m2!1d47.162394!2d27.582736099999998!4m5!1s0x40cafb7bec2c0d1f%3A0x610ba55fe0373ab3!2sBulevardul%20Independen%C8%9Bei%2C%20Ia%C8%99i%2C%20Romania!3m2!1d47.167272!2d27.583394499999997!4m5!1s0x40cafb9a985e3201%3A0xb37c8b87e9da577c!2sBulevardul%20Tudor%20Vladimirescu%2C%20Ia%C8%99i%2C%20Romania!3m2!1d47.158239599999995!2d27.6017144!4m5!1s0x40cafba1c553035d%3A0xd08b1809b0df1982!2sBulevardul%20Nicolae%20Iorga%2C%20Ia%C8%99i%2C%20Romania!3m2!1d47.1486964!2d27.580325199999997!4m5!1s0x40cafb6e90e65af9%3A0xb7ee786ce9d02790!2sBulevardul%20Alexandru%20cel%20Bun%2C%20Ia%C8%99i%2C%20Romania!3m2!1d47.163089!2d27.5647147!4m5!1s0x2875af1345fa17a5%3A0x355982e9bc4cefa9!2sGoFix%20Vulcanizare%20Mobil%C4%83%20Ia%C8%99i%2C%20Strada%20Golia%203%2C%20700259%20Ia%C8%99i%2C%20Romania!3m2!1d47.1638211!2d27.589526199999998!5e0!3m2!1sen!2sba!4v1786387504478!5m2!1sen!2sba",
+  ],
+  [
+    "Hartă rute vulcanizare mobilă - Nicolina, Păcurari, Chișinăului și zona metropolitană",
+    "https://www.google.com/maps/embed?pb=!1m58!1m12!1m3!1d86820.88670026461!2d27.481824785669275!3d47.15486349567384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m43!3e0!4m5!1s0x40cafa4e3c7fa509%3A0xd4a7882d1d18de0a!2zyJhvcy4gTmljb2xpbmEsIElhyJlpLCBSb21hbmlh!3m2!1d47.1283628!2d27.5686543!4m5!1s0x40cafb4de8d1c577%3A0x2f1cd2c0d4885c0a!2zyJhvc2VhdWEgUMSDY3VyYXJpLCBSb21hbmlh!3m2!1d47.173241999999995!2d27.5122598!4m5!1s0x40cafbe6679b4751%3A0xcb7e5e83698a347!2zQ2FsZWEgQ2hpyJlpbsSDdWx1aSwgSWHImWksIFJvbWFuaWE!3m2!1d47.146557!2d27.613308099999998!4m5!1s0x40cafbe4d67caad1%3A0xc7f6eec88af1ec6!2sBulevardul%20Chimiei%2C%20Ia%C8%99i%2C%20Romania!3m2!1d47.151280299999996!2d27.6232647!4m5!1s0x40cafb9d20b65ba5%3A0x1f82173af959ced6!2sStrada%20Anastasie%20Panu%2C%20Ia%C8%99i%2C%20Romania!3m2!1d47.160376299999996!2d27.590569!4m5!1s0x40cafb9ee92bb92f%3A0xe4981d0cfcbbc654!2sStrada%20Palat%2C%20Ia%C8%99i%2C%20Romania!3m2!1d47.1553488!2d27.5856963!4m5!1s0x2875af1345fa17a5%3A0x355982e9bc4cefa9!2sGoFix%20Vulcanizare%20Mobil%C4%83%20Ia%C8%99i%2C%20Strada%20Golia%203%2C%20700259%20Ia%C8%99i%2C%20Romania!3m2!1d47.1638211!2d27.589526199999998!5e0!3m2!1sen!2sba!4v1786387572220!5m2!1sen!2sba",
+  ],
+];
+
+function RouteMaps() {
+  return (
+    <section id="harti" className="py-20">
+      <div className="mx-auto max-w-7xl px-4">
+        <SectionHeading kicker="Hărți" title="Rutele noastre în Iași" sub="Principalele artere pe care intervenim rapid, pornind din Strada Golia 3." />
+        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          {ROUTE_MAPS.map(([title, src]) => (
+            <div key={src} className="rounded-2xl border border-border bg-secondary p-2 text-secondary-foreground">
+              <iframe
+                title={title}
+                src={src}
+                className="h-80 w-full rounded-xl border-0 sm:h-[450px]"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 function FinalCTA() {
   return (
     <section className="relative overflow-hidden bg-checker py-20 text-secondary-foreground">
@@ -844,6 +880,8 @@ function HomePage() {
         <Pricing />
         <AppSection />
         <FAQ />
+        <RouteMaps />
+
         <FinalCTA />
       </main>
       <Footer />
