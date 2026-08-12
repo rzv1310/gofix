@@ -699,11 +699,11 @@ function RouteMaps() {
         <SectionHeading kicker="Hărți" title="Rutele noastre în Iași" sub="Principalele artere pe care intervenim rapid, pornind din Strada Golia 3." />
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
           {ROUTE_MAPS.map(([title, src]) => (
-            <div key={src} className="rounded-2xl border border-border bg-secondary p-2 text-secondary-foreground">
+            <div key={src} className="min-w-0 rounded-2xl border border-border bg-secondary p-2 text-secondary-foreground">
               <iframe
                 title={title}
                 src={src}
-                className="h-80 w-full rounded-xl border-0 sm:h-[450px]"
+                className="aspect-[4/3] h-auto w-full rounded-xl border-0 sm:aspect-video"
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
