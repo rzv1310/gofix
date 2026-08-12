@@ -344,11 +344,11 @@ function Zones() {
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeading kicker="Acoperire" title="Zone deservite în Păcurari și împrejurimi" sub="Intervenim în Păcurari și în zonele apropiate, în funcție de disponibilitate și acces." />
         <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-secondary p-2 text-secondary-foreground">
+          <div className="min-w-0 rounded-2xl border border-border bg-secondary p-2 text-secondary-foreground">
             <iframe
               title="Hartă vulcanizare mobilă în Păcurari, Iași"
               src="https://maps.google.com/maps?q=P%C4%83curari,%20Ia%C8%99i&z=14&output=embed&hl=ro"
-              className="h-80 w-full rounded-xl border-0 lg:h-full"
+              className="aspect-[4/3] h-auto w-full rounded-xl border-0 sm:aspect-video"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
